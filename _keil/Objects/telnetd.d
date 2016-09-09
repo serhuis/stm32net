@@ -1,0 +1,10 @@
+.\objects\telnetd.o: ..\src\telnetd.c
+.\objects\telnetd.o: ..\uIP\uip.h
+.\objects\telnetd.o: ..\uIP\uipopt.h
+.\objects\telnetd.o: ..\inc\uip-conf.h
+.\objects\telnetd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\telnetd.o: ..\inc\telnetd.h
+.\objects\telnetd.o: ..\uIP\uipopt.h
+.\objects\telnetd.o: ..\lib\memb.h
+.\objects\telnetd.o: ..\inc\shell.h
+.\objects\telnetd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

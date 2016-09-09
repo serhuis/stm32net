@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>AJAX_TEST</title>
+<script type="text/javascript" src="scripts.js" ></script>
+</head>
+<!--<body onLoad="javascript: setInterval('sendRequest()', 2000)">
+-->
+<body>
+<form name="controller_setting" id="setting_form">
+D1: <input type="text" name="di1" readonly ><br>
+D2: <input type="text" name="di2" readonly >
+</form>
+
+<p>Click the following to see the result:</p>
+<form>
+<input type="button" value="Click Me" onclick="showValue();" />
+</form>
+
+<form >
+<input name="addr" type="text" maxlength="15" />
+
+<input type="button" value="Set IP Address" onclick="sendGetQuery("addr.value");" />
+</form>
+
+</body>
+
+
+</html>

@@ -1,0 +1,16 @@
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\portable\Common\mpu_wrappers.c
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\FreeRTOS.h
+.\objects\mpu_wrappers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\mpu_wrappers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mpu_wrappers.o: ..\inc\FreeRTOSConfig.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\projdefs.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\portable.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\deprecated_definitions.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\mpu_wrappers.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\task.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\list.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\queue.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\timers.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\event_groups.h
+.\objects\mpu_wrappers.o: ..\FreeRTOS\Source\include\mpu_prototypes.h

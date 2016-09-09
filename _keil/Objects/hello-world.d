@@ -1,0 +1,17 @@
+.\objects\hello-world.o: ..\src\hello-world.c
+.\objects\hello-world.o: ..\inc\hello-world.h
+.\objects\hello-world.o: ..\uIP\uipopt.h
+.\objects\hello-world.o: ..\inc\uip-conf.h
+.\objects\hello-world.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\hello-world.o: ..\inc\hello-world.h
+.\objects\hello-world.o: ..\inc\dhcpc.h
+.\objects\hello-world.o: ..\inc\uip-conf.h
+.\objects\hello-world.o: ..\uIP\timer.h
+.\objects\hello-world.o: ..\uIP\clock.h
+.\objects\hello-world.o: ..\inc\clock-arch.h
+.\objects\hello-world.o: ..\uIP\pt.h
+.\objects\hello-world.o: ..\uIP\lc.h
+.\objects\hello-world.o: ..\uIP\lc-switch.h
+.\objects\hello-world.o: ..\uIP\psock.h
+.\objects\hello-world.o: ..\uIP\uip.h
+.\objects\hello-world.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

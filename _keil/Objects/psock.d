@@ -1,0 +1,16 @@
+.\objects\psock.o: ..\uIP\psock.c
+.\objects\psock.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\psock.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\psock.o: ..\uIP\uipopt.h
+.\objects\psock.o: ..\inc\uip-conf.h
+.\objects\psock.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\objects\psock.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\psock.o: ..\app\webserver.h
+.\objects\psock.o: ..\app\httpd.h
+.\objects\psock.o: ..\uIP\psock.h
+.\objects\psock.o: ..\uIP\uipopt.h
+.\objects\psock.o: ..\uIP\pt.h
+.\objects\psock.o: ..\uIP\lc.h
+.\objects\psock.o: ..\uIP\lc-switch.h
+.\objects\psock.o: ..\app\httpd-fs.h
+.\objects\psock.o: ..\uIP\uip.h

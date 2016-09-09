@@ -1,0 +1,19 @@
+%!: /header.html
+<center>
+<h1>Settings</h1>
+<table width="300">
+<tr><td>IP adress:</td>
+<td>%! get-addr</td>
+</tr>
+<tr><td>Mask</td><td>%! get-mask</td></tr>
+<tr><td>Gate</td><td>%! get-gate</td></tr>
+</table>
+<form method="get" action="http-cgi.c">
+<input name="set-addr" type="text"  value="" width="120" />
+<!--<input type="hidden" name="addr" value=addr-text.value /> -->
+<input type="submit"  value="Set"></input>
+</form>
+</center>
+
+
+%!: /footer.html
