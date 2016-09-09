@@ -34,8 +34,3 @@
 .\objects\stm32net.o: ..\enc28j60\inc\enc28j60.h
 .\objects\stm32net.o: ..\uIP\uip.h
 .\objects\stm32net.o: ..\uIP\uip_arp.h
-.\objects\stm32net.o: ..\fs\inc\ff.h
-.\objects\stm32net.o: ..\fs\inc\integer.h
-.\objects\stm32net.o: ..\fs\inc\ffconf.h
-.\objects\stm32net.o: ..\sd_mmc\mmc.h
-.\objects\stm32net.o: ..\fs\inc\diskio.h

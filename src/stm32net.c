@@ -5,8 +5,8 @@
 #include "stm32net.h"
 #include "uip.h"
 #include "uip_arp.h"
-#include "ff.h"
-#include "mmc.h"
+
+
 
 //--------------------------------------------------------------
 #define BUF ((struct uip_eth_hdr *)&uip_buf[0])
@@ -21,7 +21,6 @@ void Thread_uIP_periodic(void const *pvParameters);
 void Thread_uIP(void const *pvParameters);
 int Init_Thread (void);
 void demo_init(void);
-FRESULT fs_init(card_type_id_t* disk, FATFS* fs);
 
 osThreadId tid_Thread_uIP_periodic, tid_Thread_uIP;                                          // thread id
 osThreadDef(Thread_uIP_periodic, osPriorityBelowNormal, 1, 0);                   // thread object
@@ -105,22 +104,6 @@ void Thread_uIP(void const * pvParameters) {
 	}
 }
 
-//--------------------------------------------------------------
-
-FATFS fatfs;
-FRESULT res;
-DIR dir;
-FIL file;
-
-FILINFO fno;
-char f_path[128] = {"/"};
-
-u8	card = 0;
-u32 bw, br;
-char fname[] = {"/test.txt"};
-char ftext[] = {"Hello, world!!"};
-char fstring[32];
-DWORD fsize = 0;
 
 int main(void) {
 	
@@ -128,25 +111,6 @@ int main(void) {
 	struct uip_eth_addr mac = { { 0x00, 0x01, 0x02, 0x03, 0x04, 0x00 } };
 	uip_ipaddr_t ipaddr;
 
-//	res = fs_init(&disk, fs);
-	res = f_mount(&fatfs, _T(""), 1);
-    if (res == FR_OK) {
-			res = f_opendir(&dir, _T("/"));
-			for(;;)
-			{
-				res = f_readdir(&dir, &fno);
-				res = f_open(&file, fno.fname, FA_OPEN_EXISTING|FA_READ);
-				fsize = f_size(&file);
-				res = f_close(&file);
-				if(res!= FR_OK || fno.fname[0] ==0)
-					break;
-			}
-
-			res = f_closedir(&dir);
-
-    }
-	
-	
 	enc28j60_init(mac.addr);
 	uip_init();
 	uip_arp_init();
