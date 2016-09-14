@@ -3,7 +3,7 @@
 .\objects\uip-split.o: ..\uIP\uip-split.h
 .\objects\uip-split.o: ..\uIP\uip.h
 .\objects\uip-split.o: ..\uIP\uipopt.h
-.\objects\uip-split.o: ..\inc\uip-conf.h
+.\objects\uip-split.o: ..\uIP\uip-conf.h
 .\objects\uip-split.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\uip-split.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\uip-split.o: ..\app\webserver.h

@@ -2,7 +2,7 @@
 .\objects\uip_arp.o: ..\uIP\uip_arp.h
 .\objects\uip_arp.o: ..\uIP\uip.h
 .\objects\uip_arp.o: ..\uIP\uipopt.h
-.\objects\uip_arp.o: ..\inc\uip-conf.h
+.\objects\uip_arp.o: ..\uIP\uip-conf.h
 .\objects\uip_arp.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\uip_arp.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\uip_arp.o: ..\app\webserver.h

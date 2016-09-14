@@ -91,21 +91,21 @@ typedef unsigned short uip_stats_t;
  *
  * \hideinitializer
  */
-#define UIP_CONF_MAX_CONNECTIONS 4
+#define UIP_CONF_MAX_CONNECTIONS 2
 
 /**
  * Maximum number of listening TCP ports.
  *
  * \hideinitializer
  */
-#define UIP_CONF_MAX_LISTENPORTS 4
+#define UIP_CONF_MAX_LISTENPORTS 5
 
 /**
  * uIP buffer size.
  *
  * \hideinitializer
  */
-#define UIP_CONF_BUFFER_SIZE     512
+#define UIP_CONF_BUFFER_SIZE     1536
 
 /**
  * CPU byte order.

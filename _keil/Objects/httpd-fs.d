@@ -2,7 +2,7 @@
 .\objects\httpd-fs.o: ..\app\httpd.h
 .\objects\httpd-fs.o: ..\uIP\psock.h
 .\objects\httpd-fs.o: ..\uIP\uipopt.h
-.\objects\httpd-fs.o: ..\inc\uip-conf.h
+.\objects\httpd-fs.o: ..\uIP\uip-conf.h
 .\objects\httpd-fs.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\httpd-fs.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\httpd-fs.o: ..\app\webserver.h

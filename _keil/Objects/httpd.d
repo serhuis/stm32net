@@ -1,7 +1,7 @@
 .\objects\httpd.o: ..\app\httpd.c
 .\objects\httpd.o: ..\uIP\uip.h
 .\objects\httpd.o: ..\uIP\uipopt.h
-.\objects\httpd.o: ..\inc\uip-conf.h
+.\objects\httpd.o: ..\uIP\uip-conf.h
 .\objects\httpd.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\httpd.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\httpd.o: ..\app\webserver.h

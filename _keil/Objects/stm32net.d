@@ -21,7 +21,7 @@
 .\objects\stm32net.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\objects\stm32net.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\stm32net.o: ..\uIP\uipopt.h
-.\objects\stm32net.o: ..\inc\uip-conf.h
+.\objects\stm32net.o: ..\uIP\uip-conf.h
 .\objects\stm32net.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\stm32net.o: ..\app\webserver.h
 .\objects\stm32net.o: ..\app\httpd.h

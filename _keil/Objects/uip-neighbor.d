@@ -2,7 +2,7 @@
 .\objects\uip-neighbor.o: ..\uIP\uip-neighbor.h
 .\objects\uip-neighbor.o: ..\uIP\uip.h
 .\objects\uip-neighbor.o: ..\uIP\uipopt.h
-.\objects\uip-neighbor.o: ..\inc\uip-conf.h
+.\objects\uip-neighbor.o: ..\uIP\uip-conf.h
 .\objects\uip-neighbor.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\uip-neighbor.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\uip-neighbor.o: ..\app\webserver.h

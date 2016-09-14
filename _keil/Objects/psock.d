@@ -2,7 +2,7 @@
 .\objects\psock.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\psock.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\psock.o: ..\uIP\uipopt.h
-.\objects\psock.o: ..\inc\uip-conf.h
+.\objects\psock.o: ..\uIP\uip-conf.h
 .\objects\psock.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\psock.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\psock.o: ..\app\webserver.h

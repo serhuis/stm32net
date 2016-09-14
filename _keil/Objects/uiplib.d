@@ -1,7 +1,7 @@
 .\objects\uiplib.o: ..\uIP\uiplib.c
 .\objects\uiplib.o: ..\uIP\uip.h
 .\objects\uiplib.o: ..\uIP\uipopt.h
-.\objects\uiplib.o: ..\inc\uip-conf.h
+.\objects\uiplib.o: ..\uIP\uip-conf.h
 .\objects\uiplib.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\uiplib.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\uiplib.o: ..\app\webserver.h

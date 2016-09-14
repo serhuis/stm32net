@@ -22,38 +22,25 @@ Dialog DLL:      TCM.DLL V1.14.9.0
  
 <h2>Project:</h2>
 E:\MY_Proj\STM32net_uIP\current\_keil\stm32_net.uvprojx
-Project File Date:  09/09/2016
+Project File Date:  09/13/2016
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 2 (build 183)', folder: 'd:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 compiling clock-arch.c...
+compiling stm32f10x_gpio.c...
 compiling stm32net.c...
-..\src\stm32net.c(172): error:  #20: identifier "FRESULT" is undefined
-  FRESULT fs_init(card_type_id_t* disk, FATFS* fs)
-..\src\stm32net.c(172): error:  #20: identifier "card_type_id_t" is undefined
-  FRESULT fs_init(card_type_id_t* disk, FATFS* fs)
-..\src\stm32net.c(172): error:  #20: identifier "FATFS" is undefined
-  FRESULT fs_init(card_type_id_t* disk, FATFS* fs)
-..\src\stm32net.c(174): warning:  #223-D: function "mmc_mount" declared implicitly
-  	*disk = mmc_mount();
-..\src\stm32net.c(175): error:  #20: identifier "NO_CARD" is undefined
-  	if(NO_CARD != *disk)
-..\src\stm32net.c(177): warning:  #223-D: function "f_mount" declared implicitly
-  		return f_mount(fs, _T("0"), 1);
-..\src\stm32net.c(177): warning:  #223-D: function "_T" declared implicitly
-  		return f_mount(fs, _T("0"), 1);
-..\src\stm32net.c(180): error:  #20: identifier "FR_DISK_ERR" is undefined
-  		return FR_DISK_ERR;
-..\src\stm32net.c(182): warning:  #1-D: last line of file ends without a newline
-  }
 ..\src\stm32net.c(161): warning:  #177-D: function "HardFault_Handler" was declared but never referenced
   static void HardFault_Handler(void)
-..\src\stm32net.c: 5 warnings, 5 errors
-compiling stm32f10x_gpio.c...
+..\src\stm32net.c: 1 warning, 0 errors
 compiling stm32f10x_rcc.c...
-compiling stm32f10x_spi.c...
 compiling misc.c...
+compiling stm32f10x_spi.c...
+compiling timer.c...
+compiling enc28j60.c...
+..\enc28j60\src\enc28j60.c(183): warning:  #177-D: variable "a" was declared but never referenced
+  	uint16_t a;
+..\enc28j60\src\enc28j60.c: 1 warning, 0 errors
 compiling psock.c...
 ..\uIP\psock.c(179): warning:  #550-D: variable "PT_YIELD_FLAG" was set but never used
     PT_BEGIN(&s->psockpt);
@@ -70,19 +57,14 @@ compiling psock.c...
 ..\uIP\psock.c(334): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8_t *"
     buf_setup(&psock->buf, buffer, buffersize);
 ..\uIP\psock.c: 7 warnings, 0 errors
-compiling timer.c...
 compiling uip_arp.c...
-compiling enc28j60.c...
-..\enc28j60\src\enc28j60.c(183): warning:  #177-D: variable "a" was declared but never referenced
-  	uint16_t a;
-..\enc28j60\src\enc28j60.c: 1 warning, 0 errors
+compiling uip-fw.c...
 compiling uip.c...
 ..\uIP\uip.c(1847): warning:  #177-D: label "ip_send_nolen" was declared but never referenced
    ip_send_nolen:
 ..\uIP\uip.c(113): warning:  #177-D: variable "all_ones_addr" was declared but never referenced
   static const uip_ipaddr_t all_ones_addr =
 ..\uIP\uip.c: 2 warnings, 0 errors
-compiling uip-fw.c...
 compiling uiplib.c...
 compiling uip-neighbor.c...
 compiling uip-split.c...
@@ -179,19 +161,12 @@ ULL, data_settings_shtml, data_settings_shtml + 16, sizeof(data_settings_shtml) 
   const struct httpd_fsdata_file file_stats_shtml[] = {{file_fade_png, data_stats_shtml, data_stats_shtml + 13, sizeof(data_stats_shtml) - 13}};
 ..\app\httpd-fs.c: 22 warnings, 0 errors
 compiling http-strings.c...
-compiling diskio.c...
-"no source": Error:  #5: cannot open source input file "..\fs\diskio.c": No such file or directory
-..\fs\diskio.c: 0 warnings, 1 error
-compiling mmc.c...
-"no source": Error:  #5: cannot open source input file "..\sd_mmc\mmc.c": No such file or directory
-..\sd_mmc\mmc.c: 0 warnings, 1 error
-compiling ff.c...
-"no source": Error:  #5: cannot open source input file "..\fs\ff.c": No such file or directory
-..\fs\ff.c: 0 warnings, 1 error
-assembling startup_stm32f10x_md_vl.s...
 compiling RTX_Conf_CM.c...
+assembling startup_stm32f10x_md_vl.s...
 compiling system_stm32f10x.c...
-".\Objects\stm32_net.axf" - 5 Error(s), 57 Warning(s).
+linking...
+Program Size: Code=19124 RO-data=7868 RW-data=224 ZI-data=6256  
+".\Objects\stm32_net.axf" - 0 Error(s), 53 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -200,8 +175,8 @@ Package Vendor: ARM
                 ::CMSIS:RTOS:1.0 (API)
                 CMSIS (Cortex Microcontroller Software Interface Standard)
    * Component: RTOS Version: 1.0
-   * Component: CORE Version: 4.3.0
    * Component: Keil RTX Version: 4.80.0
+   * Component: CORE Version: 4.3.0
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.1.0.pack
@@ -220,30 +195,29 @@ Package Vendor: Keil
 
    * Component: ::CMSIS:RTOS:1.0 (API)
 
-   * Component: ARM::CMSIS:CORE:4.3.0
-
    * Component: ARM::CMSIS:RTOS:Keil RTX:4.80.0
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
-      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
       Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
-      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
-      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
       Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
+      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
+      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
+
+   * Component: ARM::CMSIS:CORE:4.3.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\ARM\startup_stm32f10x_md_vl.s
-      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
       Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\system_stm32f10x.c
-Target not created.
-Build Time Elapsed:  00:00:02
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f10x_md_vl.s
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

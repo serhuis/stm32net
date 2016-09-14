@@ -1,7 +1,7 @@
 .\objects\uip-fw.o: ..\uIP\uip-fw.c
 .\objects\uip-fw.o: ..\uIP\uip.h
 .\objects\uip-fw.o: ..\uIP\uipopt.h
-.\objects\uip-fw.o: ..\inc\uip-conf.h
+.\objects\uip-fw.o: ..\uIP\uip-conf.h
 .\objects\uip-fw.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
 .\objects\uip-fw.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\uip-fw.o: ..\app\webserver.h

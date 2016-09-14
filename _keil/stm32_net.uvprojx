@@ -334,7 +334,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\inc;..\STM32F10x_StdPeriph_Driver\inc;..\FreeRTOS\Source\portable\RVDS\ARM_CM3;..\enc28j60\inc;C:\Keil_v5;..\uIP;..\uIP\lib;..\app;..\fs\inc;..\sd_mmc</IncludePath>
+              <IncludePath>..\inc;..\STM32F10x_StdPeriph_Driver\inc;..\FreeRTOS\Source\portable\RVDS\ARM_CM3;..\enc28j60\inc;C:\Keil_v5;..\uIP;..\uIP\lib;..\app</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -540,31 +540,6 @@
               <FileName>http-strings.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\app\http-strings.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>fs</GroupName>
-          <Files>
-            <File>
-              <FileName>diskio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\fs\diskio.c</FilePath>
-            </File>
-            <File>
-              <FileName>ff.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\fs\ff.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>sd_mmc</GroupName>
-          <Files>
-            <File>
-              <FileName>mmc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\sd_mmc\mmc.c</FilePath>
             </File>
           </Files>
         </Group>

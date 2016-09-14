@@ -1,5 +1,5 @@
 Dependencies for Project 'stm32_net', Target 'Target 1': (DO NOT MODIFY !)
-F (..\src\stm32net.c)(0x57D2CA6B)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\stm32net.o --omf_browse .\objects\stm32net.crf --depend .\objects\stm32net.d)
+F (..\src\stm32net.c)(0x57D95876)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\stm32net.o --omf_browse .\objects\stm32net.crf --depend .\objects\stm32net.d)
 I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x56278E2E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x56FE892E)
@@ -20,22 +20,22 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
+I (..\app\httpd-fs.h)(0x57D7A265)
 I (..\enc28j60\inc\enc28j60.h)(0x57D2C9A6)
-I (..\uIP\uip.h)(0x57D2C9A6)
+I (..\uIP\uip.h)(0x57D7A265)
 I (..\uIP\uip_arp.h)(0x57D2C9A6)
-F (..\src\clock-arch.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\clock-arch.o --omf_browse .\objects\clock-arch.crf --depend .\objects\clock-arch.d)
+F (..\src\clock-arch.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\clock-arch.o --omf_browse .\objects\clock-arch.crf --depend .\objects\clock-arch.d)
 I (..\inc\clock-arch.h)(0x57D2C9A6)
-F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_gpio.o --omf_browse .\objects\stm32f10x_gpio.crf --depend .\objects\stm32f10x_gpio.d)
+F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_gpio.o --omf_browse .\objects\stm32f10x_gpio.crf --depend .\objects\stm32f10x_gpio.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x57D2C9A6)
 I (..\inc\stm32f10x.h)(0x57D2C9A6)
 I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
@@ -51,7 +51,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x57D2C9A6)
-F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_rcc.o --omf_browse .\objects\stm32f10x_rcc.crf --depend .\objects\stm32f10x_rcc.d)
+F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_rcc.o --omf_browse .\objects\stm32f10x_rcc.crf --depend .\objects\stm32f10x_rcc.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x57D2C9A6)
 I (..\inc\stm32f10x.h)(0x57D2C9A6)
 I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
@@ -67,7 +67,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x57D2C9A6)
-F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_spi.o --omf_browse .\objects\stm32f10x_spi.crf --depend .\objects\stm32f10x_spi.d)
+F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_spi.o --omf_browse .\objects\stm32f10x_spi.crf --depend .\objects\stm32f10x_spi.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x57D2C9A6)
 I (..\inc\stm32f10x.h)(0x57D2C9A6)
 I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
@@ -83,7 +83,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x57D2C9A6)
-F (..\STM32F10x_StdPeriph_Driver\src\misc.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\misc.o --omf_browse .\objects\misc.crf --depend .\objects\misc.d)
+F (..\STM32F10x_StdPeriph_Driver\src\misc.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\misc.o --omf_browse .\objects\misc.crf --depend .\objects\misc.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x57D2C9A6)
 I (..\inc\stm32f10x.h)(0x57D2C9A6)
 I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
@@ -99,7 +99,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_spi.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x57D2C9A6)
-F (..\enc28j60\src\enc28j60.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I "D:\Program Files\ARM\ARMCC\include" -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\enc28j60.o --omf_browse .\objects\enc28j60.crf --depend .\objects\enc28j60.d)
+F (..\enc28j60\src\enc28j60.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I "D:\Program Files\ARM\ARMCC\include" -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\enc28j60.o --omf_browse .\objects\enc28j60.crf --depend .\objects\enc28j60.d)
 I (..\inc\stm32f10x.h)(0x57D2C9A6)
 I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
@@ -116,177 +116,174 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x57D2C9A6)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x57D2C9A6)
 I (..\enc28j60\inc\enc28j60.h)(0x57D2C9A6)
-F (..\uIP\psock.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\psock.o --omf_browse .\objects\psock.crf --depend .\objects\psock.d)
+F (..\uIP\psock.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\psock.o --omf_browse .\objects\psock.crf --depend .\objects\psock.d)
 I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE892E)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
-I (..\uIP\uip.h)(0x57D2C9A6)
-F (..\uIP\timer.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
+I (..\app\httpd-fs.h)(0x57D7A265)
+I (..\uIP\uip.h)(0x57D7A265)
+F (..\uIP\timer.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
 I (..\uIP\clock.h)(0x57D2C9A6)
 I (..\inc\clock-arch.h)(0x57D2C9A6)
 I (..\uIP\timer.h)(0x57D2C9A6)
-F (..\uIP\uip.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip.o --omf_browse .\objects\uip.crf --depend .\objects\uip.d)
-I (..\uIP\uip.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+F (..\uIP\uip.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip.o --omf_browse .\objects\uip.crf --depend .\objects\uip.d)
+I (..\uIP\uip.h)(0x57D7A265)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
+I (..\app\httpd-fs.h)(0x57D7A265)
 I (..\uIP\uip_arch.h)(0x57D2C9A6)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE892E)
-F (..\uIP\uip_arp.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip_arp.o --omf_browse .\objects\uip_arp.crf --depend .\objects\uip_arp.d)
+F (..\uIP\uip_arp.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip_arp.o --omf_browse .\objects\uip_arp.crf --depend .\objects\uip_arp.d)
 I (..\uIP\uip_arp.h)(0x57D2C9A6)
-I (..\uIP\uip.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+I (..\uIP\uip.h)(0x57D7A265)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
+I (..\app\httpd-fs.h)(0x57D7A265)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE892E)
-F (..\uIP\uip-fw.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip-fw.o --omf_browse .\objects\uip-fw.crf --depend .\objects\uip-fw.d)
-I (..\uIP\uip.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+F (..\uIP\uip-fw.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip-fw.o --omf_browse .\objects\uip-fw.crf --depend .\objects\uip-fw.d)
+I (..\uIP\uip.h)(0x57D7A265)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
+I (..\app\httpd-fs.h)(0x57D7A265)
 I (..\uIP\uip_arch.h)(0x57D2C9A6)
 I (..\uIP\uip-fw.h)(0x57D2C9A6)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE892E)
-F (..\uIP\uiplib.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uiplib.o --omf_browse .\objects\uiplib.crf --depend .\objects\uiplib.d)
-I (..\uIP\uip.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+F (..\uIP\uiplib.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uiplib.o --omf_browse .\objects\uiplib.crf --depend .\objects\uiplib.d)
+I (..\uIP\uip.h)(0x57D7A265)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
+I (..\app\httpd-fs.h)(0x57D7A265)
 I (..\uIP\uiplib.h)(0x57D2C9A6)
-F (..\uIP\uip-neighbor.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip-neighbor.o --omf_browse .\objects\uip-neighbor.crf --depend .\objects\uip-neighbor.d)
+F (..\uIP\uip-neighbor.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip-neighbor.o --omf_browse .\objects\uip-neighbor.crf --depend .\objects\uip-neighbor.d)
 I (..\uIP\uip-neighbor.h)(0x57D2C9A6)
-I (..\uIP\uip.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+I (..\uIP\uip.h)(0x57D7A265)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
+I (..\app\httpd-fs.h)(0x57D7A265)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE892E)
-F (..\uIP\uip-split.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip-split.o --omf_browse .\objects\uip-split.crf --depend .\objects\uip-split.d)
+F (..\uIP\uip-split.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\uip-split.o --omf_browse .\objects\uip-split.crf --depend .\objects\uip-split.d)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE892E)
 I (..\uIP\uip-split.h)(0x57D2C9A6)
-I (..\uIP\uip.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+I (..\uIP\uip.h)(0x57D7A265)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
+I (..\app\httpd-fs.h)(0x57D7A265)
 I (..\uIP\uip-fw.h)(0x57D2C9A6)
 I (..\uIP\uip_arch.h)(0x57D2C9A6)
-F (..\app\httpd.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\httpd.o --omf_browse .\objects\httpd.crf --depend .\objects\httpd.d)
-I (..\uIP\uip.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+F (..\app\httpd.c)(0x57D9597F)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\httpd.o --omf_browse .\objects\httpd.crf --depend .\objects\httpd.d)
+I (..\uIP\uip.h)(0x57D7A265)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
-I (..\app\httpd-cgi.h)(0x57D2C9A6)
-I (..\app\http-strings.h)(0x57D2C9A6)
+I (..\app\httpd-fs.h)(0x57D7A265)
+I (..\app\httpd-cgi.h)(0x57D7A265)
+I (..\app\http-strings.h)(0x57D7A265)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE892E)
-F (..\app\httpd-cgi.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\httpd-cgi.o --omf_browse .\objects\httpd-cgi.crf --depend .\objects\httpd-cgi.d)
-I (..\uIP\uip.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+F (..\app\httpd-cgi.c)(0x57D7A265)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\httpd-cgi.o --omf_browse .\objects\httpd-cgi.crf --depend .\objects\httpd-cgi.d)
+I (..\uIP\uip.h)(0x57D7A265)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
-I (..\app\httpd.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
-I (..\app\httpd-cgi.h)(0x57D2C9A6)
+I (..\app\httpd-fs.h)(0x57D7A265)
+I (..\app\httpd-cgi.h)(0x57D7A265)
 I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE892E)
-F (..\app\httpd-fs.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\httpd-fs.o --omf_browse .\objects\httpd-fs.crf --depend .\objects\httpd-fs.d)
-I (..\app\httpd.h)(0x57D2C9A6)
+F (..\app\httpd-fs.c)(0x57D7A265)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\httpd-fs.o --omf_browse .\objects\httpd-fs.crf --depend .\objects\httpd-fs.d)
+I (..\app\httpd.h)(0x57D7A265)
 I (..\uIP\psock.h)(0x57D2C9A6)
-I (..\uIP\uipopt.h)(0x57D2C9A6)
-I (..\inc\uip-conf.h)(0x57D2C9A6)
+I (..\uIP\uipopt.h)(0x57D958AE)
+I (..\uIP\uip-conf.h)(0x5798C2AB)
 I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
-I (..\app\webserver.h)(0x57D2C9A6)
+I (..\app\webserver.h)(0x57D7A265)
 I (..\uIP\pt.h)(0x57D2C9A6)
 I (..\uIP\lc.h)(0x57D2C9A6)
 I (..\uIP\lc-switch.h)(0x57D2C9A6)
-I (..\app\httpd-fs.h)(0x57D2C9A6)
-I (..\app\httpd-fsdata.h)(0x57D2C9A6)
-I (..\uIP\uip.h)(0x57D2C9A6)
-I (..\app\httpd-fsdata.c)(0x57D2C9A6)
-F (..\app\http-strings.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\http-strings.o --omf_browse .\objects\http-strings.crf --depend .\objects\http-strings.d)
-F (..\fs\diskio.c)(0x00000000)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\diskio.o --omf_browse .\objects\diskio.crf --depend .\objects\diskio.d)
-F (..\fs\ff.c)(0x00000000)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\ff.o --omf_browse .\objects\ff.crf --depend .\objects\ff.d)
-F (..\sd_mmc\mmc.c)(0x00000000)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\mmc.o --omf_browse .\objects\mmc.crf --depend .\objects\mmc.d)
-F (RTE\CMSIS\RTX_Conf_CM.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\rtx_conf_cm.o --omf_browse .\objects\rtx_conf_cm.crf --depend .\objects\rtx_conf_cm.d)
+I (..\app\httpd-fs.h)(0x57D7A265)
+I (..\app\httpd-fsdata.h)(0x57D7A265)
+I (..\uIP\uip.h)(0x57D7A265)
+I (..\app\httpd-fsdata.c)(0x57D7A265)
+F (..\app\http-strings.c)(0x57D7A265)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\http-strings.o --omf_browse .\objects\http-strings.crf --depend .\objects\http-strings.d)
+F (RTE\CMSIS\RTX_Conf_CM.c)(0x57D7A265)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\rtx_conf_cm.o --omf_browse .\objects\rtx_conf_cm.crf --depend .\objects\rtx_conf_cm.d)
 I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x56278E2E)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x56FE892E)
 I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\RTX_CM_lib.h)(0x556D7734)
 F (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib)(0x5624A356)()
 F (RTE\Device\STM32F100RB\RTE_Device.h)(0x57D2C9A6)()
-F (RTE\Device\STM32F100RB\startup_stm32f10x_md_vl.s)(0x57D2C9A6)(--cpu Cortex-M3 --pd "__RTX SETA 1" -g --apcs=interwork -I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include--pd "__UVISION_VERSION SETA 520" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD_VL SETA 1"--list .\listings\startup_stm32f10x_md_vl.lst --xref -o .\objects\startup_stm32f10x_md_vl.o --depend .\objects\startup_stm32f10x_md_vl.d)
-F (RTE\Device\STM32F100RB\system_stm32f10x.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app -I ..\fs\inc -I ..\sd_mmc-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)
+F (RTE\Device\STM32F100RB\startup_stm32f10x_md_vl.s)(0x57D6BFE4)(--cpu Cortex-M3 --pd "__RTX SETA 1" -g --apcs=interwork -I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include--pd "__UVISION_VERSION SETA 520" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD_VL SETA 1"--list .\listings\startup_stm32f10x_md_vl.lst --xref -o .\objects\startup_stm32f10x_md_vl.o --depend .\objects\startup_stm32f10x_md_vl.d)
+F (RTE\Device\STM32F100RB\system_stm32f10x.c)(0x57D2C9A6)(-c --cpu Cortex-M3 -D__RTX -g -O0 --apcs=interwork --split_sections -I ..\inc -I ..\STM32F10x_StdPeriph_Driver\inc -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM3 -I ..\enc28j60\inc -I C:\Keil_v5 -I ..\uIP -I ..\uIP\lib -I ..\app-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE-I E:\MY_Proj\STM32net_uIP\current\_keil\RTE\Device\STM32F100RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_STDPERIPH_DRIVER-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)
 I (..\inc\stm32f10x.h)(0x57D2C9A6)
 I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE892E)

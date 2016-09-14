@@ -167,16 +167,3 @@ static void HardFault_Handler(void)
 	}
 	
 }
-
-
-FRESULT fs_init(card_type_id_t* disk, FATFS* fs)
-{
-	*disk = mmc_mount();
-	if(NO_CARD != *disk)
-	{
-		return f_mount(fs, _T("0"), 1);
-	}
-	else
-		return FR_DISK_ERR;
-
-}
