@@ -252,14 +252,31 @@ PT_THREAD(handle_output(struct httpd_state *s))
 static
 PT_THREAD(handle_input(struct httpd_state *s))
 {
+	char i=0;
   PSOCK_BEGIN(&s->sin);
 
   PSOCK_READTO(&s->sin, ISO_space);
+	s->method = NULL;
 
-  
+  /*
   if(strncmp(s->inputbuf, http_get, 4) != 0) {
 			PSOCK_CLOSE_EXIT(&s->sin);
   }
+	*/
+	
+	for(i=0; http_methods[i]!= NULL; i++)
+	{
+		if(strncmp(s->inputbuf, http_methods[i], strlen(http_methods[i])) == 0)
+		{
+			s->method = http_methods[i];
+			break;
+		}
+		
+	}
+	if(s->method == NULL)
+		PSOCK_CLOSE_EXIT(&s->sin);
+	
+	
 	
   PSOCK_READTO(&s->sin, ISO_space);
 

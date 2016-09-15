@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<h1>Settings</h1>
+<table width="300">
+<tr><td>IP adress:</td>
+<td>%! get-addr</td>
+</tr>
+<tr><td>Mask</td><td>%! get-mask</td></tr>
+<tr><td>Gate</td><td>%! get-gate</td></tr>
+</table>
+<!--form method="post" action="settings.shtml"-->
+<input name="addr" type="text"  value="123" width="120" />
+<input type="button"  value="Set" onclick="sendReq()"></input>
+<!--/form-->
+
+</center>
+
+<script>
+function sendReq()
+{
+	var xhttp;
+//	var text="addr.value";
+	if (window.XMLHttpRequest) {
+    	xhttp = new XMLHttpRequest();
+   }
+   	xhttp.open("POST", "settings.shtml", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("text");
+}
+
+</script>
+
+
+</body>
+</html>

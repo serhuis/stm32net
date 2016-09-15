@@ -154,9 +154,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>225</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134224560</Address>
+          <LineNumber>222</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>134224584</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -165,14 +165,14 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\app\httpd.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\stm32_net\../app/httpd.c\225</Expression>
+          <Expression>\\stm32_net\../app/httpd.c\222</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>227</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134224576</Address>
+          <LineNumber>222</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>134224830</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -181,7 +181,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\app\httpd.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\stm32_net\../app/httpd.c\227</Expression>
+          <Expression>\\stm32_net\../app/httpd.c\222</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -264,6 +264,21 @@
           <count>15</count>
           <WinNumber>1</WinNumber>
           <ItemText>s</ItemText>
+        </Ww>
+        <Ww>
+          <count>16</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>http_methods</ItemText>
+        </Ww>
+        <Ww>
+          <count>17</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>uip_buf</ItemText>
+        </Ww>
+        <Ww>
+          <count>18</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>uip_appdata</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -532,7 +547,7 @@
       <GroupNumber>5</GroupNumber>
       <FileNumber>16</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\app\httpd.c</PathWithFileName>
@@ -544,7 +559,7 @@
       <GroupNumber>5</GroupNumber>
       <FileNumber>17</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\app\httpd-cgi.c</PathWithFileName>

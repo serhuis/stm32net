@@ -2,7 +2,17 @@ extern const char http_http[8];
 extern const char http_200[5];
 extern const char http_301[5];
 extern const char http_302[5];
+/*addet by samur*/
 extern const char http_get[5];
+extern const char http_options[9];
+extern const char http_head[6];
+extern const char http_post[6];
+extern const char http_put[5];
+extern const char http_delete[8];
+extern const char http_trace[7];
+extern const char http_connect[9];
+extern const char* http_methods[9];
+/*end addet by samur*/
 extern const char http_10[9];
 extern const char http_11[9];
 extern const char http_content_type[15];

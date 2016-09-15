@@ -38,6 +38,12 @@
 #include "psock.h"
 #include "httpd-fs.h"
 
+typedef struct _HTTP_METHOD{
+	char* metod_dtring;
+	unsigned char strlen;
+	
+	
+}HTTP_METHOD;
 
 struct httpd_state {
   unsigned char timer;
@@ -50,8 +56,8 @@ struct httpd_state {
   int len;
   char *scriptptr;
   int scriptlen;
-  
   unsigned short count;
+	const char* method;
 };
 
 

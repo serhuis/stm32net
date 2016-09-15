@@ -18,17 +18,27 @@ const char http_302[5] =
 //{0x33, 0x30, 0x32, 0x20, };
 "302 ";
 
-const char http_get[5] = 
-/* "GET " */
-//{0x47, 0x45, 0x54, 0x20, };
-{"GET "};
+const char http_options[9] = {"OPTIONS "};
+const char http_get[5] = {"GET "};							/*{0x47, 0x45, 0x54, 0x20, };*/
+const char http_head[6] = {"HEAD "};
+const char http_post[6] = {"POST "};
+const char http_put[5] = {"PUT "};
+const char http_delete[8] = {"DELETE "};
+const char http_trace[7] = {"TRACE "};
+const char http_connect[9] = {"CONNECT "};
 
-const char http_post[6] = 
-/* "POST " */
-//{0x47, 0x45, 0x54, 0x20, };
-{"POST "};
 
-
+const char* http_methods[9] = {
+															http_options, 
+															http_get, 
+															http_head,
+															http_post, 
+															http_put,
+															http_delete,
+															http_trace,
+															http_connect,
+															0};
+	
 const char http_10[9] = 
 /* "HTTP/1.0" */
 //{0x48, 0x54, 0x54, 0x50, 0x2f, 0x31, 0x2e, 0x30, };

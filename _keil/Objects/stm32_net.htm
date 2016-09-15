@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\stm32_net.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\stm32_net.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Wed Sep 14 17:06:58 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Thu Sep 15 17:00:46 2016
 <BR><P>
 <H3>Maximum Stack Usage =        216 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -595,33 +595,34 @@ Global Symbols
 
 <P><STRONG><a name="[bb]"></a>strchr</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, strchr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;file_stats
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;next_scriptstate
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;next_scriptstate
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_output
 </UL>
 
-<P><STRONG><a name="[c7]"></a>strcpy</STRONG> (Thumb, 72 bytes, Stack size 12 bytes, strcpy.o(.text))
+<P><STRONG><a name="[c8]"></a>strcpy</STRONG> (Thumb, 72 bytes, Stack size 12 bytes, strcpy.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_output
 </UL>
 
 <P><STRONG><a name="[105]"></a>strrchr</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, strrchr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
+<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
 </UL>
 
-<P><STRONG><a name="[d0]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, strlen.o(.text))
+<P><STRONG><a name="[c4]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, strlen.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_cgi
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_cgi
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_input
 </UL>
 
-<P><STRONG><a name="[c4]"></a>strncmp</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, strncmp.o(.text))
+<P><STRONG><a name="[c5]"></a>strncmp</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, strncmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = strncmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_cgi
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_cgi
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_output
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_input
 </UL>
@@ -1083,22 +1084,22 @@ Global Symbols
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;upper_layer_chksum
 </UL>
 
-<P><STRONG><a name="[ce]"></a>httpd_appcall</STRONG> (Thumb, 166 bytes, Stack size 8 bytes, httpd.o(i.httpd_appcall))
+<P><STRONG><a name="[cf]"></a>httpd_appcall</STRONG> (Thumb, 166 bytes, Stack size 8 bytes, httpd.o(i.httpd_appcall))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = httpd_appcall &rArr; handle_connection &rArr; handle_output &rArr; handle_script &rArr; send_part_of_file &rArr; psock_send &rArr; send_data &rArr; uip_send
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_connection
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_init
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uip_process
 </UL>
 
-<P><STRONG><a name="[cb]"></a>httpd_cgi</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, httpd-cgi.o(i.httpd_cgi))
+<P><STRONG><a name="[cc]"></a>httpd_cgi</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, httpd-cgi.o(i.httpd_cgi))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = httpd_cgi &rArr; strncmp
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
 </UL>
 
 <P><STRONG><a name="[bd]"></a>httpd_fs_count</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, httpd-fs.o(i.httpd_fs_count))
@@ -1109,12 +1110,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;generate_file_stats
 </UL>
 
-<P><STRONG><a name="[c6]"></a>httpd_fs_open</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, httpd-fs.o(i.httpd_fs_open))
+<P><STRONG><a name="[c7]"></a>httpd_fs_open</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, httpd-fs.o(i.httpd_fs_open))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = httpd_fs_open &rArr; httpd_fs_strcmp
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_fs_strcmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_output
 </UL>
 
@@ -1211,7 +1212,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Tick_Handler
 </UL>
 
-<P><STRONG><a name="[c5]"></a>psock_datalen</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, psock.o(i.psock_datalen))
+<P><STRONG><a name="[c6]"></a>psock_datalen</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, psock.o(i.psock_datalen))
 <BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_input
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_readto
 </UL>
@@ -1229,15 +1230,15 @@ Global Symbols
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_addr
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gate_addr
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;file_stats
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_file
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_file
 </UL>
 
-<P><STRONG><a name="[cf]"></a>psock_init</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, psock.o(i.psock_init))
+<P><STRONG><a name="[d0]"></a>psock_init</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, psock.o(i.psock_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = psock_init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_setup
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_appcall
+<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_appcall
 </UL>
 
 <P><STRONG><a name="[df]"></a>psock_newdata</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, psock.o(i.psock_newdata))
@@ -1248,7 +1249,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = psock_readto &rArr; buf_bufto
 </UL>
 <BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_newdata
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_datalen
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_datalen
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_setup
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_bufto
 </UL>
@@ -1261,8 +1262,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_data
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_acked
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_part_of_file
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_part_of_file
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
 </UL>
 
 <P><STRONG><a name="[3c]"></a>rt_alloc_box</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, rt_membox.o(i.rt_alloc_box))
@@ -1740,7 +1741,7 @@ Global Symbols
 <P><STRONG><a name="[9c]"></a>uip_process</STRONG> (Thumb, 3656 bytes, Stack size 16 bytes, uip.o(i.uip_process))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = uip_process &rArr; httpd_appcall &rArr; handle_connection &rArr; handle_output &rArr; handle_script &rArr; send_part_of_file &rArr; psock_send &rArr; send_data &rArr; uip_send
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_appcall
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_appcall
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uip_tcpchksum
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uip_ipchksum
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uip_add32
@@ -1777,7 +1778,7 @@ Local Symbols
 
 <P><STRONG><a name="[de]"></a>buf_setup</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, psock.o(i.buf_setup))
 <BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_readto
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_init
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_init
 </UL>
 
 <P><STRONG><a name="[dc]"></a>data_acked</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, psock.o(i.data_acked))
@@ -1837,16 +1838,17 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_output
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_input
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_appcall
+<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_appcall
 </UL>
 
-<P><STRONG><a name="[c1]"></a>handle_input</STRONG> (Thumb, 264 bytes, Stack size 16 bytes, httpd.o(i.handle_input))
-<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = handle_input &rArr; psock_readto &rArr; buf_bufto
+<P><STRONG><a name="[c1]"></a>handle_input</STRONG> (Thumb, 334 bytes, Stack size 24 bytes, httpd.o(i.handle_input))
+<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = handle_input &rArr; psock_readto &rArr; buf_bufto
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_readto
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_datalen
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_datalen
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncpy
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_connection
 </UL>
@@ -1854,64 +1856,64 @@ Local Symbols
 <P><STRONG><a name="[c2]"></a>handle_output</STRONG> (Thumb, 266 bytes, Stack size 16 bytes, httpd.o(i.handle_output))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = handle_output &rArr; handle_script &rArr; send_part_of_file &rArr; psock_send &rArr; send_data &rArr; uip_send
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_fs_open
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_file
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_fs_open
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_headers
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_file
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strchr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_connection
 </UL>
 
-<P><STRONG><a name="[ca]"></a>handle_script</STRONG> (Thumb, 398 bytes, Stack size 24 bytes, httpd.o(i.handle_script))
+<P><STRONG><a name="[cb]"></a>handle_script</STRONG> (Thumb, 398 bytes, Stack size 24 bytes, httpd.o(i.handle_script))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = handle_script &rArr; send_part_of_file &rArr; psock_send &rArr; send_data &rArr; uip_send
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_fs_open
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_cgi
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_part_of_file
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_file
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;next_scriptstate
+<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_fs_open
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_cgi
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_part_of_file
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_file
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;next_scriptstate
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strchr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_output
 </UL>
 
-<P><STRONG><a name="[cc]"></a>next_scriptstate</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, httpd.o(i.next_scriptstate))
+<P><STRONG><a name="[cd]"></a>next_scriptstate</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, httpd.o(i.next_scriptstate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = next_scriptstate
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strchr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
 </UL>
 
-<P><STRONG><a name="[c9]"></a>send_file</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, httpd.o(i.send_file))
+<P><STRONG><a name="[ca]"></a>send_file</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, httpd.o(i.send_file))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = send_file &rArr; psock_generator_send &rArr; send_data &rArr; uip_send
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_generator_send
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_output
 </UL>
 
-<P><STRONG><a name="[c8]"></a>send_headers</STRONG> (Thumb, 450 bytes, Stack size 24 bytes, httpd.o(i.send_headers))
+<P><STRONG><a name="[c9]"></a>send_headers</STRONG> (Thumb, 450 bytes, Stack size 24 bytes, httpd.o(i.send_headers))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = send_headers &rArr; psock_send &rArr; send_data &rArr; uip_send
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_send
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strrchr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_output
 </UL>
 
-<P><STRONG><a name="[cd]"></a>send_part_of_file</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, httpd.o(i.send_part_of_file))
+<P><STRONG><a name="[ce]"></a>send_part_of_file</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, httpd.o(i.send_part_of_file))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = send_part_of_file &rArr; psock_send &rArr; send_data &rArr; uip_send
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;psock_send
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_script
 </UL>
 
 <P><STRONG><a name="[58]"></a>file_stats</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, httpd-cgi.o(i.file_stats))
@@ -2024,7 +2026,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = httpd_fs_strcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_fs_count
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_fs_open
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;httpd_fs_open
 </UL>
 
 <P><STRONG><a name="[99]"></a>SetSysClock</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SetSysClock))
