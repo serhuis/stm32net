@@ -541,6 +541,11 @@
               <FileType>1</FileType>
               <FilePath>..\app\http-strings.c</FilePath>
             </File>
+            <File>
+              <FileName>httpd-ajax.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\httpd-ajax.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

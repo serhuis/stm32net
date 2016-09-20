@@ -154,34 +154,34 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>222</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>134224584</Address>
+          <LineNumber>253</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134223402</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\app\httpd.c</Filename>
+          <Filename>..\app\httpd-cgi.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\stm32_net\../app/httpd.c\222</Expression>
+          <Expression>\\stm32_net\../app/httpd-cgi.c\253</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>222</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>134224830</Address>
+          <LineNumber>253</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134223442</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\app\httpd.c</Filename>
+          <Filename>..\app\httpd-cgi.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\stm32_net\../app/httpd.c\222</Expression>
+          <Expression>\\stm32_net\../app/httpd-cgi.c\253</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -316,6 +316,12 @@
       <Lin2Executable></Lin2Executable>
       <Lin2ConfigFile></Lin2ConfigFile>
       <bLin2Auto>0</bLin2Auto>
+      <SystemViewers>
+        <Entry>
+          <Name>OS Support\System and Thread Viewer</Name>
+          <WinId>35905</WinId>
+        </Entry>
+      </SystemViewers>
       <DebugDescription>
         <Enable>1</Enable>
         <EnableLog>0</EnableLog>
@@ -571,7 +577,7 @@
       <GroupNumber>5</GroupNumber>
       <FileNumber>18</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\app\httpd-fs.c</PathWithFileName>
@@ -588,6 +594,18 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\app\http-strings.c</PathWithFileName>
       <FilenameWithoutPath>http-strings.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>5</GroupNumber>
+      <FileNumber>20</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\app\httpd-ajax.c</PathWithFileName>
+      <FilenameWithoutPath>httpd-ajax.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

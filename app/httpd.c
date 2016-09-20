@@ -73,6 +73,7 @@
 #define ISO_period  0x2e
 #define ISO_slash   0x2f
 #define ISO_colon   0x3a
+#define ISO_question   0x3f
 
 
 /*---------------------------------------------------------------------------*/
@@ -234,10 +235,21 @@ PT_THREAD(handle_output(struct httpd_state *s))
 		}
   } else {
     PT_WAIT_THREAD(&s->outputpt,
-		   send_headers(s,
-		   http_header_200));
-    ptr = strchr(s->filename, ISO_period);
-    if(ptr != NULL && strncmp(ptr, http_shtml, 6) == 0) {
+										send_headers(s,
+										http_header_200));
+
+//handle AJAX request
+		ptr = strchr(s->filename, ISO_question);
+		if(ptr!= NULL)
+		{
+      PT_INIT(&s->scriptpt);
+      PT_WAIT_THREAD(&s->outputpt, handle_ajax(s));			
+		}
+//handle .cgi scripts
+		else
+			ptr = strchr(s->filename, ISO_period);		
+    
+		if(ptr != NULL && strncmp(ptr, http_shtml, 6) == 0) {
       PT_INIT(&s->scriptpt);
       PT_WAIT_THREAD(&s->outputpt, handle_script(s));
     } else {

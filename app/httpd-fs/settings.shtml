@@ -8,22 +8,20 @@
 <tr><td>Mask</td><td>%! get-mask</td></tr>
 <tr><td>Gate</td><td>%! get-gate</td></tr>
 </table>
-<form method="get" action="settings.shtml">
+<!--<form method="get" action="settings.shtml">-->
 <input id="addr" type="text"  value="enter the IP to send" width="200" />
-<input type="submit"  value="Set"></input>
-</form>
+<input type="button"  value="Set" onclick="sendReq(addr.value)"></input>
+<!--</form>-->
 </center>
-<!--
 <script>
 function sendReq(adr){
   var xhttp;
   var text = adr;
   if (window.XMLHttpRequest) {
   xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "settings.shtml/?addr="+addr, true);
+  xhttp.open("GET", "settings.shtml?new_addr=" + adr, true);
   xhttp.send();
   }
 }
 </script>
--->
 %!: /footer.html
