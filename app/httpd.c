@@ -59,6 +59,7 @@
 #include "httpd.h"
 #include "httpd-fs.h"
 #include "httpd-cgi.h"
+#include "httpd-ajax.h"
 #include "http-strings.h"
 
 #include <string.h>
@@ -117,6 +118,73 @@ PT_THREAD(send_part_of_file(struct httpd_state *s))
   PSOCK_END(&s->sout);
 }
 /*---------------------------------------------------------------------------*/
+static
+PT_THREAD(handle_ajax(struct httpd_state *s))
+{
+  char *ptr;
+  
+  PT_BEGIN(&s->scriptpt);
+
+
+  while(s->file.len > 0) {
+
+    /* Check if we should start executing a script. */
+    if(*s->file.data == ISO_question) {
+      s->scriptptr = s->file.data + 1;
+      s->scriptlen = s->file.len - 1;
+
+			/*      if(*(s->scriptptr - 1) == ISO_colon) {
+	httpd_fs_open(s->scriptptr + 1, &s->file);
+	PT_WAIT_THREAD(&s->scriptpt, send_file(s));
+      } else {*/
+
+			PT_WAIT_THREAD(&s->scriptpt, httpd_ajax(s->scriptptr)(s, s->scriptptr));
+/*      }*/
+//      next_scriptstate(s);
+      
+      /* The script is over, so we reset the pointers and continue
+	 sending the rest of the file. */
+      s->file.data = s->scriptptr;
+      s->file.len = s->scriptlen;
+    } else {
+      /* See if we find the start of script marker in the block of HTML
+	 to be sent. */
+
+      if(s->file.len > uip_mss()) {
+	s->len = uip_mss();
+      } else {
+	s->len = s->file.len;
+      }
+
+      if(*s->file.data == ISO_percent) {
+	ptr = strchr(s->file.data + 1, ISO_percent);
+      } else {
+	ptr = strchr(s->file.data, ISO_percent);
+      }
+      if(ptr != NULL &&
+	 ptr != s->file.data) {
+	s->len = (int)(ptr - s->file.data);
+	if(s->len >= uip_mss()) {
+	  s->len = uip_mss();
+	}
+      }
+      PT_WAIT_THREAD(&s->scriptpt, send_part_of_file(s));
+      s->file.data += s->len;
+      s->file.len -= s->len;
+      
+    }
+  }
+  
+  PT_END(&s->scriptpt);
+}
+
+
+
+
+
+
+
+/********************************************************************************************/
 static void
 next_scriptstate(struct httpd_state *s)
 {

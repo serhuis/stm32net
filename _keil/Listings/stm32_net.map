@@ -211,6 +211,10 @@ Section Cross References
     uip-split.o(i.uip_split_output) refers to uip.o(.data) for uip_len
     httpd.o(i.generate_part_of_file) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
     httpd.o(i.generate_part_of_file) refers to uip.o(.data) for uip_conn
+    httpd.o(i.handle_ajax) refers to httpd-ajax.o(i.httpd_ajax) for httpd_ajax
+    httpd.o(i.handle_ajax) refers to strchr.o(.text) for strchr
+    httpd.o(i.handle_ajax) refers to httpd.o(i.send_part_of_file) for send_part_of_file
+    httpd.o(i.handle_ajax) refers to uip.o(.data) for uip_conn
     httpd.o(i.handle_connection) refers to httpd.o(i.handle_input) for handle_input
     httpd.o(i.handle_connection) refers to httpd.o(i.handle_output) for handle_output
     httpd.o(i.handle_input) refers to psock.o(i.psock_readto) for psock_readto
@@ -227,6 +231,7 @@ Section Cross References
     httpd.o(i.handle_output) refers to httpd.o(i.send_headers) for send_headers
     httpd.o(i.handle_output) refers to httpd.o(i.send_file) for send_file
     httpd.o(i.handle_output) refers to strchr.o(.text) for strchr
+    httpd.o(i.handle_output) refers to httpd.o(i.handle_ajax) for handle_ajax
     httpd.o(i.handle_output) refers to httpd.o(i.handle_script) for handle_script
     httpd.o(i.handle_output) refers to http-strings.o(.constdata) for http_404_html
     httpd.o(i.handle_output) refers to uip.o(.data) for uip_flags
@@ -307,8 +312,6 @@ Section Cross References
     httpd-cgi.o(i.net_mask) refers to httpd-cgi.o(i.generate_net_mask) for generate_net_mask
     httpd-cgi.o(i.net_stats) refers to psock.o(i.psock_generator_send) for psock_generator_send
     httpd-cgi.o(i.net_stats) refers to httpd-cgi.o(i.generate_net_stats) for generate_net_stats
-    httpd-cgi.o(i.set_addr) refers to psock.o(i.psock_generator_send) for psock_generator_send
-    httpd-cgi.o(i.set_addr) refers to httpd-cgi.o(i.set_host_addr) for set_host_addr
     httpd-cgi.o(i.tcp_stats) refers to psock.o(i.psock_generator_send) for psock_generator_send
     httpd-cgi.o(i.tcp_stats) refers to uip.o(.bss) for uip_conns
     httpd-cgi.o(i.tcp_stats) refers to httpd-cgi.o(i.generate_tcp_stats) for generate_tcp_stats
@@ -317,7 +320,6 @@ Section Cross References
     httpd-cgi.o(.constdata) refers to httpd-cgi.o(i.tcp_stats) for tcp_stats
     httpd-cgi.o(.constdata) refers to httpd-cgi.o(i.net_stats) for net_stats
     httpd-cgi.o(.constdata) refers to httpd-cgi.o(i.get_addr) for get_addr
-    httpd-cgi.o(.constdata) refers to httpd-cgi.o(i.set_addr) for set_addr
     httpd-cgi.o(.constdata) refers to httpd-cgi.o(i.net_mask) for net_mask
     httpd-cgi.o(.constdata) refers to httpd-cgi.o(i.gate_addr) for gate_addr
     httpd-cgi.o(.data) refers to httpd-cgi.o(.constdata) for file
@@ -329,6 +331,7 @@ Section Cross References
     httpd-fs.o(i.httpd_fs_open) refers to httpd-fs.o(.constdata) for file_stats_shtml
     httpd-fs.o(i.httpd_fs_open) refers to httpd-fs.o(.bss) for count
     http-strings.o(.data) refers to http-strings.o(.constdata) for http_options
+    httpd-ajax.o(i.httpd_ajax) refers to httpd-ajax.o(i.nullfunction) for nullfunction
     rtx_conf_cm.o(.emb_text) refers to rt_cmsis.o(i.osKernelInitialize) for osKernelInitialize
     rtx_conf_cm.o(.emb_text) refers to rt_cmsis.o(i.osThreadCreate) for osThreadCreate
     rtx_conf_cm.o(.emb_text) refers to rt_cmsis.o(i.osKernelStart) for osKernelStart
@@ -1416,157 +1419,157 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
-    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr_twolibspace.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr_intlibspace.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_heap_descriptor.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_heap_descriptor_twolibspace.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_heap_descriptor_intlibspace.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_heap_descriptor.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr_twolibspace.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr_intlibspace.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_io.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_io.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  _get_argv.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/assert.c                         0x00000000   Number         0  assert_stdio.o ABSOLUTE
-    ../clib/heap1.c                          0x00000000   Number         0  h1_init.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_alloc_mt.o ABSOLUTE
-    ../clib/heap1.c                          0x00000000   Number         0  h1_alloc.o ABSOLUTE
-    ../clib/heap1.c                          0x00000000   Number         0  h1_free_mt.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_free.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_final_mt.o ABSOLUTE
-    ../clib/heap1.c                          0x00000000   Number         0  h1_final.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_extend_mt.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_init_mt.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_free_mt.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_alloc.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_init.o ABSOLUTE
     ../clib/heap1.c                          0x00000000   Number         0  h1_extend.o ABSOLUTE
-    ../clib/heap2.c                          0x00000000   Number         0  fdtree.o ABSOLUTE
+    ../clib/heap1.c                          0x00000000   Number         0  h1_final.o ABSOLUTE
     ../clib/heap2.c                          0x00000000   Number         0  heap2.o ABSOLUTE
     ../clib/heap2.c                          0x00000000   Number         0  heap2mt.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  term_alloc.o ABSOLUTE
+    ../clib/heap2.c                          0x00000000   Number         0  fdtree.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  heapstubs.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  free.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  init_alloc.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc2.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc1.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hguard.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc1.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc2.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  init_alloc.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  hguard.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  free.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  malloc.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc1.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  heapstubs.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc1.o ABSOLUTE
-    ../clib/heapalloc.c                      0x00000000   Number         0  maybetermalloc2.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  term_alloc.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxa.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/longlong.s                       0x00000000   Number         0  lludivv7m.o ABSOLUTE
-    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
-    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr.o ABSOLUTE
-    ../clib/memcpset.s                       0x00000000   Number         0  strncpy.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  aeabi_memset.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  strncpy.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_v6.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr.o ABSOLUTE
     ../clib/misc.s                           0x00000000   Number         0  printf_stubs.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char_file.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _snputc.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_file.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __2printf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_str.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_pad.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_char_file_locked.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __2snprintf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _snputc.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  noretval__2snprintf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_pad.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_str.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __2snprintf.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  noretval__2printf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_c.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_u.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_c.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_s.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_u.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  fseek.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  stdio.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  stdio_streams.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  fopen_locked.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  ferror_locked.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  fputc_locked.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  initio.o ABSOLUTE
     ../clib/stdio.c                          0x00000000   Number         0  fputc.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  ferror.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  fseek.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  fwritefast_locked.o ABSOLUTE
     ../clib/stdio.c                          0x00000000   Number         0  setvbuf_locked.o ABSOLUTE
     ../clib/stdio.c                          0x00000000   Number         0  fclose.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  fwritefast.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  fflush.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  fputs.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  ftell.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  stdio.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  fputs_locked.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  stdio_streams.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  initio_locked.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  setvbuf.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  fflush_locked.o ABSOLUTE
     ../clib/stdio.c                          0x00000000   Number         0  fopen.o ABSOLUTE
     ../clib/stdio.c                          0x00000000   Number         0  streamlock.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  setvbuf.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  ferror_locked.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  ferror.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  initio.o ABSOLUTE
     ../clib/stdio.c                          0x00000000   Number         0  flsbuf.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  fwritefast.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  fwritefast_locked.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  fflush_locked.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  fputs_locked.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  ftell.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  initio_locked.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  fputs.o ABSOLUTE
-    ../clib/stdio.c                          0x00000000   Number         0  fflush.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  fputc_locked.o ABSOLUTE
+    ../clib/stdio.c                          0x00000000   Number         0  fopen_locked.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
     ../clib/string.c                         0x00000000   Number         0  strchr.o ABSOLUTE
-    ../clib/string.c                         0x00000000   Number         0  strncmp.o ABSOLUTE
-    ../clib/string.c                         0x00000000   Number         0  strcpy.o ABSOLUTE
-    ../clib/string.c                         0x00000000   Number         0  strrchr.o ABSOLUTE
     ../clib/string.c                         0x00000000   Number         0  strlen.o ABSOLUTE
+    ../clib/string.c                         0x00000000   Number         0  strrchr.o ABSOLUTE
+    ../clib/string.c                         0x00000000   Number         0  strcpy.o ABSOLUTE
+    ../clib/string.c                         0x00000000   Number         0  strncmp.o ABSOLUTE
     ../clib/wchar.c                          0x00000000   Number         0  flsbuf_fwide.o ABSOLUTE
     ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
     ..\HAL_CM.c                              0x00000000   Number         0  hal_cm.o ABSOLUTE
@@ -1583,6 +1586,7 @@ Image Symbol Table
     ..\\rt_System.c                          0x00000000   Number         0  rt_system.o ABSOLUTE
     ..\\src\\stm32net.c                      0x00000000   Number         0  stm32net.o ABSOLUTE
     ..\app\http-strings.c                    0x00000000   Number         0  http-strings.o ABSOLUTE
+    ..\app\httpd-ajax.c                      0x00000000   Number         0  httpd-ajax.o ABSOLUTE
     ..\app\httpd-cgi.c                       0x00000000   Number         0  httpd-cgi.o ABSOLUTE
     ..\app\httpd-fs.c                        0x00000000   Number         0  httpd-fs.o ABSOLUTE
     ..\app\httpd.c                           0x00000000   Number         0  httpd.o ABSOLUTE
@@ -1775,180 +1779,180 @@ Image Symbol Table
     generate_tcp_stats                       0x08001855   Thumb Code   164  httpd-cgi.o(i.generate_tcp_stats)
     i.get_addr                               0x08001908   Section        0  httpd-cgi.o(i.get_addr)
     get_addr                                 0x08001909   Thumb Code    60  httpd-cgi.o(i.get_addr)
-    i.handle_connection                      0x08001948   Section        0  httpd.o(i.handle_connection)
-    handle_connection                        0x08001949   Thumb Code    26  httpd.o(i.handle_connection)
-    i.handle_input                           0x08001964   Section        0  httpd.o(i.handle_input)
-    handle_input                             0x08001965   Thumb Code   330  httpd.o(i.handle_input)
-    i.handle_output                          0x08001ac0   Section        0  httpd.o(i.handle_output)
-    handle_output                            0x08001ac1   Thumb Code   280  httpd.o(i.handle_output)
-    i.handle_script                          0x08001bf8   Section        0  httpd.o(i.handle_script)
-    handle_script                            0x08001bf9   Thumb Code   398  httpd.o(i.handle_script)
-    i.htons                                  0x08001d8c   Section        0  uip.o(i.htons)
-    i.httpd_appcall                          0x08001d98   Section        0  httpd.o(i.httpd_appcall)
-    i.httpd_cgi                              0x08001e48   Section        0  httpd-cgi.o(i.httpd_cgi)
-    i.httpd_fs_count                         0x08001e84   Section        0  httpd-fs.o(i.httpd_fs_count)
-    i.httpd_fs_open                          0x08001eb8   Section        0  httpd-fs.o(i.httpd_fs_open)
-    i.httpd_fs_strcmp                        0x08001f04   Section        0  httpd-fs.o(i.httpd_fs_strcmp)
-    httpd_fs_strcmp                          0x08001f05   Thumb Code    48  httpd-fs.o(i.httpd_fs_strcmp)
-    i.httpd_init                             0x08001f34   Section        0  httpd.o(i.httpd_init)
-    i.isrMessagePut                          0x08001f40   Section        0  rt_cmsis.o(i.isrMessagePut)
-    i.isr_mbx_send                           0x08001f6c   Section        0  rt_mailbox.o(i.isr_mbx_send)
-    i.main                                   0x08001f7c   Section        0  stm32net.o(i.main)
-    i.net_mask                               0x08002094   Section        0  httpd-cgi.o(i.net_mask)
-    net_mask                                 0x08002095   Thumb Code    64  httpd-cgi.o(i.net_mask)
-    i.net_stats                              0x080020d8   Section        0  httpd-cgi.o(i.net_stats)
-    net_stats                                0x080020d9   Thumb Code    86  httpd-cgi.o(i.net_stats)
-    i.next_scriptstate                       0x08002134   Section        0  httpd.o(i.next_scriptstate)
-    next_scriptstate                         0x08002135   Thumb Code    38  httpd.o(i.next_scriptstate)
-    i.nullfunction                           0x0800215a   Section        0  httpd-cgi.o(i.nullfunction)
-    nullfunction                             0x0800215b   Thumb Code    24  httpd-cgi.o(i.nullfunction)
-    i.osDelay                                0x08002174   Section        0  rt_cmsis.o(i.osDelay)
-    i.osKernelInitialize                     0x0800218c   Section        0  rt_cmsis.o(i.osKernelInitialize)
-    i.osKernelRunning                        0x080021b0   Section        0  rt_cmsis.o(i.osKernelRunning)
-    i.osKernelStart                          0x080021d4   Section        0  rt_cmsis.o(i.osKernelStart)
-    i.osThreadCreate                         0x08002240   Section        0  rt_cmsis.o(i.osThreadCreate)
-    i.osThreadExit                           0x08002270   Section        0  rt_cmsis.o(i.osThreadExit)
-    i.os_error                               0x08002288   Section        0  rtx_conf_cm.o(i.os_error)
-    i.os_idle_demon                          0x080022aa   Section        0  rtx_conf_cm.o(i.os_idle_demon)
-    i.os_tick_init                           0x080022b0   Section        0  rt_system.o(i.os_tick_init)
-    i.os_tick_irqack                         0x080022d8   Section        0  rt_system.o(i.os_tick_irqack)
-    i.psock_datalen                          0x080022da   Section        0  psock.o(i.psock_datalen)
-    i.psock_generator_send                   0x080022e8   Section        0  psock.o(i.psock_generator_send)
-    i.psock_init                             0x08002378   Section        0  psock.o(i.psock_init)
-    i.psock_newdata                          0x080023a0   Section        0  psock.o(i.psock_newdata)
-    i.psock_readto                           0x080023d4   Section        0  psock.o(i.psock_readto)
-    i.psock_send                             0x0800246c   Section        0  psock.o(i.psock_send)
-    i.rt_alloc_box                           0x080024dc   Section        0  rt_membox.o(i.rt_alloc_box)
-    i.rt_alloc_mem                           0x080024f6   Section        0  rt_memory.o(i.rt_alloc_mem)
-    i.rt_block                               0x08002534   Section        0  rt_task.o(i.rt_block)
-    i.rt_chk_robin                           0x0800256c   Section        0  rt_robin.o(i.rt_chk_robin)
-    i.rt_dec_dly                             0x080025b4   Section        0  rt_list.o(i.rt_dec_dly)
-    i.rt_dispatch                            0x08002624   Section        0  rt_task.o(i.rt_dispatch)
-    i.rt_dly_wait                            0x08002668   Section        0  rt_time.o(i.rt_dly_wait)
-    i.rt_evt_psh                             0x08002670   Section        0  rt_event.o(i.rt_evt_psh)
-    i.rt_free_box                            0x080026c0   Section        0  rt_membox.o(i.rt_free_box)
-    i.rt_free_mem                            0x080026ec   Section        0  rt_memory.o(i.rt_free_mem)
-    i.rt_get_first                           0x08002714   Section        0  rt_list.o(i.rt_get_first)
-    i.rt_init_context                        0x0800273c   Section        0  rt_task.o(i.rt_init_context)
-    rt_init_context                          0x0800273d   Thumb Code    66  rt_task.o(i.rt_init_context)
-    i.rt_init_mem                            0x08002784   Section        0  rt_memory.o(i.rt_init_mem)
-    i.rt_init_robin                          0x080027a0   Section        0  rt_robin.o(i.rt_init_robin)
-    i.rt_init_stack                          0x080027b8   Section        0  hal_cm.o(i.rt_init_stack)
-    i.rt_mbx_check                           0x08002838   Section        0  rt_mailbox.o(i.rt_mbx_check)
-    i.rt_mbx_init                            0x08002840   Section        0  rt_mailbox.o(i.rt_mbx_init)
-    i.rt_mbx_psh                             0x0800285c   Section        0  rt_mailbox.o(i.rt_mbx_psh)
-    i.rt_ms2tick                             0x0800294c   Section        0  rt_cmsis.o(i.rt_ms2tick)
-    rt_ms2tick                               0x0800294d   Thumb Code    58  rt_cmsis.o(i.rt_ms2tick)
-    i.rt_mut_release                         0x08002990   Section        0  rt_mutex.o(i.rt_mut_release)
-    i.rt_mut_wait                            0x08002a68   Section        0  rt_mutex.o(i.rt_mut_wait)
-    i.rt_pop_req                             0x08002ad0   Section        0  rt_system.o(i.rt_pop_req)
-    i.rt_psh_req                             0x08002b4c   Section        0  rt_system.o(i.rt_psh_req)
-    i.rt_psq_enq                             0x08002b6c   Section        0  rt_list.o(i.rt_psq_enq)
-    i.rt_put_dly                             0x08002bc8   Section        0  rt_list.o(i.rt_put_dly)
-    i.rt_put_prio                            0x08002c10   Section        0  rt_list.o(i.rt_put_prio)
-    i.rt_put_rdy_first                       0x08002c48   Section        0  rt_list.o(i.rt_put_rdy_first)
-    i.rt_resort_prio                         0x08002c5c   Section        0  rt_list.o(i.rt_resort_prio)
-    i.rt_ret_val                             0x08002c90   Section        0  hal_cm.o(i.rt_ret_val)
-    i.rt_ret_val2                            0x08002c96   Section        0  hal_cm.o(i.rt_ret_val2)
-    i.rt_rmv_dly                             0x08002c9e   Section        0  rt_list.o(i.rt_rmv_dly)
-    i.rt_rmv_list                            0x08002cc8   Section        0  rt_list.o(i.rt_rmv_list)
-    i.rt_sem_psh                             0x08002cf8   Section        0  rt_semaphore.o(i.rt_sem_psh)
-    i.rt_stk_check                           0x08002d2c   Section        0  rtx_conf_cm.o(i.rt_stk_check)
-    i.rt_switch_req                          0x08002d30   Section        0  rt_task.o(i.rt_switch_req)
-    i.rt_sys_init                            0x08002d58   Section        0  rt_task.o(i.rt_sys_init)
-    i.rt_sys_start                           0x08002e24   Section        0  rt_task.o(i.rt_sys_start)
-    i.rt_systick                             0x08002e9c   Section        0  rt_system.o(i.rt_systick)
-    i.rt_tid2ptcb                            0x08002edc   Section        0  rt_cmsis.o(i.rt_tid2ptcb)
-    rt_tid2ptcb                              0x08002edd   Thumb Code    18  rt_cmsis.o(i.rt_tid2ptcb)
-    i.rt_timer_insert                        0x08002ef0   Section        0  rt_cmsis.o(i.rt_timer_insert)
-    rt_timer_insert                          0x08002ef1   Thumb Code    48  rt_cmsis.o(i.rt_timer_insert)
-    i.rt_tsk_create                          0x08002f24   Section        0  rt_task.o(i.rt_tsk_create)
-    i.rt_tsk_delete                          0x08002fac   Section        0  rt_task.o(i.rt_tsk_delete)
-    i.rt_tsk_prio                            0x08003128   Section        0  rt_task.o(i.rt_tsk_prio)
-    i.rt_tsk_self                            0x080031a4   Section        0  rt_task.o(i.rt_tsk_self)
-    i.send_data                              0x080031b4   Section        0  psock.o(i.send_data)
-    send_data                                0x080031b5   Thumb Code    70  psock.o(i.send_data)
-    i.send_file                              0x08003204   Section        0  httpd.o(i.send_file)
-    send_file                                0x08003205   Thumb Code   102  httpd.o(i.send_file)
-    i.send_headers                           0x08003270   Section        0  httpd.o(i.send_headers)
-    send_headers                             0x08003271   Thumb Code   450  httpd.o(i.send_headers)
-    i.send_part_of_file                      0x08003468   Section        0  httpd.o(i.send_part_of_file)
-    send_part_of_file                        0x08003469   Thumb Code    62  httpd.o(i.send_part_of_file)
-    i.set_addr                               0x080034a8   Section        0  httpd-cgi.o(i.set_addr)
-    set_addr                                 0x080034a9   Thumb Code    64  httpd-cgi.o(i.set_addr)
-    i.set_host_addr                          0x080034ec   Section        0  httpd-cgi.o(i.set_host_addr)
-    set_host_addr                            0x080034ed   Thumb Code     6  httpd-cgi.o(i.set_host_addr)
-    i.svcDelay                               0x080034f2   Section        0  rt_cmsis.o(i.svcDelay)
-    i.svcKernelInitialize                    0x08003504   Section        0  rt_cmsis.o(i.svcKernelInitialize)
-    i.svcKernelRunning                       0x08003574   Section        0  rt_cmsis.o(i.svcKernelRunning)
-    i.svcKernelStart                         0x08003580   Section        0  rt_cmsis.o(i.svcKernelStart)
-    i.svcMessageCreate                       0x080035c8   Section        0  rt_cmsis.o(i.svcMessageCreate)
-    i.svcThreadCreate                        0x080035ec   Section        0  rt_cmsis.o(i.svcThreadCreate)
-    i.svcThreadGetId                         0x0800365c   Section        0  rt_cmsis.o(i.svcThreadGetId)
-    i.svcThreadTerminate                     0x08003678   Section        0  rt_cmsis.o(i.svcThreadTerminate)
-    i.sysTimerTick                           0x080036b0   Section        0  rt_cmsis.o(i.sysTimerTick)
-    i.tcp_stats                              0x0800370c   Section        0  httpd-cgi.o(i.tcp_stats)
-    tcp_stats                                0x0800370d   Thumb Code   108  httpd-cgi.o(i.tcp_stats)
-    i.uip_add32                              0x08003780   Section        0  uip.o(i.uip_add32)
-    i.uip_add_rcv_nxt                        0x080037f0   Section        0  uip.o(i.uip_add_rcv_nxt)
-    uip_add_rcv_nxt                          0x080037f1   Thumb Code    58  uip.o(i.uip_add_rcv_nxt)
-    i.uip_arp_arpin                          0x08003834   Section        0  uip_arp.o(i.uip_arp_arpin)
-    i.uip_arp_init                           0x0800391c   Section        0  uip_arp.o(i.uip_arp_init)
-    i.uip_arp_out                            0x08003954   Section        0  uip_arp.o(i.uip_arp_out)
-    i.uip_arp_timer                          0x08003af4   Section        0  uip_arp.o(i.uip_arp_timer)
-    i.uip_arp_update                         0x08003b4c   Section        0  uip_arp.o(i.uip_arp_update)
-    uip_arp_update                           0x08003b4d   Thumb Code   272  uip_arp.o(i.uip_arp_update)
-    i.uip_init                               0x08003c70   Section        0  uip.o(i.uip_init)
-    i.uip_ipchksum                           0x08003cdc   Section        0  uip.o(i.uip_ipchksum)
-    i.uip_listen                             0x08003d00   Section        0  uip.o(i.uip_listen)
-    i.uip_process                            0x08003d40   Section        0  uip.o(i.uip_process)
-    i.uip_send                               0x08004ba0   Section        0  uip.o(i.uip_send)
-    i.uip_tcpchksum                          0x08004bd0   Section        0  uip.o(i.uip_tcpchksum)
-    i.upper_layer_chksum                     0x08004bdc   Section        0  uip.o(i.upper_layer_chksum)
-    upper_layer_chksum                       0x08004bdd   Thumb Code    66  uip.o(i.upper_layer_chksum)
-    .constdata                               0x08004c24   Section       38  stm32net.o(.constdata)
-    .constdata                               0x08004c4a   Section        8  uip.o(.constdata)
-    all_ones_addr                            0x08004c4a   Data           4  uip.o(.constdata)
-    all_zeroes_addr                          0x08004c4e   Data           4  uip.o(.constdata)
-    .constdata                               0x08004c52   Section       10  uip_arp.o(.constdata)
-    broadcast_ethaddr                        0x08004c52   Data           6  uip_arp.o(.constdata)
-    broadcast_ipaddr                         0x08004c58   Data           4  uip_arp.o(.constdata)
-    .constdata                               0x08004c5c   Section      142  httpd-cgi.o(.constdata)
-    file                                     0x08004c5c   Data           8  httpd-cgi.o(.constdata)
-    tcp                                      0x08004c64   Data           8  httpd-cgi.o(.constdata)
-    net                                      0x08004c6c   Data           8  httpd-cgi.o(.constdata)
-    getaddr                                  0x08004c74   Data           8  httpd-cgi.o(.constdata)
-    setaddr                                  0x08004c7c   Data           8  httpd-cgi.o(.constdata)
-    mask                                     0x08004c84   Data           8  httpd-cgi.o(.constdata)
-    gate                                     0x08004c8c   Data           8  httpd-cgi.o(.constdata)
-    closed                                   0x08004c94   Data           7  httpd-cgi.o(.constdata)
-    syn_rcvd                                 0x08004c9b   Data           9  httpd-cgi.o(.constdata)
-    syn_sent                                 0x08004ca4   Data           9  httpd-cgi.o(.constdata)
-    established                              0x08004cad   Data          12  httpd-cgi.o(.constdata)
-    fin_wait_1                               0x08004cb9   Data          11  httpd-cgi.o(.constdata)
-    fin_wait_2                               0x08004cc4   Data          11  httpd-cgi.o(.constdata)
-    closing                                  0x08004ccf   Data           8  httpd-cgi.o(.constdata)
-    time_wait                                0x08004cd7   Data          10  httpd-cgi.o(.constdata)
-    last_ack                                 0x08004ce1   Data           9  httpd-cgi.o(.constdata)
-    .constdata                               0x08004cec   Section     6720  httpd-fs.o(.constdata)
-    data_processes_shtml                     0x08004cec   Data         226  httpd-fs.o(.constdata)
-    data_404_html                            0x08004dce   Data         171  httpd-fs.o(.constdata)
-    data_files_shtml                         0x08004e79   Data        1267  httpd-fs.o(.constdata)
-    data_footer_html                         0x0800536c   Data          31  httpd-fs.o(.constdata)
-    data_header_html                         0x0800538b   Data         728  httpd-fs.o(.constdata)
-    data_index_html                          0x08005663   Data         981  httpd-fs.o(.constdata)
-    data_style_css                           0x08005a38   Data        1119  httpd-fs.o(.constdata)
-    data_tcp_shtml                           0x08005e97   Data         222  httpd-fs.o(.constdata)
-    data_fade_png                            0x08005f75   Data         207  httpd-fs.o(.constdata)
-    data_stats_shtml                         0x08006044   Data         835  httpd-fs.o(.constdata)
-    data_settings_shtml                      0x08006387   Data         713  httpd-fs.o(.constdata)
-    .constdata                               0x0800672c   Section      636  http-strings.o(.constdata)
-    .constdata                               0x080069a8   Section       70  rtx_conf_cm.o(.constdata)
-    __tagsym$$used                           0x080069c4   Number         0  rtx_conf_cm.o(.constdata)
-    __tagsym$$used                           0x080069c8   Number         0  rtx_conf_cm.o(.constdata)
-    __tagsym$$used                           0x080069cc   Number         0  rtx_conf_cm.o(.constdata)
-    __tagsym$$used                           0x080069d0   Number         0  rtx_conf_cm.o(.constdata)
-    .conststring                             0x080069f0   Section      182  httpd-cgi.o(.conststring)
+    i.handle_ajax                            0x08001948   Section        0  httpd.o(i.handle_ajax)
+    handle_ajax                              0x08001949   Thumb Code   328  httpd.o(i.handle_ajax)
+    i.handle_connection                      0x08001a94   Section        0  httpd.o(i.handle_connection)
+    handle_connection                        0x08001a95   Thumb Code    26  httpd.o(i.handle_connection)
+    i.handle_input                           0x08001ab0   Section        0  httpd.o(i.handle_input)
+    handle_input                             0x08001ab1   Thumb Code   334  httpd.o(i.handle_input)
+    i.handle_output                          0x08001c10   Section        0  httpd.o(i.handle_output)
+    handle_output                            0x08001c11   Thumb Code   340  httpd.o(i.handle_output)
+    i.handle_script                          0x08001d84   Section        0  httpd.o(i.handle_script)
+    handle_script                            0x08001d85   Thumb Code   398  httpd.o(i.handle_script)
+    i.htons                                  0x08001f18   Section        0  uip.o(i.htons)
+    i.httpd_ajax                             0x08001f24   Section        0  httpd-ajax.o(i.httpd_ajax)
+    i.httpd_appcall                          0x08001f30   Section        0  httpd.o(i.httpd_appcall)
+    i.httpd_cgi                              0x08001fe0   Section        0  httpd-cgi.o(i.httpd_cgi)
+    i.httpd_fs_count                         0x0800201c   Section        0  httpd-fs.o(i.httpd_fs_count)
+    i.httpd_fs_open                          0x08002050   Section        0  httpd-fs.o(i.httpd_fs_open)
+    i.httpd_fs_strcmp                        0x0800209c   Section        0  httpd-fs.o(i.httpd_fs_strcmp)
+    httpd_fs_strcmp                          0x0800209d   Thumb Code    48  httpd-fs.o(i.httpd_fs_strcmp)
+    i.httpd_init                             0x080020cc   Section        0  httpd.o(i.httpd_init)
+    i.isrMessagePut                          0x080020d8   Section        0  rt_cmsis.o(i.isrMessagePut)
+    i.isr_mbx_send                           0x08002104   Section        0  rt_mailbox.o(i.isr_mbx_send)
+    i.main                                   0x08002114   Section        0  stm32net.o(i.main)
+    i.net_mask                               0x0800222c   Section        0  httpd-cgi.o(i.net_mask)
+    net_mask                                 0x0800222d   Thumb Code    64  httpd-cgi.o(i.net_mask)
+    i.net_stats                              0x08002270   Section        0  httpd-cgi.o(i.net_stats)
+    net_stats                                0x08002271   Thumb Code    86  httpd-cgi.o(i.net_stats)
+    i.next_scriptstate                       0x080022cc   Section        0  httpd.o(i.next_scriptstate)
+    next_scriptstate                         0x080022cd   Thumb Code    38  httpd.o(i.next_scriptstate)
+    i.nullfunction                           0x080022f2   Section        0  httpd-cgi.o(i.nullfunction)
+    nullfunction                             0x080022f3   Thumb Code    24  httpd-cgi.o(i.nullfunction)
+    i.nullfunction                           0x0800230a   Section        0  httpd-ajax.o(i.nullfunction)
+    nullfunction                             0x0800230b   Thumb Code    24  httpd-ajax.o(i.nullfunction)
+    i.osDelay                                0x08002324   Section        0  rt_cmsis.o(i.osDelay)
+    i.osKernelInitialize                     0x0800233c   Section        0  rt_cmsis.o(i.osKernelInitialize)
+    i.osKernelRunning                        0x08002360   Section        0  rt_cmsis.o(i.osKernelRunning)
+    i.osKernelStart                          0x08002384   Section        0  rt_cmsis.o(i.osKernelStart)
+    i.osThreadCreate                         0x080023f0   Section        0  rt_cmsis.o(i.osThreadCreate)
+    i.osThreadExit                           0x08002420   Section        0  rt_cmsis.o(i.osThreadExit)
+    i.os_error                               0x08002438   Section        0  rtx_conf_cm.o(i.os_error)
+    i.os_idle_demon                          0x0800245a   Section        0  rtx_conf_cm.o(i.os_idle_demon)
+    i.os_tick_init                           0x08002460   Section        0  rt_system.o(i.os_tick_init)
+    i.os_tick_irqack                         0x08002488   Section        0  rt_system.o(i.os_tick_irqack)
+    i.psock_datalen                          0x0800248a   Section        0  psock.o(i.psock_datalen)
+    i.psock_generator_send                   0x08002498   Section        0  psock.o(i.psock_generator_send)
+    i.psock_init                             0x08002528   Section        0  psock.o(i.psock_init)
+    i.psock_newdata                          0x08002550   Section        0  psock.o(i.psock_newdata)
+    i.psock_readto                           0x08002584   Section        0  psock.o(i.psock_readto)
+    i.psock_send                             0x0800261c   Section        0  psock.o(i.psock_send)
+    i.rt_alloc_box                           0x0800268c   Section        0  rt_membox.o(i.rt_alloc_box)
+    i.rt_alloc_mem                           0x080026a6   Section        0  rt_memory.o(i.rt_alloc_mem)
+    i.rt_block                               0x080026e4   Section        0  rt_task.o(i.rt_block)
+    i.rt_chk_robin                           0x0800271c   Section        0  rt_robin.o(i.rt_chk_robin)
+    i.rt_dec_dly                             0x08002764   Section        0  rt_list.o(i.rt_dec_dly)
+    i.rt_dispatch                            0x080027d4   Section        0  rt_task.o(i.rt_dispatch)
+    i.rt_dly_wait                            0x08002818   Section        0  rt_time.o(i.rt_dly_wait)
+    i.rt_evt_psh                             0x08002820   Section        0  rt_event.o(i.rt_evt_psh)
+    i.rt_free_box                            0x08002870   Section        0  rt_membox.o(i.rt_free_box)
+    i.rt_free_mem                            0x0800289c   Section        0  rt_memory.o(i.rt_free_mem)
+    i.rt_get_first                           0x080028c4   Section        0  rt_list.o(i.rt_get_first)
+    i.rt_init_context                        0x080028ec   Section        0  rt_task.o(i.rt_init_context)
+    rt_init_context                          0x080028ed   Thumb Code    66  rt_task.o(i.rt_init_context)
+    i.rt_init_mem                            0x08002934   Section        0  rt_memory.o(i.rt_init_mem)
+    i.rt_init_robin                          0x08002950   Section        0  rt_robin.o(i.rt_init_robin)
+    i.rt_init_stack                          0x08002968   Section        0  hal_cm.o(i.rt_init_stack)
+    i.rt_mbx_check                           0x080029e8   Section        0  rt_mailbox.o(i.rt_mbx_check)
+    i.rt_mbx_init                            0x080029f0   Section        0  rt_mailbox.o(i.rt_mbx_init)
+    i.rt_mbx_psh                             0x08002a0c   Section        0  rt_mailbox.o(i.rt_mbx_psh)
+    i.rt_ms2tick                             0x08002afc   Section        0  rt_cmsis.o(i.rt_ms2tick)
+    rt_ms2tick                               0x08002afd   Thumb Code    58  rt_cmsis.o(i.rt_ms2tick)
+    i.rt_mut_release                         0x08002b40   Section        0  rt_mutex.o(i.rt_mut_release)
+    i.rt_mut_wait                            0x08002c18   Section        0  rt_mutex.o(i.rt_mut_wait)
+    i.rt_pop_req                             0x08002c80   Section        0  rt_system.o(i.rt_pop_req)
+    i.rt_psh_req                             0x08002cfc   Section        0  rt_system.o(i.rt_psh_req)
+    i.rt_psq_enq                             0x08002d1c   Section        0  rt_list.o(i.rt_psq_enq)
+    i.rt_put_dly                             0x08002d78   Section        0  rt_list.o(i.rt_put_dly)
+    i.rt_put_prio                            0x08002dc0   Section        0  rt_list.o(i.rt_put_prio)
+    i.rt_put_rdy_first                       0x08002df8   Section        0  rt_list.o(i.rt_put_rdy_first)
+    i.rt_resort_prio                         0x08002e0c   Section        0  rt_list.o(i.rt_resort_prio)
+    i.rt_ret_val                             0x08002e40   Section        0  hal_cm.o(i.rt_ret_val)
+    i.rt_ret_val2                            0x08002e46   Section        0  hal_cm.o(i.rt_ret_val2)
+    i.rt_rmv_dly                             0x08002e4e   Section        0  rt_list.o(i.rt_rmv_dly)
+    i.rt_rmv_list                            0x08002e78   Section        0  rt_list.o(i.rt_rmv_list)
+    i.rt_sem_psh                             0x08002ea8   Section        0  rt_semaphore.o(i.rt_sem_psh)
+    i.rt_stk_check                           0x08002edc   Section        0  rtx_conf_cm.o(i.rt_stk_check)
+    i.rt_switch_req                          0x08002ee0   Section        0  rt_task.o(i.rt_switch_req)
+    i.rt_sys_init                            0x08002f08   Section        0  rt_task.o(i.rt_sys_init)
+    i.rt_sys_start                           0x08002fd4   Section        0  rt_task.o(i.rt_sys_start)
+    i.rt_systick                             0x0800304c   Section        0  rt_system.o(i.rt_systick)
+    i.rt_tid2ptcb                            0x0800308c   Section        0  rt_cmsis.o(i.rt_tid2ptcb)
+    rt_tid2ptcb                              0x0800308d   Thumb Code    18  rt_cmsis.o(i.rt_tid2ptcb)
+    i.rt_timer_insert                        0x080030a0   Section        0  rt_cmsis.o(i.rt_timer_insert)
+    rt_timer_insert                          0x080030a1   Thumb Code    48  rt_cmsis.o(i.rt_timer_insert)
+    i.rt_tsk_create                          0x080030d4   Section        0  rt_task.o(i.rt_tsk_create)
+    i.rt_tsk_delete                          0x0800315c   Section        0  rt_task.o(i.rt_tsk_delete)
+    i.rt_tsk_prio                            0x080032d8   Section        0  rt_task.o(i.rt_tsk_prio)
+    i.rt_tsk_self                            0x08003354   Section        0  rt_task.o(i.rt_tsk_self)
+    i.send_data                              0x08003364   Section        0  psock.o(i.send_data)
+    send_data                                0x08003365   Thumb Code    70  psock.o(i.send_data)
+    i.send_file                              0x080033b4   Section        0  httpd.o(i.send_file)
+    send_file                                0x080033b5   Thumb Code   102  httpd.o(i.send_file)
+    i.send_headers                           0x08003420   Section        0  httpd.o(i.send_headers)
+    send_headers                             0x08003421   Thumb Code   480  httpd.o(i.send_headers)
+    i.send_part_of_file                      0x08003634   Section        0  httpd.o(i.send_part_of_file)
+    send_part_of_file                        0x08003635   Thumb Code    62  httpd.o(i.send_part_of_file)
+    i.svcDelay                               0x08003672   Section        0  rt_cmsis.o(i.svcDelay)
+    i.svcKernelInitialize                    0x08003684   Section        0  rt_cmsis.o(i.svcKernelInitialize)
+    i.svcKernelRunning                       0x080036f4   Section        0  rt_cmsis.o(i.svcKernelRunning)
+    i.svcKernelStart                         0x08003700   Section        0  rt_cmsis.o(i.svcKernelStart)
+    i.svcMessageCreate                       0x08003748   Section        0  rt_cmsis.o(i.svcMessageCreate)
+    i.svcThreadCreate                        0x0800376c   Section        0  rt_cmsis.o(i.svcThreadCreate)
+    i.svcThreadGetId                         0x080037dc   Section        0  rt_cmsis.o(i.svcThreadGetId)
+    i.svcThreadTerminate                     0x080037f8   Section        0  rt_cmsis.o(i.svcThreadTerminate)
+    i.sysTimerTick                           0x08003830   Section        0  rt_cmsis.o(i.sysTimerTick)
+    i.tcp_stats                              0x0800388c   Section        0  httpd-cgi.o(i.tcp_stats)
+    tcp_stats                                0x0800388d   Thumb Code   108  httpd-cgi.o(i.tcp_stats)
+    i.uip_add32                              0x08003900   Section        0  uip.o(i.uip_add32)
+    i.uip_add_rcv_nxt                        0x08003970   Section        0  uip.o(i.uip_add_rcv_nxt)
+    uip_add_rcv_nxt                          0x08003971   Thumb Code    58  uip.o(i.uip_add_rcv_nxt)
+    i.uip_arp_arpin                          0x080039b4   Section        0  uip_arp.o(i.uip_arp_arpin)
+    i.uip_arp_init                           0x08003a9c   Section        0  uip_arp.o(i.uip_arp_init)
+    i.uip_arp_out                            0x08003ad4   Section        0  uip_arp.o(i.uip_arp_out)
+    i.uip_arp_timer                          0x08003c74   Section        0  uip_arp.o(i.uip_arp_timer)
+    i.uip_arp_update                         0x08003ccc   Section        0  uip_arp.o(i.uip_arp_update)
+    uip_arp_update                           0x08003ccd   Thumb Code   272  uip_arp.o(i.uip_arp_update)
+    i.uip_init                               0x08003df0   Section        0  uip.o(i.uip_init)
+    i.uip_ipchksum                           0x08003e5c   Section        0  uip.o(i.uip_ipchksum)
+    i.uip_listen                             0x08003e80   Section        0  uip.o(i.uip_listen)
+    i.uip_process                            0x08003ec0   Section        0  uip.o(i.uip_process)
+    i.uip_send                               0x08004d20   Section        0  uip.o(i.uip_send)
+    i.uip_tcpchksum                          0x08004d50   Section        0  uip.o(i.uip_tcpchksum)
+    i.upper_layer_chksum                     0x08004d5c   Section        0  uip.o(i.upper_layer_chksum)
+    upper_layer_chksum                       0x08004d5d   Thumb Code    66  uip.o(i.upper_layer_chksum)
+    .constdata                               0x08004da4   Section       38  stm32net.o(.constdata)
+    .constdata                               0x08004dca   Section        8  uip.o(.constdata)
+    all_ones_addr                            0x08004dca   Data           4  uip.o(.constdata)
+    all_zeroes_addr                          0x08004dce   Data           4  uip.o(.constdata)
+    .constdata                               0x08004dd2   Section       10  uip_arp.o(.constdata)
+    broadcast_ethaddr                        0x08004dd2   Data           6  uip_arp.o(.constdata)
+    broadcast_ipaddr                         0x08004dd8   Data           4  uip_arp.o(.constdata)
+    .constdata                               0x08004ddc   Section      134  httpd-cgi.o(.constdata)
+    file                                     0x08004ddc   Data           8  httpd-cgi.o(.constdata)
+    tcp                                      0x08004de4   Data           8  httpd-cgi.o(.constdata)
+    net                                      0x08004dec   Data           8  httpd-cgi.o(.constdata)
+    getaddr                                  0x08004df4   Data           8  httpd-cgi.o(.constdata)
+    mask                                     0x08004dfc   Data           8  httpd-cgi.o(.constdata)
+    gate                                     0x08004e04   Data           8  httpd-cgi.o(.constdata)
+    closed                                   0x08004e0c   Data           7  httpd-cgi.o(.constdata)
+    syn_rcvd                                 0x08004e13   Data           9  httpd-cgi.o(.constdata)
+    syn_sent                                 0x08004e1c   Data           9  httpd-cgi.o(.constdata)
+    established                              0x08004e25   Data          12  httpd-cgi.o(.constdata)
+    fin_wait_1                               0x08004e31   Data          11  httpd-cgi.o(.constdata)
+    fin_wait_2                               0x08004e3c   Data          11  httpd-cgi.o(.constdata)
+    closing                                  0x08004e47   Data           8  httpd-cgi.o(.constdata)
+    time_wait                                0x08004e4f   Data          10  httpd-cgi.o(.constdata)
+    last_ack                                 0x08004e59   Data           9  httpd-cgi.o(.constdata)
+    .constdata                               0x08004e64   Section     6720  httpd-fs.o(.constdata)
+    data_processes_shtml                     0x08004e64   Data         226  httpd-fs.o(.constdata)
+    data_404_html                            0x08004f46   Data         171  httpd-fs.o(.constdata)
+    data_files_shtml                         0x08004ff1   Data        1267  httpd-fs.o(.constdata)
+    data_footer_html                         0x080054e4   Data          31  httpd-fs.o(.constdata)
+    data_header_html                         0x08005503   Data         728  httpd-fs.o(.constdata)
+    data_index_html                          0x080057db   Data         981  httpd-fs.o(.constdata)
+    data_style_css                           0x08005bb0   Data        1119  httpd-fs.o(.constdata)
+    data_tcp_shtml                           0x0800600f   Data         222  httpd-fs.o(.constdata)
+    data_fade_png                            0x080060ed   Data         207  httpd-fs.o(.constdata)
+    data_stats_shtml                         0x080061bc   Data         835  httpd-fs.o(.constdata)
+    data_settings_shtml                      0x080064ff   Data         713  httpd-fs.o(.constdata)
+    .constdata                               0x080068a4   Section      636  http-strings.o(.constdata)
+    .constdata                               0x08006b20   Section       70  rtx_conf_cm.o(.constdata)
+    __tagsym$$used                           0x08006b3c   Number         0  rtx_conf_cm.o(.constdata)
+    __tagsym$$used                           0x08006b40   Number         0  rtx_conf_cm.o(.constdata)
+    __tagsym$$used                           0x08006b44   Number         0  rtx_conf_cm.o(.constdata)
+    __tagsym$$used                           0x08006b48   Number         0  rtx_conf_cm.o(.constdata)
+    .conststring                             0x08006b68   Section      170  httpd-cgi.o(.conststring)
     .data                                    0x20000000   Section       12  stm32net.o(.data)
     .data                                    0x2000000c   Section        4  enc28j60.o(.data)
     .data                                    0x20000010   Section       60  uip.o(.data)
@@ -1964,26 +1968,26 @@ Image Symbol Table
     c                                        0x20000051   Data           1  uip_arp.o(.data)
     arptime                                  0x20000052   Data           1  uip_arp.o(.data)
     tmpage                                   0x20000053   Data           1  uip_arp.o(.data)
-    .data                                    0x20000054   Section       68  httpd-cgi.o(.data)
-    calls                                    0x20000054   Data          32  httpd-cgi.o(.data)
-    states                                   0x20000074   Data          36  httpd-cgi.o(.data)
-    .data                                    0x20000098   Section       36  http-strings.o(.data)
-    .data                                    0x200000bc   Section       36  rtx_conf_cm.o(.data)
-    nr_mutex                                 0x200000cc   Data           4  rtx_conf_cm.o(.data)
-    .data                                    0x200000e0   Section        8  rt_cmsis.o(.data)
-    .data                                    0x200000e8   Section        8  rt_task.o(.data)
-    .data                                    0x200000f0   Section        8  rt_system.o(.data)
-    os_lock                                  0x200000f0   Data           1  rt_system.o(.data)
-    os_psh_flag                              0x200000f1   Data           1  rt_system.o(.data)
-    pend_flags                               0x200000f2   Data           1  rt_system.o(.data)
-    .data                                    0x200000f8   Section        4  rt_time.o(.data)
-    .data                                    0x200000fc   Section        8  rt_robin.o(.data)
-    .data                                    0x20000104   Section        1  hal_cm.o(.data)
-    .bss                                     0x20000108   Section     4448  uip.o(.bss)
-    .bss                                     0x20001268   Section       96  uip_arp.o(.bss)
-    arp_table                                0x20001268   Data          96  uip_arp.o(.bss)
-    .bss                                     0x200012c8   Section       22  httpd-fs.o(.bss)
-    count                                    0x200012c8   Data          22  httpd-fs.o(.bss)
+    .data                                    0x20000054   Section       64  httpd-cgi.o(.data)
+    calls                                    0x20000054   Data          28  httpd-cgi.o(.data)
+    states                                   0x20000070   Data          36  httpd-cgi.o(.data)
+    .data                                    0x20000094   Section       36  http-strings.o(.data)
+    .data                                    0x200000b8   Section       36  rtx_conf_cm.o(.data)
+    nr_mutex                                 0x200000c8   Data           4  rtx_conf_cm.o(.data)
+    .data                                    0x200000dc   Section        8  rt_cmsis.o(.data)
+    .data                                    0x200000e4   Section        8  rt_task.o(.data)
+    .data                                    0x200000ec   Section        8  rt_system.o(.data)
+    os_lock                                  0x200000ec   Data           1  rt_system.o(.data)
+    os_psh_flag                              0x200000ed   Data           1  rt_system.o(.data)
+    pend_flags                               0x200000ee   Data           1  rt_system.o(.data)
+    .data                                    0x200000f4   Section        4  rt_time.o(.data)
+    .data                                    0x200000f8   Section        8  rt_robin.o(.data)
+    .data                                    0x20000100   Section        1  hal_cm.o(.data)
+    .bss                                     0x20000104   Section     4448  uip.o(.bss)
+    .bss                                     0x20001264   Section       96  uip_arp.o(.bss)
+    arp_table                                0x20001264   Data          96  uip_arp.o(.bss)
+    .bss                                     0x200012c4   Section       22  httpd-fs.o(.bss)
+    count                                    0x200012c4   Data          22  httpd-fs.o(.bss)
     .bss                                     0x200012e0   Section     2152  rtx_conf_cm.o(.bss)
     std_libspace                             0x200019a8   Data         288  rtx_conf_cm.o(.bss)
     std_libmutex                             0x20001ac8   Data         128  rtx_conf_cm.o(.bss)
@@ -2235,165 +2239,166 @@ Image Symbol Table
     enc28j60_write_buffer                    0x0800153d   Thumb Code    54  enc28j60.o(i.enc28j60_write_buffer)
     enc28j60_write_op                        0x08001579   Thumb Code    48  enc28j60.o(i.enc28j60_write_op)
     enc28j60_write_phy                       0x080015ad   Thumb Code    40  enc28j60.o(i.enc28j60_write_phy)
-    htons                                    0x08001d8d   Thumb Code    12  uip.o(i.htons)
-    httpd_appcall                            0x08001d99   Thumb Code   166  httpd.o(i.httpd_appcall)
-    httpd_cgi                                0x08001e49   Thumb Code    50  httpd-cgi.o(i.httpd_cgi)
-    httpd_fs_count                           0x08001e85   Thumb Code    42  httpd-fs.o(i.httpd_fs_count)
-    httpd_fs_open                            0x08001eb9   Thumb Code    66  httpd-fs.o(i.httpd_fs_open)
-    httpd_init                               0x08001f35   Thumb Code    12  httpd.o(i.httpd_init)
-    isrMessagePut                            0x08001f41   Thumb Code    44  rt_cmsis.o(i.isrMessagePut)
-    isr_mbx_send                             0x08001f6d   Thumb Code    14  rt_mailbox.o(i.isr_mbx_send)
-    main                                     0x08001f7d   Thumb Code   256  stm32net.o(i.main)
-    osDelay                                  0x08002175   Thumb Code    18  rt_cmsis.o(i.osDelay)
-    osKernelInitialize                       0x0800218d   Thumb Code    30  rt_cmsis.o(i.osKernelInitialize)
-    osKernelRunning                          0x080021b1   Thumb Code    28  rt_cmsis.o(i.osKernelRunning)
-    osKernelStart                            0x080021d5   Thumb Code    98  rt_cmsis.o(i.osKernelStart)
-    osThreadCreate                           0x08002241   Thumb Code    38  rt_cmsis.o(i.osThreadCreate)
-    osThreadExit                             0x08002271   Thumb Code    14  rt_cmsis.o(i.osThreadExit)
-    os_error                                 0x08002289   Thumb Code    34  rtx_conf_cm.o(i.os_error)
-    os_idle_demon                            0x080022ab   Thumb Code     4  rtx_conf_cm.o(i.os_idle_demon)
-    os_tick_init                             0x080022b1   Thumb Code    32  rt_system.o(i.os_tick_init)
-    os_tick_irqack                           0x080022d9   Thumb Code     2  rt_system.o(i.os_tick_irqack)
-    psock_datalen                            0x080022db   Thumb Code    12  psock.o(i.psock_datalen)
-    psock_generator_send                     0x080022e9   Thumb Code   134  psock.o(i.psock_generator_send)
-    psock_init                               0x08002379   Thumb Code    40  psock.o(i.psock_init)
-    psock_newdata                            0x080023a1   Thumb Code    48  psock.o(i.psock_newdata)
-    psock_readto                             0x080023d5   Thumb Code   142  psock.o(i.psock_readto)
-    psock_send                               0x0800246d   Thumb Code   112  psock.o(i.psock_send)
-    rt_alloc_box                             0x080024dd   Thumb Code    26  rt_membox.o(i.rt_alloc_box)
-    rt_alloc_mem                             0x080024f7   Thumb Code    62  rt_memory.o(i.rt_alloc_mem)
-    rt_block                                 0x08002535   Thumb Code    48  rt_task.o(i.rt_block)
-    rt_chk_robin                             0x0800256d   Thumb Code    60  rt_robin.o(i.rt_chk_robin)
-    rt_dec_dly                               0x080025b5   Thumb Code   102  rt_list.o(i.rt_dec_dly)
-    rt_dispatch                              0x08002625   Thumb Code    60  rt_task.o(i.rt_dispatch)
-    rt_dly_wait                              0x08002669   Thumb Code     6  rt_time.o(i.rt_dly_wait)
-    rt_evt_psh                               0x08002671   Thumb Code    76  rt_event.o(i.rt_evt_psh)
-    rt_free_box                              0x080026c1   Thumb Code    44  rt_membox.o(i.rt_free_box)
-    rt_free_mem                              0x080026ed   Thumb Code    40  rt_memory.o(i.rt_free_mem)
-    rt_get_first                             0x08002715   Thumb Code    40  rt_list.o(i.rt_get_first)
-    rt_init_mem                              0x08002785   Thumb Code    26  rt_memory.o(i.rt_init_mem)
-    rt_init_robin                            0x080027a1   Thumb Code    14  rt_robin.o(i.rt_init_robin)
-    rt_init_stack                            0x080027b9   Thumb Code   118  hal_cm.o(i.rt_init_stack)
-    rt_mbx_check                             0x08002839   Thumb Code     8  rt_mailbox.o(i.rt_mbx_check)
-    rt_mbx_init                              0x08002841   Thumb Code    26  rt_mailbox.o(i.rt_mbx_init)
-    rt_mbx_psh                               0x0800285d   Thumb Code   236  rt_mailbox.o(i.rt_mbx_psh)
-    rt_mut_release                           0x08002991   Thumb Code   208  rt_mutex.o(i.rt_mut_release)
-    rt_mut_wait                              0x08002a69   Thumb Code   100  rt_mutex.o(i.rt_mut_wait)
-    rt_pop_req                               0x08002ad1   Thumb Code   112  rt_system.o(i.rt_pop_req)
-    rt_psh_req                               0x08002b4d   Thumb Code    22  rt_system.o(i.rt_psh_req)
-    rt_psq_enq                               0x08002b6d   Thumb Code    88  rt_list.o(i.rt_psq_enq)
-    rt_put_dly                               0x08002bc9   Thumb Code    68  rt_list.o(i.rt_put_dly)
-    rt_put_prio                              0x08002c11   Thumb Code    54  rt_list.o(i.rt_put_prio)
-    rt_put_rdy_first                         0x08002c49   Thumb Code    14  rt_list.o(i.rt_put_rdy_first)
-    rt_resort_prio                           0x08002c5d   Thumb Code    46  rt_list.o(i.rt_resort_prio)
-    rt_ret_val                               0x08002c91   Thumb Code     6  hal_cm.o(i.rt_ret_val)
-    rt_ret_val2                              0x08002c97   Thumb Code     8  hal_cm.o(i.rt_ret_val2)
-    rt_rmv_dly                               0x08002c9f   Thumb Code    40  rt_list.o(i.rt_rmv_dly)
-    rt_rmv_list                              0x08002cc9   Thumb Code    44  rt_list.o(i.rt_rmv_list)
-    rt_sem_psh                               0x08002cf9   Thumb Code    48  rt_semaphore.o(i.rt_sem_psh)
-    rt_stk_check                             0x08002d2d   Thumb Code     2  rtx_conf_cm.o(i.rt_stk_check)
-    rt_switch_req                            0x08002d31   Thumb Code    30  rt_task.o(i.rt_switch_req)
-    rt_sys_init                              0x08002d59   Thumb Code   138  rt_task.o(i.rt_sys_init)
-    rt_sys_start                             0x08002e25   Thumb Code   110  rt_task.o(i.rt_sys_start)
-    rt_systick                               0x08002e9d   Thumb Code    50  rt_system.o(i.rt_systick)
-    rt_tsk_create                            0x08002f25   Thumb Code   118  rt_task.o(i.rt_tsk_create)
-    rt_tsk_delete                            0x08002fad   Thumb Code   352  rt_task.o(i.rt_tsk_delete)
-    rt_tsk_prio                              0x08003129   Thumb Code   108  rt_task.o(i.rt_tsk_prio)
-    rt_tsk_self                              0x080031a5   Thumb Code    12  rt_task.o(i.rt_tsk_self)
-    svcDelay                                 0x080034f3   Thumb Code    18  rt_cmsis.o(i.svcDelay)
-    svcKernelInitialize                      0x08003505   Thumb Code    80  rt_cmsis.o(i.svcKernelInitialize)
-    svcKernelRunning                         0x08003575   Thumb Code     6  rt_cmsis.o(i.svcKernelRunning)
-    svcKernelStart                           0x08003581   Thumb Code    62  rt_cmsis.o(i.svcKernelStart)
-    svcMessageCreate                         0x080035c9   Thumb Code    36  rt_cmsis.o(i.svcMessageCreate)
-    svcThreadCreate                          0x080035ed   Thumb Code   100  rt_cmsis.o(i.svcThreadCreate)
-    svcThreadGetId                           0x0800365d   Thumb Code    22  rt_cmsis.o(i.svcThreadGetId)
-    svcThreadTerminate                       0x08003679   Thumb Code    50  rt_cmsis.o(i.svcThreadTerminate)
-    sysTimerTick                             0x080036b1   Thumb Code    84  rt_cmsis.o(i.sysTimerTick)
-    uip_add32                                0x08003781   Thumb Code   106  uip.o(i.uip_add32)
-    uip_arp_arpin                            0x08003835   Thumb Code   216  uip_arp.o(i.uip_arp_arpin)
-    uip_arp_init                             0x0800391d   Thumb Code    46  uip_arp.o(i.uip_arp_init)
-    uip_arp_out                              0x08003955   Thumb Code   366  uip_arp.o(i.uip_arp_out)
-    uip_arp_timer                            0x08003af5   Thumb Code    76  uip_arp.o(i.uip_arp_timer)
-    uip_init                                 0x08003c71   Thumb Code    92  uip.o(i.uip_init)
-    uip_ipchksum                             0x08003cdd   Thumb Code    30  uip.o(i.uip_ipchksum)
-    uip_listen                               0x08003d01   Thumb Code    54  uip.o(i.uip_listen)
-    uip_process                              0x08003d41   Thumb Code  3656  uip.o(i.uip_process)
-    uip_send                                 0x08004ba1   Thumb Code    38  uip.o(i.uip_send)
-    uip_tcpchksum                            0x08004bd1   Thumb Code    10  uip.o(i.uip_tcpchksum)
-    os_thread_def_Thread_uIP_periodic        0x08004c24   Data          16  stm32net.o(.constdata)
-    os_thread_def_Thread_uIP                 0x08004c34   Data          16  stm32net.o(.constdata)
-    file_settings_shtml                      0x08006650   Data          20  httpd-fs.o(.constdata)
-    file_processes_shtml                     0x08006664   Data          20  httpd-fs.o(.constdata)
-    file_404_html                            0x08006678   Data          20  httpd-fs.o(.constdata)
-    file_files_shtml                         0x0800668c   Data          20  httpd-fs.o(.constdata)
-    file_footer_html                         0x080066a0   Data          20  httpd-fs.o(.constdata)
-    file_header_html                         0x080066b4   Data          20  httpd-fs.o(.constdata)
-    file_index_html                          0x080066c8   Data          20  httpd-fs.o(.constdata)
-    file_style_css                           0x080066dc   Data          20  httpd-fs.o(.constdata)
-    file_tcp_shtml                           0x080066f0   Data          20  httpd-fs.o(.constdata)
-    file_fade_png                            0x08006704   Data          20  httpd-fs.o(.constdata)
-    file_stats_shtml                         0x08006718   Data          20  httpd-fs.o(.constdata)
-    http_http                                0x0800672c   Data           8  http-strings.o(.constdata)
-    http_200                                 0x08006734   Data           5  http-strings.o(.constdata)
-    http_301                                 0x08006739   Data           5  http-strings.o(.constdata)
-    http_302                                 0x0800673e   Data           5  http-strings.o(.constdata)
-    http_options                             0x08006743   Data           9  http-strings.o(.constdata)
-    http_get                                 0x0800674c   Data           5  http-strings.o(.constdata)
-    http_head                                0x08006751   Data           6  http-strings.o(.constdata)
-    http_post                                0x08006757   Data           6  http-strings.o(.constdata)
-    http_put                                 0x0800675d   Data           5  http-strings.o(.constdata)
-    http_delete                              0x08006762   Data           8  http-strings.o(.constdata)
-    http_trace                               0x0800676a   Data           7  http-strings.o(.constdata)
-    http_connect                             0x08006771   Data           9  http-strings.o(.constdata)
-    http_10                                  0x0800677a   Data           9  http-strings.o(.constdata)
-    http_11                                  0x08006783   Data           9  http-strings.o(.constdata)
-    http_content_type                        0x0800678c   Data          15  http-strings.o(.constdata)
-    http_texthtml                            0x0800679b   Data          10  http-strings.o(.constdata)
-    http_location                            0x080067a5   Data          11  http-strings.o(.constdata)
-    http_host                                0x080067b0   Data           7  http-strings.o(.constdata)
-    http_crnl                                0x080067b7   Data           3  http-strings.o(.constdata)
-    http_index_html                          0x080067ba   Data          12  http-strings.o(.constdata)
-    http_404_html                            0x080067c6   Data          10  http-strings.o(.constdata)
-    http_referer                             0x080067d0   Data           9  http-strings.o(.constdata)
-    http_header_200                          0x080067d9   Data          84  http-strings.o(.constdata)
-    http_header_404                          0x0800682d   Data          91  http-strings.o(.constdata)
-    http_content_type_plain                  0x08006888   Data          29  http-strings.o(.constdata)
-    http_content_type_html                   0x080068a5   Data          28  http-strings.o(.constdata)
-    http_content_type_css                    0x080068c1   Data          27  http-strings.o(.constdata)
-    http_content_type_text                   0x080068dc   Data          28  http-strings.o(.constdata)
-    http_content_type_png                    0x080068f8   Data          28  http-strings.o(.constdata)
-    http_content_type_gif                    0x08006914   Data          28  http-strings.o(.constdata)
-    http_content_type_jpg                    0x08006930   Data          29  http-strings.o(.constdata)
-    http_content_type_binary                 0x0800694d   Data          43  http-strings.o(.constdata)
-    http_html                                0x08006978   Data           6  http-strings.o(.constdata)
-    http_shtml                               0x0800697e   Data           7  http-strings.o(.constdata)
-    http_htm                                 0x08006985   Data           5  http-strings.o(.constdata)
-    http_css                                 0x0800698a   Data           5  http-strings.o(.constdata)
-    http_png                                 0x0800698f   Data           5  http-strings.o(.constdata)
-    http_gif                                 0x08006994   Data           5  http-strings.o(.constdata)
-    http_jpg                                 0x08006999   Data           5  http-strings.o(.constdata)
-    http_text                                0x0800699e   Data           5  http-strings.o(.constdata)
-    http_txt                                 0x080069a3   Data           5  http-strings.o(.constdata)
-    os_maxtaskrun                            0x080069a8   Data           2  rtx_conf_cm.o(.constdata)
-    os_stackinfo                             0x080069ac   Data           4  rtx_conf_cm.o(.constdata)
-    os_rrobin                                0x080069b0   Data           4  rtx_conf_cm.o(.constdata)
-    os_tickfreq                              0x080069b4   Data           4  rtx_conf_cm.o(.constdata)
-    os_tickus_i                              0x080069b8   Data           2  rtx_conf_cm.o(.constdata)
-    os_tickus_f                              0x080069ba   Data           2  rtx_conf_cm.o(.constdata)
-    os_trv                                   0x080069bc   Data           4  rtx_conf_cm.o(.constdata)
-    os_flags                                 0x080069c0   Data           1  rtx_conf_cm.o(.constdata)
-    CMSIS_RTOS_API_Version                   0x080069c4   Data           4  rtx_conf_cm.o(.constdata)
-    CMSIS_RTOS_RTX_Version                   0x080069c8   Data           4  rtx_conf_cm.o(.constdata)
-    os_clockrate                             0x080069cc   Data           4  rtx_conf_cm.o(.constdata)
-    os_timernum                              0x080069d0   Data           4  rtx_conf_cm.o(.constdata)
-    mp_tcb_size                              0x080069d4   Data           2  rtx_conf_cm.o(.constdata)
-    mp_stk_size                              0x080069d8   Data           4  rtx_conf_cm.o(.constdata)
-    os_stack_sz                              0x080069dc   Data           4  rtx_conf_cm.o(.constdata)
-    os_fifo_size                             0x080069e0   Data           1  rtx_conf_cm.o(.constdata)
-    os_messageQ_def_osTimerMessageQ          0x080069e4   Data           8  rtx_conf_cm.o(.constdata)
-    mp_tmr_size                              0x080069ec   Data           2  rtx_conf_cm.o(.constdata)
-    Region$$Table$$Base                      0x08006aa8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08006ac8   Number         0  anon$$obj.o(Region$$Table)
+    htons                                    0x08001f19   Thumb Code    12  uip.o(i.htons)
+    httpd_ajax                               0x08001f25   Thumb Code     6  httpd-ajax.o(i.httpd_ajax)
+    httpd_appcall                            0x08001f31   Thumb Code   166  httpd.o(i.httpd_appcall)
+    httpd_cgi                                0x08001fe1   Thumb Code    50  httpd-cgi.o(i.httpd_cgi)
+    httpd_fs_count                           0x0800201d   Thumb Code    42  httpd-fs.o(i.httpd_fs_count)
+    httpd_fs_open                            0x08002051   Thumb Code    66  httpd-fs.o(i.httpd_fs_open)
+    httpd_init                               0x080020cd   Thumb Code    12  httpd.o(i.httpd_init)
+    isrMessagePut                            0x080020d9   Thumb Code    44  rt_cmsis.o(i.isrMessagePut)
+    isr_mbx_send                             0x08002105   Thumb Code    14  rt_mailbox.o(i.isr_mbx_send)
+    main                                     0x08002115   Thumb Code   256  stm32net.o(i.main)
+    osDelay                                  0x08002325   Thumb Code    18  rt_cmsis.o(i.osDelay)
+    osKernelInitialize                       0x0800233d   Thumb Code    30  rt_cmsis.o(i.osKernelInitialize)
+    osKernelRunning                          0x08002361   Thumb Code    28  rt_cmsis.o(i.osKernelRunning)
+    osKernelStart                            0x08002385   Thumb Code    98  rt_cmsis.o(i.osKernelStart)
+    osThreadCreate                           0x080023f1   Thumb Code    38  rt_cmsis.o(i.osThreadCreate)
+    osThreadExit                             0x08002421   Thumb Code    14  rt_cmsis.o(i.osThreadExit)
+    os_error                                 0x08002439   Thumb Code    34  rtx_conf_cm.o(i.os_error)
+    os_idle_demon                            0x0800245b   Thumb Code     4  rtx_conf_cm.o(i.os_idle_demon)
+    os_tick_init                             0x08002461   Thumb Code    32  rt_system.o(i.os_tick_init)
+    os_tick_irqack                           0x08002489   Thumb Code     2  rt_system.o(i.os_tick_irqack)
+    psock_datalen                            0x0800248b   Thumb Code    12  psock.o(i.psock_datalen)
+    psock_generator_send                     0x08002499   Thumb Code   134  psock.o(i.psock_generator_send)
+    psock_init                               0x08002529   Thumb Code    40  psock.o(i.psock_init)
+    psock_newdata                            0x08002551   Thumb Code    48  psock.o(i.psock_newdata)
+    psock_readto                             0x08002585   Thumb Code   142  psock.o(i.psock_readto)
+    psock_send                               0x0800261d   Thumb Code   112  psock.o(i.psock_send)
+    rt_alloc_box                             0x0800268d   Thumb Code    26  rt_membox.o(i.rt_alloc_box)
+    rt_alloc_mem                             0x080026a7   Thumb Code    62  rt_memory.o(i.rt_alloc_mem)
+    rt_block                                 0x080026e5   Thumb Code    48  rt_task.o(i.rt_block)
+    rt_chk_robin                             0x0800271d   Thumb Code    60  rt_robin.o(i.rt_chk_robin)
+    rt_dec_dly                               0x08002765   Thumb Code   102  rt_list.o(i.rt_dec_dly)
+    rt_dispatch                              0x080027d5   Thumb Code    60  rt_task.o(i.rt_dispatch)
+    rt_dly_wait                              0x08002819   Thumb Code     6  rt_time.o(i.rt_dly_wait)
+    rt_evt_psh                               0x08002821   Thumb Code    76  rt_event.o(i.rt_evt_psh)
+    rt_free_box                              0x08002871   Thumb Code    44  rt_membox.o(i.rt_free_box)
+    rt_free_mem                              0x0800289d   Thumb Code    40  rt_memory.o(i.rt_free_mem)
+    rt_get_first                             0x080028c5   Thumb Code    40  rt_list.o(i.rt_get_first)
+    rt_init_mem                              0x08002935   Thumb Code    26  rt_memory.o(i.rt_init_mem)
+    rt_init_robin                            0x08002951   Thumb Code    14  rt_robin.o(i.rt_init_robin)
+    rt_init_stack                            0x08002969   Thumb Code   118  hal_cm.o(i.rt_init_stack)
+    rt_mbx_check                             0x080029e9   Thumb Code     8  rt_mailbox.o(i.rt_mbx_check)
+    rt_mbx_init                              0x080029f1   Thumb Code    26  rt_mailbox.o(i.rt_mbx_init)
+    rt_mbx_psh                               0x08002a0d   Thumb Code   236  rt_mailbox.o(i.rt_mbx_psh)
+    rt_mut_release                           0x08002b41   Thumb Code   208  rt_mutex.o(i.rt_mut_release)
+    rt_mut_wait                              0x08002c19   Thumb Code   100  rt_mutex.o(i.rt_mut_wait)
+    rt_pop_req                               0x08002c81   Thumb Code   112  rt_system.o(i.rt_pop_req)
+    rt_psh_req                               0x08002cfd   Thumb Code    22  rt_system.o(i.rt_psh_req)
+    rt_psq_enq                               0x08002d1d   Thumb Code    88  rt_list.o(i.rt_psq_enq)
+    rt_put_dly                               0x08002d79   Thumb Code    68  rt_list.o(i.rt_put_dly)
+    rt_put_prio                              0x08002dc1   Thumb Code    54  rt_list.o(i.rt_put_prio)
+    rt_put_rdy_first                         0x08002df9   Thumb Code    14  rt_list.o(i.rt_put_rdy_first)
+    rt_resort_prio                           0x08002e0d   Thumb Code    46  rt_list.o(i.rt_resort_prio)
+    rt_ret_val                               0x08002e41   Thumb Code     6  hal_cm.o(i.rt_ret_val)
+    rt_ret_val2                              0x08002e47   Thumb Code     8  hal_cm.o(i.rt_ret_val2)
+    rt_rmv_dly                               0x08002e4f   Thumb Code    40  rt_list.o(i.rt_rmv_dly)
+    rt_rmv_list                              0x08002e79   Thumb Code    44  rt_list.o(i.rt_rmv_list)
+    rt_sem_psh                               0x08002ea9   Thumb Code    48  rt_semaphore.o(i.rt_sem_psh)
+    rt_stk_check                             0x08002edd   Thumb Code     2  rtx_conf_cm.o(i.rt_stk_check)
+    rt_switch_req                            0x08002ee1   Thumb Code    30  rt_task.o(i.rt_switch_req)
+    rt_sys_init                              0x08002f09   Thumb Code   138  rt_task.o(i.rt_sys_init)
+    rt_sys_start                             0x08002fd5   Thumb Code   110  rt_task.o(i.rt_sys_start)
+    rt_systick                               0x0800304d   Thumb Code    50  rt_system.o(i.rt_systick)
+    rt_tsk_create                            0x080030d5   Thumb Code   118  rt_task.o(i.rt_tsk_create)
+    rt_tsk_delete                            0x0800315d   Thumb Code   352  rt_task.o(i.rt_tsk_delete)
+    rt_tsk_prio                              0x080032d9   Thumb Code   108  rt_task.o(i.rt_tsk_prio)
+    rt_tsk_self                              0x08003355   Thumb Code    12  rt_task.o(i.rt_tsk_self)
+    svcDelay                                 0x08003673   Thumb Code    18  rt_cmsis.o(i.svcDelay)
+    svcKernelInitialize                      0x08003685   Thumb Code    80  rt_cmsis.o(i.svcKernelInitialize)
+    svcKernelRunning                         0x080036f5   Thumb Code     6  rt_cmsis.o(i.svcKernelRunning)
+    svcKernelStart                           0x08003701   Thumb Code    62  rt_cmsis.o(i.svcKernelStart)
+    svcMessageCreate                         0x08003749   Thumb Code    36  rt_cmsis.o(i.svcMessageCreate)
+    svcThreadCreate                          0x0800376d   Thumb Code   100  rt_cmsis.o(i.svcThreadCreate)
+    svcThreadGetId                           0x080037dd   Thumb Code    22  rt_cmsis.o(i.svcThreadGetId)
+    svcThreadTerminate                       0x080037f9   Thumb Code    50  rt_cmsis.o(i.svcThreadTerminate)
+    sysTimerTick                             0x08003831   Thumb Code    84  rt_cmsis.o(i.sysTimerTick)
+    uip_add32                                0x08003901   Thumb Code   106  uip.o(i.uip_add32)
+    uip_arp_arpin                            0x080039b5   Thumb Code   216  uip_arp.o(i.uip_arp_arpin)
+    uip_arp_init                             0x08003a9d   Thumb Code    46  uip_arp.o(i.uip_arp_init)
+    uip_arp_out                              0x08003ad5   Thumb Code   366  uip_arp.o(i.uip_arp_out)
+    uip_arp_timer                            0x08003c75   Thumb Code    76  uip_arp.o(i.uip_arp_timer)
+    uip_init                                 0x08003df1   Thumb Code    92  uip.o(i.uip_init)
+    uip_ipchksum                             0x08003e5d   Thumb Code    30  uip.o(i.uip_ipchksum)
+    uip_listen                               0x08003e81   Thumb Code    54  uip.o(i.uip_listen)
+    uip_process                              0x08003ec1   Thumb Code  3656  uip.o(i.uip_process)
+    uip_send                                 0x08004d21   Thumb Code    38  uip.o(i.uip_send)
+    uip_tcpchksum                            0x08004d51   Thumb Code    10  uip.o(i.uip_tcpchksum)
+    os_thread_def_Thread_uIP_periodic        0x08004da4   Data          16  stm32net.o(.constdata)
+    os_thread_def_Thread_uIP                 0x08004db4   Data          16  stm32net.o(.constdata)
+    file_settings_shtml                      0x080067c8   Data          20  httpd-fs.o(.constdata)
+    file_processes_shtml                     0x080067dc   Data          20  httpd-fs.o(.constdata)
+    file_404_html                            0x080067f0   Data          20  httpd-fs.o(.constdata)
+    file_files_shtml                         0x08006804   Data          20  httpd-fs.o(.constdata)
+    file_footer_html                         0x08006818   Data          20  httpd-fs.o(.constdata)
+    file_header_html                         0x0800682c   Data          20  httpd-fs.o(.constdata)
+    file_index_html                          0x08006840   Data          20  httpd-fs.o(.constdata)
+    file_style_css                           0x08006854   Data          20  httpd-fs.o(.constdata)
+    file_tcp_shtml                           0x08006868   Data          20  httpd-fs.o(.constdata)
+    file_fade_png                            0x0800687c   Data          20  httpd-fs.o(.constdata)
+    file_stats_shtml                         0x08006890   Data          20  httpd-fs.o(.constdata)
+    http_http                                0x080068a4   Data           8  http-strings.o(.constdata)
+    http_200                                 0x080068ac   Data           5  http-strings.o(.constdata)
+    http_301                                 0x080068b1   Data           5  http-strings.o(.constdata)
+    http_302                                 0x080068b6   Data           5  http-strings.o(.constdata)
+    http_options                             0x080068bb   Data           9  http-strings.o(.constdata)
+    http_get                                 0x080068c4   Data           5  http-strings.o(.constdata)
+    http_head                                0x080068c9   Data           6  http-strings.o(.constdata)
+    http_post                                0x080068cf   Data           6  http-strings.o(.constdata)
+    http_put                                 0x080068d5   Data           5  http-strings.o(.constdata)
+    http_delete                              0x080068da   Data           8  http-strings.o(.constdata)
+    http_trace                               0x080068e2   Data           7  http-strings.o(.constdata)
+    http_connect                             0x080068e9   Data           9  http-strings.o(.constdata)
+    http_10                                  0x080068f2   Data           9  http-strings.o(.constdata)
+    http_11                                  0x080068fb   Data           9  http-strings.o(.constdata)
+    http_content_type                        0x08006904   Data          15  http-strings.o(.constdata)
+    http_texthtml                            0x08006913   Data          10  http-strings.o(.constdata)
+    http_location                            0x0800691d   Data          11  http-strings.o(.constdata)
+    http_host                                0x08006928   Data           7  http-strings.o(.constdata)
+    http_crnl                                0x0800692f   Data           3  http-strings.o(.constdata)
+    http_index_html                          0x08006932   Data          12  http-strings.o(.constdata)
+    http_404_html                            0x0800693e   Data          10  http-strings.o(.constdata)
+    http_referer                             0x08006948   Data           9  http-strings.o(.constdata)
+    http_header_200                          0x08006951   Data          84  http-strings.o(.constdata)
+    http_header_404                          0x080069a5   Data          91  http-strings.o(.constdata)
+    http_content_type_plain                  0x08006a00   Data          29  http-strings.o(.constdata)
+    http_content_type_html                   0x08006a1d   Data          28  http-strings.o(.constdata)
+    http_content_type_css                    0x08006a39   Data          27  http-strings.o(.constdata)
+    http_content_type_text                   0x08006a54   Data          28  http-strings.o(.constdata)
+    http_content_type_png                    0x08006a70   Data          28  http-strings.o(.constdata)
+    http_content_type_gif                    0x08006a8c   Data          28  http-strings.o(.constdata)
+    http_content_type_jpg                    0x08006aa8   Data          29  http-strings.o(.constdata)
+    http_content_type_binary                 0x08006ac5   Data          43  http-strings.o(.constdata)
+    http_html                                0x08006af0   Data           6  http-strings.o(.constdata)
+    http_shtml                               0x08006af6   Data           7  http-strings.o(.constdata)
+    http_htm                                 0x08006afd   Data           5  http-strings.o(.constdata)
+    http_css                                 0x08006b02   Data           5  http-strings.o(.constdata)
+    http_png                                 0x08006b07   Data           5  http-strings.o(.constdata)
+    http_gif                                 0x08006b0c   Data           5  http-strings.o(.constdata)
+    http_jpg                                 0x08006b11   Data           5  http-strings.o(.constdata)
+    http_text                                0x08006b16   Data           5  http-strings.o(.constdata)
+    http_txt                                 0x08006b1b   Data           5  http-strings.o(.constdata)
+    os_maxtaskrun                            0x08006b20   Data           2  rtx_conf_cm.o(.constdata)
+    os_stackinfo                             0x08006b24   Data           4  rtx_conf_cm.o(.constdata)
+    os_rrobin                                0x08006b28   Data           4  rtx_conf_cm.o(.constdata)
+    os_tickfreq                              0x08006b2c   Data           4  rtx_conf_cm.o(.constdata)
+    os_tickus_i                              0x08006b30   Data           2  rtx_conf_cm.o(.constdata)
+    os_tickus_f                              0x08006b32   Data           2  rtx_conf_cm.o(.constdata)
+    os_trv                                   0x08006b34   Data           4  rtx_conf_cm.o(.constdata)
+    os_flags                                 0x08006b38   Data           1  rtx_conf_cm.o(.constdata)
+    CMSIS_RTOS_API_Version                   0x08006b3c   Data           4  rtx_conf_cm.o(.constdata)
+    CMSIS_RTOS_RTX_Version                   0x08006b40   Data           4  rtx_conf_cm.o(.constdata)
+    os_clockrate                             0x08006b44   Data           4  rtx_conf_cm.o(.constdata)
+    os_timernum                              0x08006b48   Data           4  rtx_conf_cm.o(.constdata)
+    mp_tcb_size                              0x08006b4c   Data           2  rtx_conf_cm.o(.constdata)
+    mp_stk_size                              0x08006b50   Data           4  rtx_conf_cm.o(.constdata)
+    os_stack_sz                              0x08006b54   Data           4  rtx_conf_cm.o(.constdata)
+    os_fifo_size                             0x08006b58   Data           1  rtx_conf_cm.o(.constdata)
+    os_messageQ_def_osTimerMessageQ          0x08006b5c   Data           8  rtx_conf_cm.o(.constdata)
+    mp_tmr_size                              0x08006b64   Data           2  rtx_conf_cm.o(.constdata)
+    Region$$Table$$Base                      0x08006c14   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08006c34   Number         0  anon$$obj.o(Region$$Table)
     HostIP                                   0x20000000   Data           4  stm32net.o(.data)
     tid_Thread_uIP_periodic                  0x20000004   Data           4  stm32net.o(.data)
     tid_Thread_uIP                           0x20000008   Data           4  stm32net.o(.data)
@@ -2411,23 +2416,23 @@ Image Symbol Table
     uip_conn                                 0x20000034   Data           4  uip.o(.data)
     uip_listenports                          0x20000038   Data           4  uip.o(.data)
     uip_acc32                                0x20000044   Data           4  uip.o(.data)
-    http_methods                             0x20000098   Data          36  http-strings.o(.data)
-    osThreadId_osTimerThread                 0x200000bc   Data           4  rtx_conf_cm.o(.data)
-    osMessageQId_osTimerMessageQ             0x200000c0   Data           4  rtx_conf_cm.o(.data)
-    os_tmr                                   0x200000c4   Data           4  rtx_conf_cm.o(.data)
-    m_tmr                                    0x200000c8   Data           4  rtx_conf_cm.o(.data)
-    os_thread_def_main                       0x200000d0   Data          16  rtx_conf_cm.o(.data)
-    os_initialized                           0x200000e0   Data           1  rt_cmsis.o(.data)
-    os_running                               0x200000e1   Data           1  rt_cmsis.o(.data)
-    os_timer_head                            0x200000e4   Data           4  rt_cmsis.o(.data)
-    os_tsk                                   0x200000e8   Data           8  rt_task.o(.data)
-    os_tick_irqn                             0x200000f4   Data           4  rt_system.o(.data)
-    os_time                                  0x200000f8   Data           4  rt_time.o(.data)
-    os_robin                                 0x200000fc   Data           8  rt_robin.o(.data)
-    dbg_msg                                  0x20000104   Data           1  hal_cm.o(.data)
-    uip_buf                                  0x20000108   Data        1538  uip.o(.bss)
-    uip_conns                                0x2000070c   Data        2864  uip.o(.bss)
-    uip_stat                                 0x2000123c   Data          44  uip.o(.bss)
+    http_methods                             0x20000094   Data          36  http-strings.o(.data)
+    osThreadId_osTimerThread                 0x200000b8   Data           4  rtx_conf_cm.o(.data)
+    osMessageQId_osTimerMessageQ             0x200000bc   Data           4  rtx_conf_cm.o(.data)
+    os_tmr                                   0x200000c0   Data           4  rtx_conf_cm.o(.data)
+    m_tmr                                    0x200000c4   Data           4  rtx_conf_cm.o(.data)
+    os_thread_def_main                       0x200000cc   Data          16  rtx_conf_cm.o(.data)
+    os_initialized                           0x200000dc   Data           1  rt_cmsis.o(.data)
+    os_running                               0x200000dd   Data           1  rt_cmsis.o(.data)
+    os_timer_head                            0x200000e0   Data           4  rt_cmsis.o(.data)
+    os_tsk                                   0x200000e4   Data           8  rt_task.o(.data)
+    os_tick_irqn                             0x200000f0   Data           4  rt_system.o(.data)
+    os_time                                  0x200000f4   Data           4  rt_time.o(.data)
+    os_robin                                 0x200000f8   Data           8  rt_robin.o(.data)
+    dbg_msg                                  0x20000100   Data           1  hal_cm.o(.data)
+    uip_buf                                  0x20000104   Data        1538  uip.o(.bss)
+    uip_conns                                0x20000708   Data        2864  uip.o(.bss)
+    uip_stat                                 0x20001238   Data          44  uip.o(.bss)
     mp_tcb                                   0x200012e0   Data         168  rtx_conf_cm.o(.bss)
     mp_stk                                   0x20001388   Data        1168  rtx_conf_cm.o(.bss)
     os_stack_mem                             0x20001818   Data         224  rtx_conf_cm.o(.bss)
@@ -2449,99 +2454,99 @@ Memory Map of the image
 
   Image Entry point : 0x08000121
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00006bd0, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00006d38, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00006ac8, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00006c34, Max: 0x00020000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x08000000   0x00000120   Data   RO         1552    RESET               startup_stm32f10x_md_vl.o
-    0x08000120   0x00000008   Code   RO         2882  * !!!main             c_w.l(__main.o)
-    0x08000128   0x00000034   Code   RO         3243    !!!scatter          c_w.l(__scatter.o)
-    0x0800015c   0x0000001a   Code   RO         3245    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x08000000   0x00000120   Data   RO         1567    RESET               startup_stm32f10x_md_vl.o
+    0x08000120   0x00000008   Code   RO         2897  * !!!main             c_w.l(__main.o)
+    0x08000128   0x00000034   Code   RO         3258    !!!scatter          c_w.l(__scatter.o)
+    0x0800015c   0x0000001a   Code   RO         3260    !!handler_copy      c_w.l(__scatter_copy.o)
     0x08000176   0x00000002   PAD
-    0x08000178   0x0000001c   Code   RO         3247    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x08000194   0x00000000   Code   RO         2861    .ARM.Collect$$_printf_percent$$00000000  c_w.l(_printf_percent.o)
-    0x08000194   0x00000006   Code   RO         2859    .ARM.Collect$$_printf_percent$$00000009  c_w.l(_printf_d.o)
-    0x0800019a   0x00000006   Code   RO         2860    .ARM.Collect$$_printf_percent$$0000000A  c_w.l(_printf_u.o)
-    0x080001a0   0x00000006   Code   RO         2857    .ARM.Collect$$_printf_percent$$00000013  c_w.l(_printf_c.o)
-    0x080001a6   0x00000006   Code   RO         2858    .ARM.Collect$$_printf_percent$$00000014  c_w.l(_printf_s.o)
-    0x080001ac   0x00000004   Code   RO         2903    .ARM.Collect$$_printf_percent$$00000017  c_w.l(_printf_percent_end.o)
-    0x080001b0   0x00000002   Code   RO         3048    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x080001b2   0x00000000   Code   RO         3050    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3052    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3055    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3057    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3059    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3062    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3064    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3066    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3068    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3070    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3072    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3074    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3076    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3078    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3080    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3082    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3086    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3088    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3090    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x080001b2   0x00000000   Code   RO         3092    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x080001b2   0x00000002   Code   RO         3093    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x080001b4   0x00000002   Code   RO         3094    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x080001b6   0x00000000   Code   RO         3096    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x080001b6   0x00000000   Code   RO         3098    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x080001b6   0x00000000   Code   RO         3101    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x080001b6   0x00000000   Code   RO         3104    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x080001b6   0x00000000   Code   RO         3106    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x080001b6   0x00000000   Code   RO         3109    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x080001b6   0x00000002   Code   RO         3110    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x080001b8   0x00000000   Code   RO         2884    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x080001b8   0x00000000   Code   RO         2915    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x080001b8   0x00000006   Code   RO         2927    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x080001be   0x00000000   Code   RO         2917    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x080001be   0x00000004   Code   RO         2918    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x080001c2   0x00000008   Code   RO         2919    .ARM.Collect$$rtentry$$0000000B  c_w.l(__rtentry2.o)
-    0x080001ca   0x00000008   Code   RO         2921    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x080001d2   0x00000002   Code   RO         2885    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x080001d4   0x00000000   Code   RO         2930    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x080001d4   0x00000004   Code   RO         2931    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x080001d8   0x00000006   Code   RO         2932    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x08000178   0x0000001c   Code   RO         3262    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x08000194   0x00000000   Code   RO         2876    .ARM.Collect$$_printf_percent$$00000000  c_w.l(_printf_percent.o)
+    0x08000194   0x00000006   Code   RO         2874    .ARM.Collect$$_printf_percent$$00000009  c_w.l(_printf_d.o)
+    0x0800019a   0x00000006   Code   RO         2875    .ARM.Collect$$_printf_percent$$0000000A  c_w.l(_printf_u.o)
+    0x080001a0   0x00000006   Code   RO         2872    .ARM.Collect$$_printf_percent$$00000013  c_w.l(_printf_c.o)
+    0x080001a6   0x00000006   Code   RO         2873    .ARM.Collect$$_printf_percent$$00000014  c_w.l(_printf_s.o)
+    0x080001ac   0x00000004   Code   RO         2918    .ARM.Collect$$_printf_percent$$00000017  c_w.l(_printf_percent_end.o)
+    0x080001b0   0x00000002   Code   RO         3063    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x080001b2   0x00000000   Code   RO         3065    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3067    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3070    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3072    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3074    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3077    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3079    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3081    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3083    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3085    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3087    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3089    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3091    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3093    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3095    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3097    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3101    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3103    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3105    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x080001b2   0x00000000   Code   RO         3107    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x080001b2   0x00000002   Code   RO         3108    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x080001b4   0x00000002   Code   RO         3109    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x080001b6   0x00000000   Code   RO         3111    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x080001b6   0x00000000   Code   RO         3113    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x080001b6   0x00000000   Code   RO         3116    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x080001b6   0x00000000   Code   RO         3119    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x080001b6   0x00000000   Code   RO         3121    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x080001b6   0x00000000   Code   RO         3124    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x080001b6   0x00000002   Code   RO         3125    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x080001b8   0x00000000   Code   RO         2899    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x080001b8   0x00000000   Code   RO         2930    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x080001b8   0x00000006   Code   RO         2942    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x080001be   0x00000000   Code   RO         2932    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x080001be   0x00000004   Code   RO         2933    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x080001c2   0x00000008   Code   RO         2934    .ARM.Collect$$rtentry$$0000000B  c_w.l(__rtentry2.o)
+    0x080001ca   0x00000008   Code   RO         2936    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x080001d2   0x00000002   Code   RO         2900    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x080001d4   0x00000000   Code   RO         2945    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x080001d4   0x00000004   Code   RO         2946    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x080001d8   0x00000006   Code   RO         2947    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x080001de   0x00000002   PAD
-    0x080001e0   0x0000001c   Code   RO         1486    .emb_text           rtx_conf_cm.o
-    0x080001fc   0x00000130   Code   RO         2801    .emb_text           RTX_CM3.lib(hal_cm3.o)
-    0x0800032c   0x00000040   Code   RO         1553    .text               startup_stm32f10x_md_vl.o
-    0x0800036c   0x00000008   Code   RO         2816    .text               c_w.l(libspace.o)
-    0x08000374   0x00000038   Code   RO         2823    .text               c_w.l(__2snprintf.o)
-    0x080003ac   0x0000004e   Code   RO         2831    .text               c_w.l(_printf_pad.o)
-    0x080003fa   0x00000052   Code   RO         2833    .text               c_w.l(_printf_str.o)
-    0x0800044c   0x00000078   Code   RO         2835    .text               c_w.l(_printf_dec.o)
-    0x080004c4   0x0000010e   Code   RO         2845    .text               c_w.l(__printf_wp.o)
-    0x080005d2   0x00000012   Code   RO         2862    .text               c_w.l(exit.o)
-    0x080005e4   0x00000014   Code   RO         2864    .text               c_w.l(strchr.o)
-    0x080005f8   0x00000048   Code   RO         2866    .text               c_w.l(strcpy.o)
-    0x08000640   0x00000016   Code   RO         2868    .text               c_w.l(strrchr.o)
-    0x08000656   0x0000003e   Code   RO         2870    .text               c_w.l(strlen.o)
-    0x08000694   0x00000096   Code   RO         2872    .text               c_w.l(strncmp.o)
-    0x0800072a   0x0000008a   Code   RO         2874    .text               c_w.l(rt_memcpy_v6.o)
-    0x080007b4   0x00000010   Code   RO         2876    .text               c_w.l(aeabi_memset.o)
-    0x080007c4   0x00000056   Code   RO         2878    .text               c_w.l(strncpy.o)
-    0x0800081a   0x00000006   Code   RO         2880    .text               c_w.l(heapauxi.o)
-    0x08000820   0x000000b2   Code   RO         2891    .text               c_w.l(_printf_intcommon.o)
+    0x080001e0   0x0000001c   Code   RO         1501    .emb_text           rtx_conf_cm.o
+    0x080001fc   0x00000130   Code   RO         2816    .emb_text           RTX_CM3.lib(hal_cm3.o)
+    0x0800032c   0x00000040   Code   RO         1568    .text               startup_stm32f10x_md_vl.o
+    0x0800036c   0x00000008   Code   RO         2831    .text               c_w.l(libspace.o)
+    0x08000374   0x00000038   Code   RO         2838    .text               c_w.l(__2snprintf.o)
+    0x080003ac   0x0000004e   Code   RO         2846    .text               c_w.l(_printf_pad.o)
+    0x080003fa   0x00000052   Code   RO         2848    .text               c_w.l(_printf_str.o)
+    0x0800044c   0x00000078   Code   RO         2850    .text               c_w.l(_printf_dec.o)
+    0x080004c4   0x0000010e   Code   RO         2860    .text               c_w.l(__printf_wp.o)
+    0x080005d2   0x00000012   Code   RO         2877    .text               c_w.l(exit.o)
+    0x080005e4   0x00000014   Code   RO         2879    .text               c_w.l(strchr.o)
+    0x080005f8   0x00000048   Code   RO         2881    .text               c_w.l(strcpy.o)
+    0x08000640   0x00000016   Code   RO         2883    .text               c_w.l(strrchr.o)
+    0x08000656   0x0000003e   Code   RO         2885    .text               c_w.l(strlen.o)
+    0x08000694   0x00000096   Code   RO         2887    .text               c_w.l(strncmp.o)
+    0x0800072a   0x0000008a   Code   RO         2889    .text               c_w.l(rt_memcpy_v6.o)
+    0x080007b4   0x00000010   Code   RO         2891    .text               c_w.l(aeabi_memset.o)
+    0x080007c4   0x00000056   Code   RO         2893    .text               c_w.l(strncpy.o)
+    0x0800081a   0x00000006   Code   RO         2895    .text               c_w.l(heapauxi.o)
+    0x08000820   0x000000b2   Code   RO         2906    .text               c_w.l(_printf_intcommon.o)
     0x080008d2   0x00000002   PAD
-    0x080008d4   0x00000030   Code   RO         2893    .text               c_w.l(_printf_char_common.o)
-    0x08000904   0x0000000a   Code   RO         2895    .text               c_w.l(_sputc.o)
-    0x0800090e   0x00000010   Code   RO         2897    .text               c_w.l(_snputc.o)
-    0x0800091e   0x0000002c   Code   RO         2899    .text               c_w.l(_printf_char.o)
-    0x0800094a   0x00000064   Code   RO         2910    .text               c_w.l(rt_memcpy_w.o)
-    0x080009ae   0x00000044   Code   RO         2912    .text               c_w.l(rt_memclr.o)
-    0x080009f2   0x0000004e   Code   RO         2954    .text               c_w.l(rt_memclr_w.o)
-    0x08000a40   0x0000000c   Code   RO         2961    .text               c_w.l(sys_exit.o)
-    0x08000a4c   0x0000004a   Code   RO         2963    .text               c_w.l(sys_stackheap_outer.o)
-    0x08000a96   0x00000002   Code   RO         3113    .text               c_w.l(use_no_semi.o)
-    0x08000a98   0x00000000   Code   RO         3115    .text               c_w.l(indicate_semi.o)
-    0x08000a98   0x00000004   Code   RO         2811    SVC_TABLE           RTX_CM3.lib(svc_table.o)
+    0x080008d4   0x00000030   Code   RO         2908    .text               c_w.l(_printf_char_common.o)
+    0x08000904   0x0000000a   Code   RO         2910    .text               c_w.l(_sputc.o)
+    0x0800090e   0x00000010   Code   RO         2912    .text               c_w.l(_snputc.o)
+    0x0800091e   0x0000002c   Code   RO         2914    .text               c_w.l(_printf_char.o)
+    0x0800094a   0x00000064   Code   RO         2925    .text               c_w.l(rt_memcpy_w.o)
+    0x080009ae   0x00000044   Code   RO         2927    .text               c_w.l(rt_memclr.o)
+    0x080009f2   0x0000004e   Code   RO         2969    .text               c_w.l(rt_memclr_w.o)
+    0x08000a40   0x0000000c   Code   RO         2976    .text               c_w.l(sys_exit.o)
+    0x08000a4c   0x0000004a   Code   RO         2978    .text               c_w.l(sys_stackheap_outer.o)
+    0x08000a96   0x00000002   Code   RO         3128    .text               c_w.l(use_no_semi.o)
+    0x08000a98   0x00000000   Code   RO         3130    .text               c_w.l(indicate_semi.o)
+    0x08000a98   0x00000004   Code   RO         2826    SVC_TABLE           RTX_CM3.lib(svc_table.o)
     0x08000a9c   0x00000116   Code   RO          195    i.GPIO_Init         stm32f10x_gpio.o
     0x08000bb2   0x00000004   Code   RO          202    i.GPIO_ResetBits    stm32f10x_gpio.o
     0x08000bb6   0x00000004   Code   RO          203    i.GPIO_SetBits      stm32f10x_gpio.o
@@ -2554,23 +2559,23 @@ Memory Map of the image
     0x08000c6e   0x00000006   Code   RO          549    i.SPI_I2S_ReceiveData  stm32f10x_spi.o
     0x08000c74   0x00000004   Code   RO          550    i.SPI_I2S_SendData  stm32f10x_spi.o
     0x08000c78   0x0000003c   Code   RO          551    i.SPI_Init          stm32f10x_spi.o
-    0x08000cb4   0x00000008   Code   RO         1560    i.SetSysClock       system_stm32f10x.o
-    0x08000cbc   0x000000b8   Code   RO         1561    i.SetSysClockTo24   system_stm32f10x.o
-    0x08000d74   0x00000064   Code   RO         1563    i.SystemInit        system_stm32f10x.o
+    0x08000cb4   0x00000008   Code   RO         1575    i.SetSysClock       system_stm32f10x.o
+    0x08000cbc   0x000000b8   Code   RO         1576    i.SetSysClockTo24   system_stm32f10x.o
+    0x08000d74   0x00000064   Code   RO         1578    i.SystemInit        system_stm32f10x.o
     0x08000dd8   0x00000078   Code   RO            6    i.Thread_uIP        stm32net.o
     0x08000e50   0x00000064   Code   RO            7    i.Thread_uIP_periodic  stm32net.o
-    0x08000eb4   0x00000046   Code   RO         2700    i._init_box         RTX_CM3.lib(rt_membox.o)
-    0x08000efa   0x0000000e   Code   RO         2847    i._is_digit         c_w.l(__printf_wp.o)
-    0x08000f08   0x00000020   Code   RO         1488    i._mutex_acquire    rtx_conf_cm.o
-    0x08000f28   0x0000001c   Code   RO         1490    i._mutex_release    rtx_conf_cm.o
+    0x08000eb4   0x00000046   Code   RO         2715    i._init_box         RTX_CM3.lib(rt_membox.o)
+    0x08000efa   0x0000000e   Code   RO         2862    i._is_digit         c_w.l(__printf_wp.o)
+    0x08000f08   0x00000020   Code   RO         1503    i._mutex_acquire    rtx_conf_cm.o
+    0x08000f28   0x0000001c   Code   RO         1505    i._mutex_release    rtx_conf_cm.o
     0x08000f44   0x00000066   Code   RO          864    i.buf_bufto         psock.o
     0x08000faa   0x00000006   Code   RO          865    i.buf_setup         psock.o
     0x08000fb0   0x00000046   Code   RO          986    i.chksum            uip.o
     0x08000ff6   0x00000002   PAD
     0x08000ff8   0x0000005c   Code   RO          866    i.data_acked        psock.o
-    0x08001054   0x00000030   Code   RO         2753    i.dbg_init          RTX_CM3.lib(hal_cm.o)
-    0x08001084   0x00000020   Code   RO         2754    i.dbg_task_notify   RTX_CM3.lib(hal_cm.o)
-    0x080010a4   0x00000010   Code   RO         2755    i.dbg_task_switch   RTX_CM3.lib(hal_cm.o)
+    0x08001054   0x00000030   Code   RO         2768    i.dbg_init          RTX_CM3.lib(hal_cm.o)
+    0x08001084   0x00000020   Code   RO         2769    i.dbg_task_notify   RTX_CM3.lib(hal_cm.o)
+    0x080010a4   0x00000010   Code   RO         2770    i.dbg_task_switch   RTX_CM3.lib(hal_cm.o)
     0x080010b4   0x00000018   Code   RO          737    i.enc28j60_bfc      enc28j60.o
     0x080010cc   0x00000018   Code   RO          738    i.enc28j60_bfs      enc28j60.o
     0x080010e4   0x000001c4   Code   RO          739    i.enc28j60_init     enc28j60.o
@@ -2588,150 +2593,150 @@ Memory Map of the image
     0x0800153c   0x0000003c   Code   RO          752    i.enc28j60_write_buffer  enc28j60.o
     0x08001578   0x00000034   Code   RO          753    i.enc28j60_write_op  enc28j60.o
     0x080015ac   0x00000028   Code   RO          754    i.enc28j60_write_phy  enc28j60.o
-    0x080015d4   0x00000050   Code   RO         1348    i.file_stats        httpd-cgi.o
-    0x08001624   0x00000040   Code   RO         1349    i.gate_addr         httpd-cgi.o
-    0x08001664   0x0000002c   Code   RO         1350    i.generate_file_stats  httpd-cgi.o
-    0x08001690   0x0000006c   Code   RO         1351    i.generate_gate_addr  httpd-cgi.o
-    0x080016fc   0x0000006c   Code   RO         1352    i.generate_host_addr  httpd-cgi.o
-    0x08001768   0x0000006c   Code   RO         1353    i.generate_net_mask  httpd-cgi.o
-    0x080017d4   0x00000034   Code   RO         1354    i.generate_net_stats  httpd-cgi.o
+    0x080015d4   0x00000050   Code   RO         1356    i.file_stats        httpd-cgi.o
+    0x08001624   0x00000040   Code   RO         1357    i.gate_addr         httpd-cgi.o
+    0x08001664   0x0000002c   Code   RO         1358    i.generate_file_stats  httpd-cgi.o
+    0x08001690   0x0000006c   Code   RO         1359    i.generate_gate_addr  httpd-cgi.o
+    0x080016fc   0x0000006c   Code   RO         1360    i.generate_host_addr  httpd-cgi.o
+    0x08001768   0x0000006c   Code   RO         1361    i.generate_net_mask  httpd-cgi.o
+    0x080017d4   0x00000034   Code   RO         1362    i.generate_net_stats  httpd-cgi.o
     0x08001808   0x0000004c   Code   RO         1280    i.generate_part_of_file  httpd.o
-    0x08001854   0x000000b4   Code   RO         1355    i.generate_tcp_stats  httpd-cgi.o
-    0x08001908   0x00000040   Code   RO         1356    i.get_addr          httpd-cgi.o
-    0x08001948   0x0000001a   Code   RO         1281    i.handle_connection  httpd.o
-    0x08001962   0x00000002   PAD
-    0x08001964   0x0000015c   Code   RO         1282    i.handle_input      httpd.o
-    0x08001ac0   0x00000138   Code   RO         1283    i.handle_output     httpd.o
-    0x08001bf8   0x00000194   Code   RO         1284    i.handle_script     httpd.o
-    0x08001d8c   0x0000000c   Code   RO          987    i.htons             uip.o
-    0x08001d98   0x000000b0   Code   RO         1285    i.httpd_appcall     httpd.o
-    0x08001e48   0x0000003c   Code   RO         1357    i.httpd_cgi         httpd-cgi.o
-    0x08001e84   0x00000034   Code   RO         1439    i.httpd_fs_count    httpd-fs.o
-    0x08001eb8   0x0000004c   Code   RO         1441    i.httpd_fs_open     httpd-fs.o
-    0x08001f04   0x00000030   Code   RO         1442    i.httpd_fs_strcmp   httpd-fs.o
-    0x08001f34   0x0000000c   Code   RO         1286    i.httpd_init        httpd.o
-    0x08001f40   0x0000002c   Code   RO         1607    i.isrMessagePut     RTX_CM3.lib(rt_cmsis.o)
-    0x08001f6c   0x0000000e   Code   RO         2556    i.isr_mbx_send      RTX_CM3.lib(rt_mailbox.o)
-    0x08001f7a   0x00000002   PAD
-    0x08001f7c   0x00000118   Code   RO            8    i.main              stm32net.o
-    0x08002094   0x00000044   Code   RO         1358    i.net_mask          httpd-cgi.o
-    0x080020d8   0x0000005c   Code   RO         1359    i.net_stats         httpd-cgi.o
-    0x08002134   0x00000026   Code   RO         1287    i.next_scriptstate  httpd.o
-    0x0800215a   0x00000018   Code   RO         1360    i.nullfunction      httpd-cgi.o
-    0x08002172   0x00000002   PAD
-    0x08002174   0x00000018   Code   RO         1610    i.osDelay           RTX_CM3.lib(rt_cmsis.o)
-    0x0800218c   0x00000024   Code   RO         1611    i.osKernelInitialize  RTX_CM3.lib(rt_cmsis.o)
-    0x080021b0   0x00000024   Code   RO         1612    i.osKernelRunning   RTX_CM3.lib(rt_cmsis.o)
-    0x080021d4   0x0000006c   Code   RO         1613    i.osKernelStart     RTX_CM3.lib(rt_cmsis.o)
-    0x08002240   0x00000030   Code   RO         1639    i.osThreadCreate    RTX_CM3.lib(rt_cmsis.o)
-    0x08002270   0x00000018   Code   RO         1640    i.osThreadExit      RTX_CM3.lib(rt_cmsis.o)
-    0x08002288   0x00000022   Code   RO         1491    i.os_error          rtx_conf_cm.o
-    0x080022aa   0x00000004   Code   RO         1492    i.os_idle_demon     rtx_conf_cm.o
-    0x080022ae   0x00000002   PAD
-    0x080022b0   0x00000028   Code   RO         2347    i.os_tick_init      RTX_CM3.lib(rt_system.o)
-    0x080022d8   0x00000002   Code   RO         2348    i.os_tick_irqack    RTX_CM3.lib(rt_system.o)
-    0x080022da   0x0000000c   Code   RO          867    i.psock_datalen     psock.o
-    0x080022e6   0x00000002   PAD
-    0x080022e8   0x00000090   Code   RO          868    i.psock_generator_send  psock.o
-    0x08002378   0x00000028   Code   RO          869    i.psock_init        psock.o
-    0x080023a0   0x00000034   Code   RO          870    i.psock_newdata     psock.o
-    0x080023d4   0x00000098   Code   RO          872    i.psock_readto      psock.o
-    0x0800246c   0x00000070   Code   RO          873    i.psock_send        psock.o
-    0x080024dc   0x0000001a   Code   RO         2701    i.rt_alloc_box      RTX_CM3.lib(rt_membox.o)
-    0x080024f6   0x0000003e   Code   RO         2729    i.rt_alloc_mem      RTX_CM3.lib(rt_memory.o)
-    0x08002534   0x00000038   Code   RO         2228    i.rt_block          RTX_CM3.lib(rt_task.o)
-    0x0800256c   0x00000048   Code   RO         2678    i.rt_chk_robin      RTX_CM3.lib(rt_robin.o)
-    0x080025b4   0x00000070   Code   RO         2479    i.rt_dec_dly        RTX_CM3.lib(rt_list.o)
-    0x08002624   0x00000044   Code   RO         2229    i.rt_dispatch       RTX_CM3.lib(rt_task.o)
-    0x08002668   0x00000006   Code   RO         2645    i.rt_dly_wait       RTX_CM3.lib(rt_time.o)
-    0x0800266e   0x00000002   PAD
-    0x08002670   0x00000050   Code   RO         2440    i.rt_evt_psh        RTX_CM3.lib(rt_event.o)
-    0x080026c0   0x0000002c   Code   RO         2702    i.rt_free_box       RTX_CM3.lib(rt_membox.o)
-    0x080026ec   0x00000028   Code   RO         2730    i.rt_free_mem       RTX_CM3.lib(rt_memory.o)
-    0x08002714   0x00000028   Code   RO         2480    i.rt_get_first      RTX_CM3.lib(rt_list.o)
-    0x0800273c   0x00000048   Code   RO         2230    i.rt_init_context   RTX_CM3.lib(rt_task.o)
-    0x08002784   0x0000001a   Code   RO         2731    i.rt_init_mem       RTX_CM3.lib(rt_memory.o)
-    0x0800279e   0x00000002   PAD
-    0x080027a0   0x00000018   Code   RO         2679    i.rt_init_robin     RTX_CM3.lib(rt_robin.o)
-    0x080027b8   0x00000080   Code   RO         2756    i.rt_init_stack     RTX_CM3.lib(hal_cm.o)
-    0x08002838   0x00000008   Code   RO         2557    i.rt_mbx_check      RTX_CM3.lib(rt_mailbox.o)
-    0x08002840   0x0000001a   Code   RO         2558    i.rt_mbx_init       RTX_CM3.lib(rt_mailbox.o)
-    0x0800285a   0x00000002   PAD
-    0x0800285c   0x000000f0   Code   RO         2559    i.rt_mbx_psh        RTX_CM3.lib(rt_mailbox.o)
-    0x0800294c   0x00000044   Code   RO         1657    i.rt_ms2tick        RTX_CM3.lib(rt_cmsis.o)
-    0x08002990   0x000000d8   Code   RO         2314    i.rt_mut_release    RTX_CM3.lib(rt_mutex.o)
-    0x08002a68   0x00000068   Code   RO         2315    i.rt_mut_wait       RTX_CM3.lib(rt_mutex.o)
-    0x08002ad0   0x0000007c   Code   RO         2351    i.rt_pop_req        RTX_CM3.lib(rt_system.o)
-    0x08002b4c   0x00000020   Code   RO         2352    i.rt_psh_req        RTX_CM3.lib(rt_system.o)
-    0x08002b6c   0x0000005c   Code   RO         2482    i.rt_psq_enq        RTX_CM3.lib(rt_list.o)
-    0x08002bc8   0x00000048   Code   RO         2483    i.rt_put_dly        RTX_CM3.lib(rt_list.o)
-    0x08002c10   0x00000036   Code   RO         2484    i.rt_put_prio       RTX_CM3.lib(rt_list.o)
-    0x08002c46   0x00000002   PAD
-    0x08002c48   0x00000014   Code   RO         2485    i.rt_put_rdy_first  RTX_CM3.lib(rt_list.o)
-    0x08002c5c   0x00000034   Code   RO         2486    i.rt_resort_prio    RTX_CM3.lib(rt_list.o)
-    0x08002c90   0x00000006   Code   RO         2757    i.rt_ret_val        RTX_CM3.lib(hal_cm.o)
-    0x08002c96   0x00000008   Code   RO         2758    i.rt_ret_val2       RTX_CM3.lib(hal_cm.o)
-    0x08002c9e   0x00000028   Code   RO         2487    i.rt_rmv_dly        RTX_CM3.lib(rt_list.o)
-    0x08002cc6   0x00000002   PAD
-    0x08002cc8   0x00000030   Code   RO         2488    i.rt_rmv_list       RTX_CM3.lib(rt_list.o)
-    0x08002cf8   0x00000034   Code   RO         2606    i.rt_sem_psh        RTX_CM3.lib(rt_semaphore.o)
-    0x08002d2c   0x00000002   Code   RO         1493    i.rt_stk_check      rtx_conf_cm.o
-    0x08002d2e   0x00000002   PAD
-    0x08002d30   0x00000028   Code   RO         2231    i.rt_switch_req     RTX_CM3.lib(rt_task.o)
-    0x08002d58   0x000000cc   Code   RO         2232    i.rt_sys_init       RTX_CM3.lib(rt_task.o)
-    0x08002e24   0x00000078   Code   RO         2233    i.rt_sys_start      RTX_CM3.lib(rt_task.o)
-    0x08002e9c   0x00000040   Code   RO         2356    i.rt_systick        RTX_CM3.lib(rt_system.o)
-    0x08002edc   0x00000012   Code   RO         1658    i.rt_tid2ptcb       RTX_CM3.lib(rt_cmsis.o)
-    0x08002eee   0x00000002   PAD
-    0x08002ef0   0x00000034   Code   RO         1659    i.rt_timer_insert   RTX_CM3.lib(rt_cmsis.o)
-    0x08002f24   0x00000088   Code   RO         2234    i.rt_tsk_create     RTX_CM3.lib(rt_task.o)
-    0x08002fac   0x0000017c   Code   RO         2235    i.rt_tsk_delete     RTX_CM3.lib(rt_task.o)
-    0x08003128   0x0000007c   Code   RO         2237    i.rt_tsk_prio       RTX_CM3.lib(rt_task.o)
-    0x080031a4   0x00000010   Code   RO         2238    i.rt_tsk_self       RTX_CM3.lib(rt_task.o)
-    0x080031b4   0x00000050   Code   RO          874    i.send_data         psock.o
-    0x08003204   0x0000006c   Code   RO         1288    i.send_file         httpd.o
-    0x08003270   0x000001f8   Code   RO         1289    i.send_headers      httpd.o
-    0x08003468   0x0000003e   Code   RO         1290    i.send_part_of_file  httpd.o
-    0x080034a6   0x00000002   PAD
-    0x080034a8   0x00000044   Code   RO         1361    i.set_addr          httpd-cgi.o
-    0x080034ec   0x00000006   Code   RO         1362    i.set_host_addr     httpd-cgi.o
-    0x080034f2   0x00000012   Code   RO         1661    i.svcDelay          RTX_CM3.lib(rt_cmsis.o)
-    0x08003504   0x00000070   Code   RO         1662    i.svcKernelInitialize  RTX_CM3.lib(rt_cmsis.o)
-    0x08003574   0x0000000c   Code   RO         1663    i.svcKernelRunning  RTX_CM3.lib(rt_cmsis.o)
-    0x08003580   0x00000048   Code   RO         1664    i.svcKernelStart    RTX_CM3.lib(rt_cmsis.o)
-    0x080035c8   0x00000024   Code   RO         1667    i.svcMessageCreate  RTX_CM3.lib(rt_cmsis.o)
-    0x080035ec   0x00000070   Code   RO         1682    i.svcThreadCreate   RTX_CM3.lib(rt_cmsis.o)
-    0x0800365c   0x0000001c   Code   RO         1683    i.svcThreadGetId    RTX_CM3.lib(rt_cmsis.o)
-    0x08003678   0x00000038   Code   RO         1686    i.svcThreadTerminate  RTX_CM3.lib(rt_cmsis.o)
-    0x080036b0   0x0000005c   Code   RO         1697    i.sysTimerTick      RTX_CM3.lib(rt_cmsis.o)
-    0x0800370c   0x00000074   Code   RO         1363    i.tcp_stats         httpd-cgi.o
-    0x08003780   0x00000070   Code   RO          988    i.uip_add32         uip.o
-    0x080037f0   0x00000044   Code   RO          989    i.uip_add_rcv_nxt   uip.o
-    0x08003834   0x000000e8   Code   RO         1093    i.uip_arp_arpin     uip_arp.o
-    0x0800391c   0x00000038   Code   RO         1094    i.uip_arp_init      uip_arp.o
-    0x08003954   0x000001a0   Code   RO         1095    i.uip_arp_out       uip_arp.o
-    0x08003af4   0x00000058   Code   RO         1096    i.uip_arp_timer     uip_arp.o
-    0x08003b4c   0x00000124   Code   RO         1097    i.uip_arp_update    uip_arp.o
-    0x08003c70   0x0000006c   Code   RO          992    i.uip_init          uip.o
-    0x08003cdc   0x00000024   Code   RO          993    i.uip_ipchksum      uip.o
-    0x08003d00   0x00000040   Code   RO          994    i.uip_listen        uip.o
-    0x08003d40   0x00000e60   Code   RO          995    i.uip_process       uip.o
-    0x08004ba0   0x00000030   Code   RO          996    i.uip_send          uip.o
-    0x08004bd0   0x0000000a   Code   RO          998    i.uip_tcpchksum     uip.o
-    0x08004bda   0x00000002   PAD
-    0x08004bdc   0x00000048   Code   RO         1000    i.upper_layer_chksum  uip.o
-    0x08004c24   0x00000026   Data   RO           11    .constdata          stm32net.o
-    0x08004c4a   0x00000008   Data   RO         1002    .constdata          uip.o
-    0x08004c52   0x0000000a   Data   RO         1099    .constdata          uip_arp.o
-    0x08004c5c   0x0000008e   Data   RO         1364    .constdata          httpd-cgi.o
-    0x08004cea   0x00000002   PAD
-    0x08004cec   0x00001a40   Data   RO         1444    .constdata          httpd-fs.o
-    0x0800672c   0x0000027c   Data   RO         1478    .constdata          http-strings.o
-    0x080069a8   0x00000046   Data   RO         1495    .constdata          rtx_conf_cm.o
-    0x080069ee   0x00000002   PAD
-    0x080069f0   0x000000b6   Data   RO         1365    .conststring        httpd-cgi.o
-    0x08006aa6   0x00000002   PAD
-    0x08006aa8   0x00000020   Data   RO         3241    Region$$Table       anon$$obj.o
+    0x08001854   0x000000b4   Code   RO         1363    i.generate_tcp_stats  httpd-cgi.o
+    0x08001908   0x00000040   Code   RO         1364    i.get_addr          httpd-cgi.o
+    0x08001948   0x0000014c   Code   RO         1281    i.handle_ajax       httpd.o
+    0x08001a94   0x0000001a   Code   RO         1282    i.handle_connection  httpd.o
+    0x08001aae   0x00000002   PAD
+    0x08001ab0   0x00000160   Code   RO         1283    i.handle_input      httpd.o
+    0x08001c10   0x00000174   Code   RO         1284    i.handle_output     httpd.o
+    0x08001d84   0x00000194   Code   RO         1285    i.handle_script     httpd.o
+    0x08001f18   0x0000000c   Code   RO          987    i.htons             uip.o
+    0x08001f24   0x0000000c   Code   RO         1484    i.httpd_ajax        httpd-ajax.o
+    0x08001f30   0x000000b0   Code   RO         1286    i.httpd_appcall     httpd.o
+    0x08001fe0   0x0000003c   Code   RO         1365    i.httpd_cgi         httpd-cgi.o
+    0x0800201c   0x00000034   Code   RO         1437    i.httpd_fs_count    httpd-fs.o
+    0x08002050   0x0000004c   Code   RO         1439    i.httpd_fs_open     httpd-fs.o
+    0x0800209c   0x00000030   Code   RO         1440    i.httpd_fs_strcmp   httpd-fs.o
+    0x080020cc   0x0000000c   Code   RO         1287    i.httpd_init        httpd.o
+    0x080020d8   0x0000002c   Code   RO         1622    i.isrMessagePut     RTX_CM3.lib(rt_cmsis.o)
+    0x08002104   0x0000000e   Code   RO         2571    i.isr_mbx_send      RTX_CM3.lib(rt_mailbox.o)
+    0x08002112   0x00000002   PAD
+    0x08002114   0x00000118   Code   RO            8    i.main              stm32net.o
+    0x0800222c   0x00000044   Code   RO         1366    i.net_mask          httpd-cgi.o
+    0x08002270   0x0000005c   Code   RO         1367    i.net_stats         httpd-cgi.o
+    0x080022cc   0x00000026   Code   RO         1288    i.next_scriptstate  httpd.o
+    0x080022f2   0x00000018   Code   RO         1368    i.nullfunction      httpd-cgi.o
+    0x0800230a   0x00000018   Code   RO         1485    i.nullfunction      httpd-ajax.o
+    0x08002322   0x00000002   PAD
+    0x08002324   0x00000018   Code   RO         1625    i.osDelay           RTX_CM3.lib(rt_cmsis.o)
+    0x0800233c   0x00000024   Code   RO         1626    i.osKernelInitialize  RTX_CM3.lib(rt_cmsis.o)
+    0x08002360   0x00000024   Code   RO         1627    i.osKernelRunning   RTX_CM3.lib(rt_cmsis.o)
+    0x08002384   0x0000006c   Code   RO         1628    i.osKernelStart     RTX_CM3.lib(rt_cmsis.o)
+    0x080023f0   0x00000030   Code   RO         1654    i.osThreadCreate    RTX_CM3.lib(rt_cmsis.o)
+    0x08002420   0x00000018   Code   RO         1655    i.osThreadExit      RTX_CM3.lib(rt_cmsis.o)
+    0x08002438   0x00000022   Code   RO         1506    i.os_error          rtx_conf_cm.o
+    0x0800245a   0x00000004   Code   RO         1507    i.os_idle_demon     rtx_conf_cm.o
+    0x0800245e   0x00000002   PAD
+    0x08002460   0x00000028   Code   RO         2362    i.os_tick_init      RTX_CM3.lib(rt_system.o)
+    0x08002488   0x00000002   Code   RO         2363    i.os_tick_irqack    RTX_CM3.lib(rt_system.o)
+    0x0800248a   0x0000000c   Code   RO          867    i.psock_datalen     psock.o
+    0x08002496   0x00000002   PAD
+    0x08002498   0x00000090   Code   RO          868    i.psock_generator_send  psock.o
+    0x08002528   0x00000028   Code   RO          869    i.psock_init        psock.o
+    0x08002550   0x00000034   Code   RO          870    i.psock_newdata     psock.o
+    0x08002584   0x00000098   Code   RO          872    i.psock_readto      psock.o
+    0x0800261c   0x00000070   Code   RO          873    i.psock_send        psock.o
+    0x0800268c   0x0000001a   Code   RO         2716    i.rt_alloc_box      RTX_CM3.lib(rt_membox.o)
+    0x080026a6   0x0000003e   Code   RO         2744    i.rt_alloc_mem      RTX_CM3.lib(rt_memory.o)
+    0x080026e4   0x00000038   Code   RO         2243    i.rt_block          RTX_CM3.lib(rt_task.o)
+    0x0800271c   0x00000048   Code   RO         2693    i.rt_chk_robin      RTX_CM3.lib(rt_robin.o)
+    0x08002764   0x00000070   Code   RO         2494    i.rt_dec_dly        RTX_CM3.lib(rt_list.o)
+    0x080027d4   0x00000044   Code   RO         2244    i.rt_dispatch       RTX_CM3.lib(rt_task.o)
+    0x08002818   0x00000006   Code   RO         2660    i.rt_dly_wait       RTX_CM3.lib(rt_time.o)
+    0x0800281e   0x00000002   PAD
+    0x08002820   0x00000050   Code   RO         2455    i.rt_evt_psh        RTX_CM3.lib(rt_event.o)
+    0x08002870   0x0000002c   Code   RO         2717    i.rt_free_box       RTX_CM3.lib(rt_membox.o)
+    0x0800289c   0x00000028   Code   RO         2745    i.rt_free_mem       RTX_CM3.lib(rt_memory.o)
+    0x080028c4   0x00000028   Code   RO         2495    i.rt_get_first      RTX_CM3.lib(rt_list.o)
+    0x080028ec   0x00000048   Code   RO         2245    i.rt_init_context   RTX_CM3.lib(rt_task.o)
+    0x08002934   0x0000001a   Code   RO         2746    i.rt_init_mem       RTX_CM3.lib(rt_memory.o)
+    0x0800294e   0x00000002   PAD
+    0x08002950   0x00000018   Code   RO         2694    i.rt_init_robin     RTX_CM3.lib(rt_robin.o)
+    0x08002968   0x00000080   Code   RO         2771    i.rt_init_stack     RTX_CM3.lib(hal_cm.o)
+    0x080029e8   0x00000008   Code   RO         2572    i.rt_mbx_check      RTX_CM3.lib(rt_mailbox.o)
+    0x080029f0   0x0000001a   Code   RO         2573    i.rt_mbx_init       RTX_CM3.lib(rt_mailbox.o)
+    0x08002a0a   0x00000002   PAD
+    0x08002a0c   0x000000f0   Code   RO         2574    i.rt_mbx_psh        RTX_CM3.lib(rt_mailbox.o)
+    0x08002afc   0x00000044   Code   RO         1672    i.rt_ms2tick        RTX_CM3.lib(rt_cmsis.o)
+    0x08002b40   0x000000d8   Code   RO         2329    i.rt_mut_release    RTX_CM3.lib(rt_mutex.o)
+    0x08002c18   0x00000068   Code   RO         2330    i.rt_mut_wait       RTX_CM3.lib(rt_mutex.o)
+    0x08002c80   0x0000007c   Code   RO         2366    i.rt_pop_req        RTX_CM3.lib(rt_system.o)
+    0x08002cfc   0x00000020   Code   RO         2367    i.rt_psh_req        RTX_CM3.lib(rt_system.o)
+    0x08002d1c   0x0000005c   Code   RO         2497    i.rt_psq_enq        RTX_CM3.lib(rt_list.o)
+    0x08002d78   0x00000048   Code   RO         2498    i.rt_put_dly        RTX_CM3.lib(rt_list.o)
+    0x08002dc0   0x00000036   Code   RO         2499    i.rt_put_prio       RTX_CM3.lib(rt_list.o)
+    0x08002df6   0x00000002   PAD
+    0x08002df8   0x00000014   Code   RO         2500    i.rt_put_rdy_first  RTX_CM3.lib(rt_list.o)
+    0x08002e0c   0x00000034   Code   RO         2501    i.rt_resort_prio    RTX_CM3.lib(rt_list.o)
+    0x08002e40   0x00000006   Code   RO         2772    i.rt_ret_val        RTX_CM3.lib(hal_cm.o)
+    0x08002e46   0x00000008   Code   RO         2773    i.rt_ret_val2       RTX_CM3.lib(hal_cm.o)
+    0x08002e4e   0x00000028   Code   RO         2502    i.rt_rmv_dly        RTX_CM3.lib(rt_list.o)
+    0x08002e76   0x00000002   PAD
+    0x08002e78   0x00000030   Code   RO         2503    i.rt_rmv_list       RTX_CM3.lib(rt_list.o)
+    0x08002ea8   0x00000034   Code   RO         2621    i.rt_sem_psh        RTX_CM3.lib(rt_semaphore.o)
+    0x08002edc   0x00000002   Code   RO         1508    i.rt_stk_check      rtx_conf_cm.o
+    0x08002ede   0x00000002   PAD
+    0x08002ee0   0x00000028   Code   RO         2246    i.rt_switch_req     RTX_CM3.lib(rt_task.o)
+    0x08002f08   0x000000cc   Code   RO         2247    i.rt_sys_init       RTX_CM3.lib(rt_task.o)
+    0x08002fd4   0x00000078   Code   RO         2248    i.rt_sys_start      RTX_CM3.lib(rt_task.o)
+    0x0800304c   0x00000040   Code   RO         2371    i.rt_systick        RTX_CM3.lib(rt_system.o)
+    0x0800308c   0x00000012   Code   RO         1673    i.rt_tid2ptcb       RTX_CM3.lib(rt_cmsis.o)
+    0x0800309e   0x00000002   PAD
+    0x080030a0   0x00000034   Code   RO         1674    i.rt_timer_insert   RTX_CM3.lib(rt_cmsis.o)
+    0x080030d4   0x00000088   Code   RO         2249    i.rt_tsk_create     RTX_CM3.lib(rt_task.o)
+    0x0800315c   0x0000017c   Code   RO         2250    i.rt_tsk_delete     RTX_CM3.lib(rt_task.o)
+    0x080032d8   0x0000007c   Code   RO         2252    i.rt_tsk_prio       RTX_CM3.lib(rt_task.o)
+    0x08003354   0x00000010   Code   RO         2253    i.rt_tsk_self       RTX_CM3.lib(rt_task.o)
+    0x08003364   0x00000050   Code   RO          874    i.send_data         psock.o
+    0x080033b4   0x0000006c   Code   RO         1289    i.send_file         httpd.o
+    0x08003420   0x00000214   Code   RO         1290    i.send_headers      httpd.o
+    0x08003634   0x0000003e   Code   RO         1291    i.send_part_of_file  httpd.o
+    0x08003672   0x00000012   Code   RO         1676    i.svcDelay          RTX_CM3.lib(rt_cmsis.o)
+    0x08003684   0x00000070   Code   RO         1677    i.svcKernelInitialize  RTX_CM3.lib(rt_cmsis.o)
+    0x080036f4   0x0000000c   Code   RO         1678    i.svcKernelRunning  RTX_CM3.lib(rt_cmsis.o)
+    0x08003700   0x00000048   Code   RO         1679    i.svcKernelStart    RTX_CM3.lib(rt_cmsis.o)
+    0x08003748   0x00000024   Code   RO         1682    i.svcMessageCreate  RTX_CM3.lib(rt_cmsis.o)
+    0x0800376c   0x00000070   Code   RO         1697    i.svcThreadCreate   RTX_CM3.lib(rt_cmsis.o)
+    0x080037dc   0x0000001c   Code   RO         1698    i.svcThreadGetId    RTX_CM3.lib(rt_cmsis.o)
+    0x080037f8   0x00000038   Code   RO         1701    i.svcThreadTerminate  RTX_CM3.lib(rt_cmsis.o)
+    0x08003830   0x0000005c   Code   RO         1712    i.sysTimerTick      RTX_CM3.lib(rt_cmsis.o)
+    0x0800388c   0x00000074   Code   RO         1369    i.tcp_stats         httpd-cgi.o
+    0x08003900   0x00000070   Code   RO          988    i.uip_add32         uip.o
+    0x08003970   0x00000044   Code   RO          989    i.uip_add_rcv_nxt   uip.o
+    0x080039b4   0x000000e8   Code   RO         1093    i.uip_arp_arpin     uip_arp.o
+    0x08003a9c   0x00000038   Code   RO         1094    i.uip_arp_init      uip_arp.o
+    0x08003ad4   0x000001a0   Code   RO         1095    i.uip_arp_out       uip_arp.o
+    0x08003c74   0x00000058   Code   RO         1096    i.uip_arp_timer     uip_arp.o
+    0x08003ccc   0x00000124   Code   RO         1097    i.uip_arp_update    uip_arp.o
+    0x08003df0   0x0000006c   Code   RO          992    i.uip_init          uip.o
+    0x08003e5c   0x00000024   Code   RO          993    i.uip_ipchksum      uip.o
+    0x08003e80   0x00000040   Code   RO          994    i.uip_listen        uip.o
+    0x08003ec0   0x00000e60   Code   RO          995    i.uip_process       uip.o
+    0x08004d20   0x00000030   Code   RO          996    i.uip_send          uip.o
+    0x08004d50   0x0000000a   Code   RO          998    i.uip_tcpchksum     uip.o
+    0x08004d5a   0x00000002   PAD
+    0x08004d5c   0x00000048   Code   RO         1000    i.upper_layer_chksum  uip.o
+    0x08004da4   0x00000026   Data   RO           11    .constdata          stm32net.o
+    0x08004dca   0x00000008   Data   RO         1002    .constdata          uip.o
+    0x08004dd2   0x0000000a   Data   RO         1099    .constdata          uip_arp.o
+    0x08004ddc   0x00000086   Data   RO         1370    .constdata          httpd-cgi.o
+    0x08004e62   0x00000002   PAD
+    0x08004e64   0x00001a40   Data   RO         1442    .constdata          httpd-fs.o
+    0x080068a4   0x0000027c   Data   RO         1476    .constdata          http-strings.o
+    0x08006b20   0x00000046   Data   RO         1510    .constdata          rtx_conf_cm.o
+    0x08006b66   0x00000002   PAD
+    0x08006b68   0x000000aa   Data   RO         1371    .conststring        httpd-cgi.o
+    0x08006c12   0x00000002   PAD
+    0x08006c14   0x00000020   Data   RO         3256    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00001f10, Max: 0x00002000, ABSOLUTE)
@@ -2742,27 +2747,27 @@ Memory Map of the image
     0x2000000c   0x00000004   Data   RW          755    .data               enc28j60.o
     0x20000010   0x0000003c   Data   RW         1003    .data               uip.o
     0x2000004c   0x00000008   Data   RW         1100    .data               uip_arp.o
-    0x20000054   0x00000044   Data   RW         1366    .data               httpd-cgi.o
-    0x20000098   0x00000024   Data   RW         1479    .data               http-strings.o
-    0x200000bc   0x00000024   Data   RW         1496    .data               rtx_conf_cm.o
-    0x200000e0   0x00000008   Data   RW         1700    .data               RTX_CM3.lib(rt_cmsis.o)
-    0x200000e8   0x00000008   Data   RW         2240    .data               RTX_CM3.lib(rt_task.o)
-    0x200000f0   0x00000008   Data   RW         2359    .data               RTX_CM3.lib(rt_system.o)
-    0x200000f8   0x00000004   Data   RW         2649    .data               RTX_CM3.lib(rt_time.o)
-    0x200000fc   0x00000008   Data   RW         2680    .data               RTX_CM3.lib(rt_robin.o)
-    0x20000104   0x00000001   Data   RW         2759    .data               RTX_CM3.lib(hal_cm.o)
-    0x20000105   0x00000003   PAD
-    0x20000108   0x00001160   Zero   RW         1001    .bss                uip.o
-    0x20001268   0x00000060   Zero   RW         1098    .bss                uip_arp.o
-    0x200012c8   0x00000016   Zero   RW         1443    .bss                httpd-fs.o
-    0x200012de   0x00000002   PAD
-    0x200012e0   0x00000868   Zero   RW         1494    .bss                rtx_conf_cm.o
-    0x20001b48   0x00000034   Zero   RW         2239    .bss                RTX_CM3.lib(rt_task.o)
-    0x20001b7c   0x00000030   Zero   RW         2489    .bss                RTX_CM3.lib(rt_list.o)
-    0x20001bac   0x00000060   Zero   RW         2817    .bss                c_w.l(libspace.o)
+    0x20000054   0x00000040   Data   RW         1372    .data               httpd-cgi.o
+    0x20000094   0x00000024   Data   RW         1477    .data               http-strings.o
+    0x200000b8   0x00000024   Data   RW         1511    .data               rtx_conf_cm.o
+    0x200000dc   0x00000008   Data   RW         1715    .data               RTX_CM3.lib(rt_cmsis.o)
+    0x200000e4   0x00000008   Data   RW         2255    .data               RTX_CM3.lib(rt_task.o)
+    0x200000ec   0x00000008   Data   RW         2374    .data               RTX_CM3.lib(rt_system.o)
+    0x200000f4   0x00000004   Data   RW         2664    .data               RTX_CM3.lib(rt_time.o)
+    0x200000f8   0x00000008   Data   RW         2695    .data               RTX_CM3.lib(rt_robin.o)
+    0x20000100   0x00000001   Data   RW         2774    .data               RTX_CM3.lib(hal_cm.o)
+    0x20000101   0x00000003   PAD
+    0x20000104   0x00001160   Zero   RW         1001    .bss                uip.o
+    0x20001264   0x00000060   Zero   RW         1098    .bss                uip_arp.o
+    0x200012c4   0x00000016   Zero   RW         1441    .bss                httpd-fs.o
+    0x200012da   0x00000006   PAD
+    0x200012e0   0x00000868   Zero   RW         1509    .bss                rtx_conf_cm.o
+    0x20001b48   0x00000034   Zero   RW         2254    .bss                RTX_CM3.lib(rt_task.o)
+    0x20001b7c   0x00000030   Zero   RW         2504    .bss                RTX_CM3.lib(rt_list.o)
+    0x20001bac   0x00000060   Zero   RW         2832    .bss                c_w.l(libspace.o)
     0x20001c0c   0x00000004   PAD
-    0x20001c10   0x00000100   Zero   RW         1551    HEAP                startup_stm32f10x_md_vl.o
-    0x20001d10   0x00000200   Zero   RW         1550    STACK               startup_stm32f10x_md_vl.o
+    0x20001c10   0x00000100   Zero   RW         1566    HEAP                startup_stm32f10x_md_vl.o
+    0x20001d10   0x00000200   Zero   RW         1565    STACK               startup_stm32f10x_md_vl.o
 
 
 ==============================================================================
@@ -2774,9 +2779,10 @@ Image component sizes
 
       1312         64          0          4          0      10581   enc28j60.o
          0          0        636         36          0       2548   http-strings.o
-      1242        162        324         68          0      10120   httpd-cgi.o
+        36          6          0          0          0       1445   httpd-ajax.o
+      1168        158        304         64          0       9020   httpd-cgi.o
        176         20       6720          0         22       4342   httpd-fs.o
-      2066        134          0          0          0       7493   httpd.o
+      2490        136          0          0          0       8829   httpd.o
        792         44          0          0          0      12970   psock.o
        128         26         70         36       2152       9390   rtx_conf_cm.o
         64         26        288          0        768        812   startup_stm32f10x_md_vl.o
@@ -2789,9 +2795,9 @@ Image component sizes
       1084        108         10          8         96       4707   uip_arp.o
 
     ----------------------------------------------------------------------
-     12488        950       8132        224       7488     330463   Object Totals
+     12872        954       8112        220       7492     332144   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        18          0          6          0          2          0   (incl. Padding)
+        16          0          6          0          6          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2881,15 +2887,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     19204       1500       8132        264       7688     391861   Grand Totals
-     19204       1500       8132        264       7688     391861   ELF Image Totals
-     19204       1500       8132        264          0          0   ROM Totals
+     19588       1504       8112        260       7692     393490   Grand Totals
+     19588       1504       8112        260       7692     393490   ELF Image Totals
+     19588       1504       8112        260          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                27336 (  26.70kB)
+    Total RO  Size (Code + RO Data)                27700 (  27.05kB)
     Total RW  Size (RW Data + ZI Data)              7952 (   7.77kB)
-    Total ROM Size (Code + RO Data + RW Data)      27600 (  26.95kB)
+    Total ROM Size (Code + RO Data + RW Data)      27960 (  27.30kB)
 
 ==============================================================================
 

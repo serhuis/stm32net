@@ -58,11 +58,10 @@ HTTPD_CGI_CALL(file, "file-stats", file_stats);
 HTTPD_CGI_CALL(tcp, "tcp-connections", tcp_stats);
 HTTPD_CGI_CALL(net, "net-stats", net_stats);
 HTTPD_CGI_CALL(getaddr, "get-addr", get_addr);
-HTTPD_CGI_CALL(setaddr, "set-addr", set_addr);
 HTTPD_CGI_CALL(mask, "get-mask", net_mask);
 HTTPD_CGI_CALL(gate, "get-gate", gate_addr);
 
-static const struct httpd_cgi_call *calls[] = { &file, &tcp, &net, &getaddr, &setaddr, &mask, &gate,  NULL };
+static const struct httpd_cgi_call *calls[] = { &file, &tcp, &net, &getaddr, &mask, &gate,  NULL };
 
 /*---------------------------------------------------------------------------*/
 static
@@ -254,31 +253,6 @@ PT_THREAD(gate_addr(struct httpd_state *s, char *ptr))
 	PSOCK_GENERATOR_SEND(&s->sout, generate_gate_addr, s);
   PSOCK_END(&s->sout);
 }
-/*   Set new IP     */
-static unsigned short
-set_host_addr(void *arg)
-{
-	unsigned char addr[4];
-	struct httpd_state *s = (struct httpd_state *)arg;
-/*	
-	addr[0] = uip_draddr[0];
-	addr[1] = uip_draddr[0]>>8;
-	addr[2] = uip_draddr[1];
-	addr[3] = uip_draddr[1]>>8;
-
-	return snprintf((char *)uip_appdata, UIP_APPDATA_SIZE,
-		  "%d.%d.%d.%d\n", addr[0], addr[1], addr[2], addr[3]);
-*/	
-}
-
-	static
-PT_THREAD(set_addr(struct httpd_state *s, char *ptr))
-{
-  PSOCK_BEGIN(&s->sout);
-	PSOCK_GENERATOR_SEND(&s->sout, set_host_addr, s);
-  PSOCK_END(&s->sout);
-}
-
 /**********************************************************/
 
 static unsigned short

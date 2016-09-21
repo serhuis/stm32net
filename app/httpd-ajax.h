@@ -47,19 +47,20 @@
  *
  */
 
-#ifndef __HTTPD_CGI_H__
-#define __HTTPD_CGI_H__
+#ifndef __HTTPD_AJAX_H__
+#define __HTTPD_AJAX_H__
 
 #include "psock.h"
 #include "httpd.h"
 
-typedef PT_THREAD((* httpd_cgifunction)(struct httpd_state *, char *));
+typedef PT_THREAD((* httpd_ajaxfunction)(struct httpd_state *, char *));
+httpd_ajaxfunction httpd_ajax(char *name);
 
-httpd_cgifunction httpd_cgi(char *name);
-
-struct httpd_cgi_call {
+struct httpd_ajax_call {
   const char *name;
-  const httpd_cgifunction function;
+  const httpd_ajaxfunction function;
+	unsigned char argc;
+	unsigned char *argv;
 };
 
 /**
@@ -74,11 +75,11 @@ struct httpd_cgi_call {
  *
  * \hideinitializer
  */
-#define HTTPD_CGI_CALL(name, str, function) \
+#define httpd_ajax_call(name, str, function) \
 static PT_THREAD(function(struct httpd_state *, char *)); \
-static const struct httpd_cgi_call name = {str, function}
+static const struct httpd_ajax_call name = {str, function}
 
-void httpd_cgi_init(void);
+//void httpd_cgi_init(void);
 #endif /* __HTTPD_CGI_H__ */
 
 /** @} */

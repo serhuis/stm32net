@@ -13,5 +13,6 @@
 .\objects\httpd.o: ..\uIP\lc-switch.h
 .\objects\httpd.o: ..\app\httpd-fs.h
 .\objects\httpd.o: ..\app\httpd-cgi.h
+.\objects\httpd.o: ..\app\httpd-ajax.h
 .\objects\httpd.o: ..\app\http-strings.h
 .\objects\httpd.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
