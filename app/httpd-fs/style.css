@@ -27,7 +27,7 @@ body
 	
   border: solid 1px;
   background-color: #fffcd2;
-  text-align:left;
+  text-align:center;
   
   font-size:9pt;
   font-family:arial,helvetica;  
@@ -35,7 +35,7 @@ body
 
 div.menubox
 {
-  width: 20%;
+  width: 50%;
   border: 0;
   float: left;
 text-align: center;

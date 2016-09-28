@@ -28,20 +28,28 @@ Project File Date:  09/19/2016
 *** Using Compiler 'V5.06 update 2 (build 183)', folder: 'd:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling httpd-fs.c...
-..\app\httpd-fsdata.c(851): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+..\app\httpd-fsdata.c(382): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
   const struct httpd_fsdata_file file_settings_shtml[] = {{
 ULL, data_settings_shtml, data_settings_shtml + 16, sizeof(data_settings_shtml) - 16}};
-..\app\httpd-fsdata.c(851): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+..\app\httpd-fsdata.c(382): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
   const struct httpd_fsdata_file file_settings_shtml[] = {{
 ULL, data_settings_shtml, data_settings_shtml + 16, sizeof(data_settings_shtml) - 16}};
-..\app\httpd-fsdata.c(861): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+..\app\httpd-fsdata.c(388): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
   const struct httpd_fsdata_file file_header_html[] = {{file_footer_html, data_header_html, data_header_html + 13, sizeof(data_header_html) - 13}};
-..\app\httpd-fsdata.c(861): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+..\app\httpd-fsdata.c(388): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
   const struct httpd_fsdata_file file_header_html[] = {{file_footer_html, data_header_html, data_header_html + 13, sizeof(data_header_html) - 13}};
-..\app\httpd-fs.c: 4 warnings, 0 errors
+..\app\httpd-fsdata.c(389): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+  const struct httpd_fsdata_file file_index_html[] = {{file_header_html, data_index_html, data_index_html + 12, sizeof(data_index_html) - 12}};
+..\app\httpd-fsdata.c(389): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+  const struct httpd_fsdata_file file_index_html[] = {{file_header_html, data_index_html, data_index_html + 12, sizeof(data_index_html) - 12}};
+..\app\httpd-fsdata.c(390): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+  const struct httpd_fsdata_file file_style_css[] = {{file_index_html, data_style_css, data_style_css + 11, sizeof(data_style_css) - 11}};
+..\app\httpd-fsdata.c(390): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+  const struct httpd_fsdata_file file_style_css[] = {{file_index_html, data_style_css, data_style_css + 11, sizeof(data_style_css) - 11}};
+..\app\httpd-fs.c: 8 warnings, 0 errors
 linking...
-Program Size: Code=20448 RO-data=8520 RW-data=276 ZI-data=6260  
-".\Objects\stm32_net.axf" - 0 Error(s), 4 Warning(s).
+Program Size: Code=20448 RO-data=5448 RW-data=276 ZI-data=6260  
+".\Objects\stm32_net.axf" - 0 Error(s), 8 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,8 +58,8 @@ Package Vendor: ARM
                 ::CMSIS:RTOS:1.0 (API)
                 CMSIS (Cortex Microcontroller Software Interface Standard)
    * Component: RTOS Version: 1.0
-   * Component: CORE Version: 4.3.0
    * Component: Keil RTX Version: 4.80.0
+   * Component: CORE Version: 4.3.0
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.1.0.pack
@@ -70,28 +78,28 @@ Package Vendor: Keil
 
    * Component: ::CMSIS:RTOS:1.0 (API)
 
-   * Component: ARM::CMSIS:CORE:4.3.0
-
    * Component: ARM::CMSIS:RTOS:Keil RTX:4.80.0
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
-      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
-      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
-      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
-      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
-      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
+      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
+      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
+      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
+      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
+
+   * Component: ARM::CMSIS:CORE:4.3.0
 
    * Component: Keil::Device:Startup:1.0.0
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\startup_stm32f10x_md_vl.s
       Source file:   Device\Source\system_stm32f10x.c
-      Include file:  RTE_Driver\Config\RTE_Device.h
 Build Time Elapsed:  00:00:00
 </pre>
 </body>
