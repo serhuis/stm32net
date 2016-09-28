@@ -12,7 +12,7 @@
 #define BUF ((struct uip_eth_hdr *)&uip_buf[0])
 //--------------------------------------------------------------
 
-#define DEF_IP	{192,168,3,248}
+#define DEF_IP	{192,168,3,245}
 
 u8 HostIP[4] = DEF_IP;
 
@@ -23,7 +23,7 @@ int Init_Thread (void);
 void demo_init(void);
 
 osThreadId tid_Thread_uIP_periodic, tid_Thread_uIP;                                          // thread id
-osThreadDef(Thread_uIP_periodic, osPriorityBelowNormal, 1, 0);                   // thread object
+osThreadDef(Thread_uIP_periodic, osPriorityNormal, 1, 0);                   // thread object
 osThreadDef(Thread_uIP, osPriorityNormal, 1, 0);                   // thread object
 int Init_Thread (void) {
 

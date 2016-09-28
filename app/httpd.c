@@ -125,13 +125,14 @@ PT_THREAD(handle_ajax(struct httpd_state *s))
   
   PT_BEGIN(&s->scriptpt);
 
-
   while(s->file.len > 0) {
 
     /* Check if we should start executing a script. */
-    if(*s->file.data == ISO_question) {
-      s->scriptptr = s->file.data + 1;
-      s->scriptlen = s->file.len - 1;
+		if(*s->inputbuf == ISO_question) {
+
+/*    if(*s->file.data == ISO_question) {*/
+      s->scriptptr = s->inputbuf + 1;
+//      s->scriptlen = s->file.len - 1;
 
 			/*      if(*(s->scriptptr - 1) == ISO_colon) {
 	httpd_fs_open(s->scriptptr + 1, &s->file);
@@ -144,11 +145,10 @@ PT_THREAD(handle_ajax(struct httpd_state *s))
       
       /* The script is over, so we reset the pointers and continue
 	 sending the rest of the file. */
-      s->file.data = s->scriptptr;
-      s->file.len = s->scriptlen;
-    } else {
-      /* See if we find the start of script marker in the block of HTML
-	 to be sent. */
+//      s->file.data = s->scriptptr;
+//      s->file.len = s->scriptlen;
+    }
+/*		else {
 
       if(s->file.len > uip_mss()) {
 	s->len = uip_mss();
@@ -173,16 +173,11 @@ PT_THREAD(handle_ajax(struct httpd_state *s))
       s->file.len -= s->len;
       
     }
+		*/
   }
   
   PT_END(&s->scriptpt);
 }
-
-
-
-
-
-
 
 /********************************************************************************************/
 static void
@@ -286,7 +281,7 @@ PT_THREAD(send_headers(struct httpd_state *s, const char *statushdr))
 static
 PT_THREAD(handle_output(struct httpd_state *s))
 {
-  char *ptr;
+  char *ptr = NULL;
   
   PT_BEGIN(&s->outputpt);
  
@@ -307,7 +302,7 @@ PT_THREAD(handle_output(struct httpd_state *s))
 										http_header_200));
 
 //handle AJAX request
-		ptr = strchr(s->filename, ISO_question);
+		ptr = strchr(s->inputbuf, ISO_question);
 		if(ptr!= NULL)
 		{
       PT_INIT(&s->scriptpt);

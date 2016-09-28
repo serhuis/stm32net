@@ -19,8 +19,12 @@ function sendReq(adr){
   var text = adr;
   if (window.XMLHttpRequest) {
   xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "settings.shtml?new_addr=" + adr, true);
-  xhttp.send();
+//  xhttp.open("GET", "settings.shtml?new_addr=" + adr, true);
+//  xhttp.send();
+  xhttp.open("POST", "settings.shtml", true);
+  xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+  xhttp.send("?xhr:set-addr,addr:" + adr+" ");
+
   }
 }
 </script>

@@ -1,4 +1,7 @@
 .\objects\httpd-ajax.o: ..\app\httpd-ajax.c
+.\objects\httpd-ajax.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\httpd-ajax.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\httpd-ajax.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\httpd-ajax.o: ..\uIP\uip.h
 .\objects\httpd-ajax.o: ..\uIP\uipopt.h
 .\objects\httpd-ajax.o: ..\uIP\uip-conf.h
@@ -13,5 +16,3 @@
 .\objects\httpd-ajax.o: ..\uIP\lc-switch.h
 .\objects\httpd-ajax.o: ..\app\httpd-fs.h
 .\objects\httpd-ajax.o: ..\app\httpd-ajax.h
-.\objects\httpd-ajax.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\httpd-ajax.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

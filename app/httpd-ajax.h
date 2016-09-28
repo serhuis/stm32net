@@ -53,14 +53,15 @@
 #include "psock.h"
 #include "httpd.h"
 
-typedef PT_THREAD((* httpd_ajaxfunction)(struct httpd_state *, char *));
-httpd_ajaxfunction httpd_ajax(char *name);
+typedef PT_THREAD((* httpd_ajax_parser)(struct httpd_state *, char *));
+
+httpd_ajax_parser httpd_ajax(char *name);
+
+typedef char ((*httpd_ajaxfunction)());
 
 struct httpd_ajax_call {
   const char *name;
   const httpd_ajaxfunction function;
-	unsigned char argc;
-	unsigned char *argv;
 };
 
 /**
@@ -75,9 +76,9 @@ struct httpd_ajax_call {
  *
  * \hideinitializer
  */
-#define httpd_ajax_call(name, str, function) \
+#define HTTPD_AJAX_CALL(name, req, function) \
 static PT_THREAD(function(struct httpd_state *, char *)); \
-static const struct httpd_ajax_call name = {str, function}
+static struct httpd_ajax_call name = {req, function}
 
 //void httpd_cgi_init(void);
 #endif /* __HTTPD_CGI_H__ */
