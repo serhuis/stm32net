@@ -7,7 +7,7 @@
 #include "enc28j60.h"
 
 
-
+extern u8 HostIP[];
 
 
 #endif

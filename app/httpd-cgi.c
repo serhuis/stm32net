@@ -50,6 +50,7 @@
 #include "httpd.h"
 #include "httpd-cgi.h"
 #include "httpd-fs.h"
+#include "stm32net.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -216,7 +217,7 @@ generate_host_addr(void *arg)
 	addr[3] = uip_hostaddr[1]>>8;
 
 	return snprintf((char *)uip_appdata, UIP_APPDATA_SIZE,
-		  "%d.%d.%d.%d\n", addr[0], addr[1], addr[2], addr[3]);
+		  "%d.%d.%d.%d\n", HostIP[0], HostIP[1], HostIP[2], HostIP[3]);
 	
 }
 

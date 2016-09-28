@@ -129,11 +129,9 @@ PT_THREAD(handle_ajax(struct httpd_state *s))
   while(s->file.len > 0) {
 
     /* Check if we should start executing a script. */
- 		if(*s->inputbuf == ISO_question) {
-
-/*    if(*s->file.data == ISO_question) {*/
-      s->scriptptr = s->inputbuf + 1;
-//      s->scriptlen = s->file.len - 1;
+    if(*s->file.data == ISO_question) {
+      s->scriptptr = s->file.data + 1;
+      s->scriptlen = s->file.len - 1;
 
 			/*      if(*(s->scriptptr - 1) == ISO_colon) {
 	httpd_fs_open(s->scriptptr + 1, &s->file);
@@ -309,7 +307,7 @@ PT_THREAD(handle_output(struct httpd_state *s))
 										http_header_200));
 
 //handle AJAX request
-		ptr = strchr(s->inputbuf, ISO_question);
+		ptr = strchr(s->filename, ISO_question);
 		if(ptr!= NULL)
 		{
       PT_INIT(&s->scriptpt);

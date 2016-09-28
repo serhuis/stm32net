@@ -45,26 +45,30 @@
  *
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "uip.h"
 #include "psock.h"
 #include "httpd.h"
 #include "httpd-ajax.h"
 #include "httpd-fs.h"
+#include "stm32net.h"
 
-#include <stdio.h>
-#include <string.h>
-/*
-HTTPD_AJAX_CALL(file, "file-stats", file_stats);
+HTTPD_AJAX_CALL(addr, "set-addr", set_addr);
 
-HTTPD_CGI_CALL(tcp, "tcp-connections", tcp_stats);
-HTTPD_CGI_CALL(net, "net-stats", net_stats);
-HTTPD_CGI_CALL(getaddr, "get-addr", get_addr);
-HTTPD_CGI_CALL(setaddr, "set-addr", set_addr);
-HTTPD_CGI_CALL(mask, "get-mask", net_mask);
-HTTPD_CGI_CALL(gate, "get-gate", gate_addr);
+static const struct httpd_ajax_call *ajax_calls[] = {&addr,  NULL };
 
-static const struct httpd_cgi_call *calls[] = { &file, &tcp, &net, &getaddr, &setaddr, &mask, &gate,  NULL };
-*/
+
+
+
+
+
+
+
+
+
 /*---------------------------------------------------------------------------*/
 static
 PT_THREAD(nullfunction(struct httpd_state *s, char *ptr))
@@ -73,21 +77,72 @@ PT_THREAD(nullfunction(struct httpd_state *s, char *ptr))
   PSOCK_END(&s->sout);
 }
 /*---------------------------------------------------------------------------*/
-httpd_ajaxfunction
+httpd_ajax_parser
 httpd_ajax(char *name)
 {
-  const struct httpd_cgi_call **f;
-
+	const struct httpd_ajax_call **f;	
+	
+	char xhr_name[16] = {NULL}, xhr_len = 0;
+	char *pname = NULL;
+  
+  for(pname = name+4; *pname != ','; pname++, xhr_len++)
+	{
+		xhr_name[xhr_len] = *pname;
+	}
   /* Find the matching name in the table, return the function. */
-/*
-  for(f = calls; *f != NULL; ++f) {
-    if(strncmp((*f)->name, name, strlen((*f)->name)) == 0) {
+  for(f = ajax_calls; *f != NULL; ++f) {
+    if(strncmp((*f)->name, xhr_name, strlen((*f)->name)) == 0) {
+
+
       return (*f)->function;
     }
   }
-	*/
+
   return nullfunction;
 }
+
+static unsigned short
+generate_set_addr(void *arg)
+{
+  char *f = (char *)arg;
+	char addr_str[4] = {0};
+	unsigned char addr_val[4] = {0}, i=0, j=0;
+	
+	while(*f != 0)
+	{
+		addr_str[i++] = *f;
+    if(*f == '.')
+		{
+			addr_str[i-1] = 0;
+			HostIP[j++] = atoi(addr_str);
+			i = 0;
+		}
+		if(*f == ' ')
+		{
+			HostIP[j++] = atoi(addr_str);
+			break;
+		}
+
+		f++;
+	}
+
+	return 0;
+//  return snprintf((char *)uip_appdata, UIP_APPDATA_SIZE, "%5u", httpd_fs_count(f));
+}
+/*---------------------------------------------------------------------------*/
+static
+PT_THREAD(set_addr(struct httpd_state *s, char *ptr))
+{
+  PSOCK_BEGIN(&s->sout);
+	
+	
+	
+
+  PSOCK_GENERATOR_SEND(&s->sout, generate_set_addr, strchr(ptr + 4, ':') + 1);
+  
+  PSOCK_END(&s->sout);
+}
+
 
 //uip_ipaddr_t uip_hostaddr, uip_draddr, uip_netmask;
 /*---------------------------------------------------------------------------*/

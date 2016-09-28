@@ -5,16 +5,14 @@
 
 /**
  * \file
- *         Web server script interface header file
+ *         Web server script interface
  * \author
  *         Adam Dunkels <adam@sics.se>
  *
  */
 
-
-
 /*
- * Copyright (c) 2001, Adam Dunkels.
+ * Copyright (c) 2001-2006, Adam Dunkels.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -43,46 +41,54 @@
  *
  * This file is part of the uIP TCP/IP stack.
  *
- * $Id: httpd-cgi.h,v 1.2 2006/06/11 21:46:38 adam Exp $
+ * $Id: httpd-cgi.c,v 1.2 2006/06/11 21:46:37 adam Exp $
  *
  */
 
-#ifndef __HTTPD_AJAX_H__
-#define __HTTPD_AJAX_H__
-
+#include "uip.h"
 #include "psock.h"
 #include "httpd.h"
+#include "httpd-ajax.h"
+#include "httpd-fs.h"
 
-typedef PT_THREAD((* httpd_ajax_parser)(struct httpd_state *, char *));
+#include <stdio.h>
+#include <string.h>
+/*
+HTTPD_AJAX_CALL(file, "file-stats", file_stats);
 
-httpd_ajax_parser httpd_ajax(char *name);
+HTTPD_CGI_CALL(tcp, "tcp-connections", tcp_stats);
+HTTPD_CGI_CALL(net, "net-stats", net_stats);
+HTTPD_CGI_CALL(getaddr, "get-addr", get_addr);
+HTTPD_CGI_CALL(setaddr, "set-addr", set_addr);
+HTTPD_CGI_CALL(mask, "get-mask", net_mask);
+HTTPD_CGI_CALL(gate, "get-gate", gate_addr);
 
-typedef char ((*httpd_ajaxfunction)());
+static const struct httpd_cgi_call *calls[] = { &file, &tcp, &net, &getaddr, &setaddr, &mask, &gate,  NULL };
+*/
+/*---------------------------------------------------------------------------*/
+static
+PT_THREAD(nullfunction(struct httpd_state *s, char *ptr))
+{
+  PSOCK_BEGIN(&s->sout);
+  PSOCK_END(&s->sout);
+}
+/*---------------------------------------------------------------------------*/
+httpd_ajaxfunction
+httpd_ajax(char *name)
+{
+  const struct httpd_cgi_call **f;
 
-struct httpd_ajax_call {
-  const char *name;
-  const httpd_ajaxfunction function;
-//	unsigned char argc;
-//	unsigned char *argv;
-};
+  /* Find the matching name in the table, return the function. */
+/*
+  for(f = calls; *f != NULL; ++f) {
+    if(strncmp((*f)->name, name, strlen((*f)->name)) == 0) {
+      return (*f)->function;
+    }
+  }
+	*/
+  return nullfunction;
+}
 
-/**
- * \brief      HTTPD CGI function declaration
- * \param name The C variable name of the function
- * \param str  The string name of the function, used in the script file
- * \param function A pointer to the function that implements it
- *
- *             This macro is used for declaring a HTTPD CGI
- *             function. This function is then added to the list of
- *             HTTPD CGI functions with the httpd_cgi_add() function.
- *
- * \hideinitializer
- */
-#define HTTPD_AJAX_CALL(name, req, function) \
-static PT_THREAD(function(struct httpd_state *, char *)); \
-static struct httpd_ajax_call name = {req, function}
-
-//void httpd_cgi_init(void);
-#endif /* __HTTPD_CGI_H__ */
-
+//uip_ipaddr_t uip_hostaddr, uip_draddr, uip_netmask;
+/*---------------------------------------------------------------------------*/
 /** @} */
