@@ -114,7 +114,7 @@ generate_set_addr(void *arg)
   char *f = (char *)arg;
 	char addr_str[4] = {0};
 	unsigned char addr_val[4] = {0}, i=0, j=0;
-/*	
+	
 	while(*f != ' ')
 	{
 		addr_str[i++] = *f;
@@ -129,10 +129,6 @@ generate_set_addr(void *arg)
 		f++;
 	}
 
-	
-	
-	
-	*/
   return snprintf((char *)uip_appdata, UIP_APPDATA_SIZE, "%5u", httpd_fs_count(f));
 }
 /*---------------------------------------------------------------------------*/

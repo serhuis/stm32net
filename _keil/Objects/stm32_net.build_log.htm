@@ -28,15 +28,18 @@ Project File Date:  09/19/2016
 *** Using Compiler 'V5.06 update 2 (build 183)', folder: 'd:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 compiling clock-arch.c...
-compiling stm32f10x_gpio.c...
 compiling stm32net.c...
 ..\src\stm32net.c(161): warning:  #177-D: function "HardFault_Handler" was declared but never referenced
   static void HardFault_Handler(void)
 ..\src\stm32net.c: 1 warning, 0 errors
 compiling stm32f10x_rcc.c...
-compiling stm32f10x_spi.c...
+compiling stm32f10x_gpio.c...
 compiling misc.c...
-compiling timer.c...
+compiling enc28j60.c...
+..\enc28j60\src\enc28j60.c(183): warning:  #177-D: variable "a" was declared but never referenced
+  	uint16_t a;
+..\enc28j60\src\enc28j60.c: 1 warning, 0 errors
+compiling stm32f10x_spi.c...
 compiling psock.c...
 ..\uIP\psock.c(179): warning:  #550-D: variable "PT_YIELD_FLAG" was set but never used
     PT_BEGIN(&s->psockpt);
@@ -53,12 +56,9 @@ compiling psock.c...
 ..\uIP\psock.c(334): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8_t *"
     buf_setup(&psock->buf, buffer, buffersize);
 ..\uIP\psock.c: 7 warnings, 0 errors
-compiling enc28j60.c...
-..\enc28j60\src\enc28j60.c(183): warning:  #177-D: variable "a" was declared but never referenced
-  	uint16_t a;
-..\enc28j60\src\enc28j60.c: 1 warning, 0 errors
-compiling uip_arp.c...
+compiling timer.c...
 compiling uip-fw.c...
+compiling uip_arp.c...
 compiling uip.c...
 ..\uIP\uip.c(1847): warning:  #177-D: label "ip_send_nolen" was declared but never referenced
    ip_send_nolen:
@@ -68,14 +68,6 @@ compiling uip.c...
 compiling uiplib.c...
 compiling uip-neighbor.c...
 compiling uip-split.c...
-compiling httpd-fs.c...
-..\app\httpd-fsdata.c(857): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
-  const struct httpd_fsdata_file file_settings_shtml[] = {{
-ULL, data_settings_shtml, data_settings_shtml + 16, sizeof(data_settings_shtml) - 16}};
-..\app\httpd-fsdata.c(857): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
-  const struct httpd_fsdata_file file_settings_shtml[] = {{
-ULL, data_settings_shtml, data_settings_shtml + 16, sizeof(data_settings_shtml) - 16}};
-..\app\httpd-fs.c: 2 warnings, 0 errors
 compiling httpd.c...
 ..\app\httpd-cgi.h(84): warning:  #1-D: last line of file ends without a newline
   /** @} */
@@ -96,6 +88,14 @@ compiling httpd.c...
 ..\app\httpd.c(331): warning:  #550-D: variable "PT_YIELD_FLAG" was set but never used
     PSOCK_BEGIN(&s->sin);
 ..\app\httpd.c: 9 warnings, 0 errors
+compiling httpd-fs.c...
+..\app\httpd-fsdata.c(857): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+  const struct httpd_fsdata_file file_settings_shtml[] = {{
+ULL, data_settings_shtml, data_settings_shtml + 16, sizeof(data_settings_shtml) - 16}};
+..\app\httpd-fsdata.c(857): warning:  #144-D: a value of type "const unsigned char *" cannot be used to initialize an entity of type "const char *"
+  const struct httpd_fsdata_file file_settings_shtml[] = {{
+ULL, data_settings_shtml, data_settings_shtml + 16, sizeof(data_settings_shtml) - 16}};
+..\app\httpd-fs.c: 2 warnings, 0 errors
 compiling httpd-cgi.c...
 ..\app\httpd-cgi.h(84): warning:  #1-D: last line of file ends without a newline
   /** @} */
@@ -124,23 +124,17 @@ compiling http-strings.c...
 compiling httpd-ajax.c...
 ..\app\httpd-ajax.c(68): warning:  #550-D: variable "PT_YIELD_FLAG" was set but never used
     PSOCK_BEGIN(&s->sout);
-..\app\httpd-ajax.c(115): warning:  #177-D: variable "addr_str" was declared but never referenced
-  	char addr_str[4] = {0};
-..\app\httpd-ajax.c(116): warning:  #177-D: variable "addr_val" was declared but never referenced
+..\app\httpd-ajax.c(116): warning:  #550-D: variable "addr_val" was set but never used
   	unsigned char addr_val[4] = {0}, i=0, j=0;
-..\app\httpd-ajax.c(116): warning:  #177-D: variable "i" was declared but never referenced
-  	unsigned char addr_val[4] = {0}, i=0, j=0;
-..\app\httpd-ajax.c(116): warning:  #177-D: variable "j" was declared but never referenced
-  	unsigned char addr_val[4] = {0}, i=0, j=0;
-..\app\httpd-ajax.c(142): warning:  #550-D: variable "PT_YIELD_FLAG" was set but never used
+..\app\httpd-ajax.c(138): warning:  #550-D: variable "PT_YIELD_FLAG" was set but never used
     PSOCK_BEGIN(&s->sout);
-..\app\httpd-ajax.c: 6 warnings, 0 errors
+..\app\httpd-ajax.c: 3 warnings, 0 errors
 assembling startup_stm32f10x_md_vl.s...
 compiling RTX_Conf_CM.c...
 compiling system_stm32f10x.c...
 linking...
-Program Size: Code=19584 RO-data=8304 RW-data=276 ZI-data=6260  
-".\Objects\stm32_net.axf" - 0 Error(s), 39 Warning(s).
+Program Size: Code=20240 RO-data=8576 RW-data=276 ZI-data=7692  
+".\Objects\stm32_net.axf" - 0 Error(s), 36 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -173,25 +167,25 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:RTOS:Keil RTX:4.80.0
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
-      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
-      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
       Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
       Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
       Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
+      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
+      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
 
    * Component: Keil::Device:Startup:1.0.0
       Source file:   Device\Source\ARM\startup_stm32f10x_md_vl.s
-      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
