@@ -12,7 +12,7 @@
 #define BUF ((struct uip_eth_hdr *)&uip_buf[0])
 //--------------------------------------------------------------
 
-#define DEF_IP	{192,168,3,248}
+#define DEF_IP	{192,168,3,245}
 
 u8 HostIP[4] = DEF_IP;
 
